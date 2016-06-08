@@ -7,45 +7,50 @@ use Illuminate\Http\Request;
 
 class LaravelTracker
 {
+    /**
+     * Routes to be analysed.
+     *
+     * @var array
+     */
     private $routes;
 
     /**
-     * Namespace dos controladores.
+     * Controllers namespace.
      *
      * @var string
      */
     private $namespace;
 
     /**
-     * Action acessada.
+     * Stores the accessed action.
      *
      * @var string
      */
     private $currentAction;
 
     /**
-     * Controller acessado.
+     * Stores the accessed controller.
      *
      * @var string
      */
     private $currentController;
 
     /**
-     * Método acessado.
+     * Stores the accessed method.
      *
      * @var string
      */
     private $currentMethod;
 
     /**
-     *
+     * True if the accessed route is in the $routes array.
      *
      * @var bool
      */
     private $isCurrent;
 
     /**
-     * Construtor do componente Tracker.
+     * Laravel Tracker class constructor.
      *
      * @param array $namespace
      */
@@ -70,8 +75,7 @@ class LaravelTracker
     }
 
     /**
-     * Verifica se a action que é acessada está contida
-     * no array de actions passado por parâmetro.
+     * Checks if the route being accessed is contained in the analyzed routes.
      *
      * @param $actions
      * @return bool
@@ -80,7 +84,6 @@ class LaravelTracker
     {
         foreach ($actions as $action)
         {
-            // Rota via Controller
             if(stristr($action, '@') !== false) {
                 list($controller, $method) = explode('@', $action);
 
@@ -116,7 +119,7 @@ class LaravelTracker
     }
 
     /**
-     * Retorna a action que está sendo acessada.
+     * Returns the action being accessed.
      *
      * @return string
      */
@@ -126,7 +129,7 @@ class LaravelTracker
     }
 
     /**
-     * Retorna o controller que está sendo acessado.
+     * Returns the controller being accessed.
      *
      * @return string
      */
@@ -136,7 +139,7 @@ class LaravelTracker
     }
 
     /**
-     * Retorna o método que está sendo acessado.
+     * Returns the method that is being accessed.
      *
      * @return string
      */
@@ -146,7 +149,7 @@ class LaravelTracker
     }
 
     /**
-     * Define as rotas solicitadas para análise.
+     * Defines the routes requested for analysis.
      *
      * @param $routes
      * @return $this
@@ -161,7 +164,7 @@ class LaravelTracker
     }
 
     /**
-     * Se for a rota corrente retorna a string.
+     * If it is the current route returns the string.
      *
      * @param $str
      * @return string

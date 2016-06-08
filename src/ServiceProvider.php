@@ -15,7 +15,6 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
 {
-
     /**
      * Perform post-registration booting of services.
      *
@@ -36,7 +35,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->bind('laravel-tracker', function ($app) {
-            $namespace = $app->config->get('gsmeira.tracker.controllers_namespace', 'multialerts');
+            $namespace = $app->config->get('gsmeira.tracker.controllers_namespace', 'App\Http\Controllers');
 
             return new LaravelTracker($namespace);
         });

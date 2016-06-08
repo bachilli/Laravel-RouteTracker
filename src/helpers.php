@@ -13,7 +13,7 @@ use GSMeira\LaravelTracker\LaravelTracker;
 
 if (! function_exists('tracker')) {
     /**
-     * Instância do componente Tracker.
+     * Returns an instance of Laravel Tracker.
      *
      * @param array $routes
      * @return LaravelTracker
