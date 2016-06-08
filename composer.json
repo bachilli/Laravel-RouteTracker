@@ -1,7 +1,7 @@
 {
     "name": "gsmeira/laravel-tracker",
     "type": "library",
-    "description": ":package_description",
+    "description": "Extract information from the current route accessed.",
     "keywords": [
         "gsmeira",
         "laravel-tracker"

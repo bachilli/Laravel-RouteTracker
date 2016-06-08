@@ -149,6 +149,7 @@ class LaravelTracker
      * Define as rotas solicitadas para análise.
      *
      * @param $routes
+     * @return $this
      */
     public function setRoutes($routes)
     {
