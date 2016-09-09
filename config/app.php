@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'My Application',
+    'name' => 'CentralJogos',
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://www.centraljogos.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,14 +166,20 @@ return [
         /*
          * Package Service Providers...
          */
-
-        //
+        GSMeira\LaravelMultialerts\ServiceProvider::class,
+        GSMeira\LaravelTracker\ServiceProvider::class,
+        GSMeira\LaravelRuleBuilder\ServiceProvider::class,
+        GSMeira\LaravelPrep\ServiceProvider::class,
+        GSMeira\LaravelFileManager\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\DatabaseServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
@@ -193,6 +199,9 @@ return [
 
     'aliases' => [
 
+        /*
+         * Laravel Framework Facades...
+         */
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -224,6 +233,17 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Package Facades...
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
+        'RuleBuilder' => GSMeira\LaravelRuleBuilder\Facade::class,
+        'Prep' => GSMeira\LaravelPrep\Facade::class,
+        'Tracker' => GSMeira\LaravelTracker\Facade::class,
+        'Multialerts' => GSMeira\LaravelMultialerts\Facade::class,
 
     ],
 

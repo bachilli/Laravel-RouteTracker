@@ -1,0 +1,81 @@
+//
+// Fontes ---------------------------------------
+//
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+//
+// Twitter Bootstrap ----------------------------
+//
+
+$font-size-root: 14px !default;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//
+// Font Awesome ---------------------------------
+//
+
+@import "node_modules/font-awesome/scss/font-awesome";
+
+//
+// Linha Horizontal (hr) ------------------------
+//
+
+hr {
+  &.dashed { border-style: dashed; }
+  &.hidden { border: 0; }
+}
+
+//
+// Tabela (table)  ------------------------------
+//
+
+table {
+  &.table-show {
+    tr {
+      td.field { font-weight: bold; background: #f5f5f5; color: #666; }
+    }
+  }
+  tr {
+    &:hover { background: #f5f5f5; font-weight: bold; }
+    th { background: #eee; color: #888; }
+    td, th {
+      vertical-align: middle;
+      min-height: 30px;
+      line-height: 30px;
+      &.align-left { text-align: left; }
+      &.align-center { text-align: center; }
+      &.align-right { text-align: right; }
+      @for $i from 1 through 100 {
+        &.w-#{$i} {
+          width: percentage($i / 100);
+        }
+      }
+    }
+  }
+}
+
+//
+// Formulário (form) ----------------------------
+//
+
+form {
+  .form-group {
+    label { cursor: pointer; font-weight: bold; }
+    .required-input { color: #cc0000; font-weight: bold; font-size: 14px; }
+  }
+}
+
+//
+// Alertas --------------------------------------
+//
+
+.alert {
+  ul {
+    margin: 0;
+    li {
+      span { font-weight: bold; text-decoration: underline; }
+    }
+  }
+}

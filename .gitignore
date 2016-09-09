@@ -1,7 +1,12 @@
+Homestead.json
+Homestead.yaml
+/bower_components
 /node_modules
 /public/storage
 /vendor
-/.idea
-Homestead.json
-Homestead.yaml
-.env
+*.log
+.*
+~*
+!.env.example
+!.gitignore
+!.gitattributes

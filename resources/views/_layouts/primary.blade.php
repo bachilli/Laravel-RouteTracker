@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>CentralJogos</title>
+        @yield('styles')
+        @yield('css')
+    </head>
+    <body>
+        @yield('content')
+        @yield('scripts')
+        @yield('js')
+        @include('_layouts.partials._common.google-analytics')
+    </body>
+</html>

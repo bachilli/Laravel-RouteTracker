@@ -6,7 +6,26 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "laravel/framework": "5.3.*",
+        "paquettg/php-html-parser": "^1.7",
+        "guzzlehttp/guzzle": "^6.2",
+        "laravelcollective/html": "@dev",
+        "graham-campbell/htmlmin": "^4.3",
+        "gsmeira/laravel-multialerts": "~v1.0.0",
+        "gsmeira/laravel-tracker": "~v1.0.0",
+        "gsmeira/laravel-assist": "dev-master@dev",
+        "gsmeira/laravel-rulebuilder": "dev-master@dev",
+        "gsmeira/laravel-thumbnail": "dev-master@dev",
+        "gsmeira/laravel-css": "dev-master@dev",
+        "gsmeira/laravel-metatags": "dev-master@dev",
+        "gsmeira/laravel-prep": "dev-master@dev",
+        "gsmeira/laravel-recaptcha": "dev-master@dev",
+        "gsmeira/laravel-input": "dev-master@dev",
+        "gsmeira/laravel-throttle": "dev-master@dev",
+        "gsmeira/laravel-toggle": "dev-master@dev",
+        "gsmeira/laravel-flag": "dev-master@dev",
+        "gsmeira/laravel-filemanager": "dev-master@dev",
+        "gsmeira/laravel-clock": "dev-master@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -21,7 +40,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
@@ -46,5 +68,72 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-assist.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-rulebuilder.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-thumbnail.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-css.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-metatags.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-prep.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-recaptcha.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-input.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-throttle.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-toggle.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-flag.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-filemanager.git",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url":  "git@github.com:gsmeira/laravel-clock.git",
+            "no-api": true
+        }
+    ]
 }

@@ -1,23 +1,19 @@
+//
+// Vars
+//
 
 window._ = require('lodash');
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
 window.$ = window.jQuery = require('jquery');
-require('bootstrap-sass');
-
-/**
- * Vue is a modern JavaScript library for building interactive web interfaces
- * using reactive data binding and reusable components. Vue's API is clean
- * and simple, leaving you to focus on building your next great project.
- */
-
+window.Tether = require('tether');
 window.Vue = require('vue');
+
+//
+// Requires
+//
+
+require('../../../node_modules/bootstrap/dist/js/bootstrap');
 require('vue-resource');
+require('sweetalert2');
 
 /**
  * We'll register a HTTP interceptor to attach the "CSRF" header to each of
@@ -27,7 +23,6 @@ require('vue-resource');
 
 Vue.http.interceptors.push((request, next) => {
     request.headers['X-CSRF-TOKEN'] = Laravel.csrfToken;
-
     next();
 });
 
@@ -38,8 +33,23 @@ Vue.http.interceptors.push((request, next) => {
  */
 
 // import Echo from "laravel-echo"
-
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the body of the page. From here, you may begin adding components to
+ * the application, or feel free to tweak this setup for your needs.
+ */
+
+Vue.component('example', require('./components/Example.vue'));
+
+const app = new Vue({
+    el: 'body'
+});
+
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
