@@ -32,6 +32,10 @@
                     <td class="value w-75">{{ $category->description }}</td>
                 </tr>
                 <tr>
+                    <td class="field w-25 align-right">{{ trans('general.thumbnail') }}</td>
+                    <td class="value w-75"><img src="{{ storage('public')->url($category->thumbnail->location) }}"></td>
+                </tr>
+                <tr>
                     <td class="field w-25 align-right">{{ trans('general.created_at') }}</td>
                     <td class="value w-75">{{ $category->created_at }}</td>
                 </tr>

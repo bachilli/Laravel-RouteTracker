@@ -18,5 +18,16 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'name', 'slug', 'description' ];
+    protected $fillable = [ 'name', 'slug', 'description', 'thumbnail' ];
+
+    /**
+     * ...
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getThumbnailAttribute($value)
+    {
+        return json_decode($value);
+    }
 }

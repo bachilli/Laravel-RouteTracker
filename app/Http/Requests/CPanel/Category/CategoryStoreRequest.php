@@ -3,6 +3,7 @@
 namespace App\Http\Requests\CPanel\Category;
 
 use App\Http\Requests\Request;
+use GSMeira\LaravelRuleBuilder\LaravelRuleBuilder;
 
 class CategoryStoreRequest extends Request
 {
@@ -19,15 +20,20 @@ class CategoryStoreRequest extends Request
     /**
      * Regras de validação aplicadas na requisição.
      *
+     * @param LaravelRuleBuilder $validate
      * @return array
      */
-    public function rules()
+    public function rules(LaravelRuleBuilder $validate)
     {
-        return rule_builder()
-            ->input('name')->required()->today_onwards()
-            ->input('slug')->nullable()
-            ->input('description')->nullable()
-            ->rules();
+        $validate->input('name')->required();
+        $validate->input('slug')->nullable();
+        $validate->input('description')->nullable();
+        $validate->input('thumbnail')->uplab_required('image')
+            ->uplab_size('max=10MB')
+            ->uplab_dimensions('min_width=800,min_height=600')
+            ->uplab_mimes('jpg,png,gif');
+
+        return $validate->rules();
     }
 
     /**

@@ -11,22 +11,31 @@ class EloquentCategoryCrudRepository implements CategoryCrudRepository
     /**
      * Cria uma nova categoria.
      *
-     * @param $data
-     * @return mixed
+     * @param $values
+     * @return Category|bool
+     * @throws Exception
      */
-    public function store($data)
+    public function store($values)
     {
         DB::beginTransaction();
 
         try {
-            $category = Category::create($data);
+            $category = Category::create([
+                'name' => $values['name'],
+                'slug' => $values['slug'],
+                'description' => $values['description'],
+                'thumbnail' => prep($values['thumbnail'])->uplab()
+            ]);
 
             DB::commit();
 
+            uplab($values['thumbnail'])->persist($category->thumbnail->location);
+
             return $category;
         } catch (Exception $e) {
-            dd($e);
             DB::rollback();
+
+            if (env('APP_DEBUG')) throw $e;
 
             return false;
         }
@@ -35,22 +44,34 @@ class EloquentCategoryCrudRepository implements CategoryCrudRepository
     /**
      * Realiza a atualização de uma categoria.
      *
-     * @param $data
+     * @param $values
      * @param $category
-     * @return bool
+     * @return Category|bool
+     * @throws Exception
      */
-    public function update($data, $category)
+    public function update($values, $category)
     {
         DB::beginTransaction();
 
         try {
-            $category->update($data);
+            $previous = (object) [ 'thumbnail' => $category->thumbnail ];
+
+            $category->update([
+                'name' => $values['name'],
+                'slug' => $values['slug'],
+                'description' => $values['description'],
+                'thumbnail' => prep($values['thumbnail'])->uplab()
+            ]);
 
             DB::commit();
+
+            uplab($values['thumbnail'])->persist($category->thumbnail->location, $previous->thumbnail->location);
 
             return true;
         } catch (Exception $e) {
             DB::rollback();
+
+            if (env('APP_DEBUG')) throw $e;
 
             return false;
         }
@@ -60,7 +81,8 @@ class EloquentCategoryCrudRepository implements CategoryCrudRepository
      * Faz a exclusão de uma categoria.
      *
      * @param $category
-     * @return bool
+     * @return Category|bool
+     * @throws Exception
      */
     public function destroy($category)
     {
@@ -71,9 +93,13 @@ class EloquentCategoryCrudRepository implements CategoryCrudRepository
 
             DB::commit();
 
+            storage()->deleteDirectory($category->thumbnail->dir);
+
             return $category;
         } catch (Exception $e) {
             DB::rollback();
+
+            if (env('APP_DEBUG')) throw $e;
 
             return false;
         }

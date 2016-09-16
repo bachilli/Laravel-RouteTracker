@@ -23,11 +23,7 @@ class CategoryUpdateRequest extends Request
      */
     public function rules()
     {
-        return rule_builder()
-            ->input('name')->required()
-            ->input('slug')->nullable()
-            ->input('description')->nullable()
-            ->rules();
+        return [];
     }
 
     /**

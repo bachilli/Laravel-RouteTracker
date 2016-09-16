@@ -170,7 +170,8 @@ return [
         GSMeira\LaravelTracker\ServiceProvider::class,
         GSMeira\LaravelRuleBuilder\ServiceProvider::class,
         GSMeira\LaravelPrep\ServiceProvider::class,
-        GSMeira\LaravelFileManager\ServiceProvider::class,
+        GSMeira\LaravelFileBox\ServiceProvider::class,
+        GSMeira\LaravelUpLab\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
 

@@ -82,8 +82,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        // 2560x1440
-        dd(file_manager('/home/vagrant/www/sites/centraljogos/storage/app/image.jpg')->isFileSizeGreaterThan(25600000));
         return view('cpanel.categories.create');
     }
 
@@ -98,10 +96,6 @@ class CategoryController extends Controller
         $category = $this->categoryCrudRepository->store($request->all());
 
         if (! empty($category)) {
-            // caminho, destino,
-            file_manager($request->input('thumbnail'));
-            // $request->file('thumbnail')->store('categories', 'public');
-
             multialerts()->success('categories.successfully_stored', [ 'name' => $category->name ])->put();
 
             return to('CPanel\CategoryController@index');
@@ -132,11 +126,7 @@ class CategoryController extends Controller
      */
     public function update(CategoryUpdateRequest $request, Category $category)
     {
-        // $copy = [ 'image' => $category->image ];
-
         if ($this->categoryCrudRepository->update($request->all(), $category)) {
-            // storage_persist($category->image, $copy['image']);
-
             multialerts()->success('categories.successfully_updated', [ 'name' => $category->name ])->put();
 
             return to('CPanel\CategoryController@index');
@@ -156,8 +146,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         if (! empty($category) && $this->categoryCrudRepository->destroy($category)) {
-            // storage()->delete($category->image);
-
             multialerts()->success('categories.successfully_deleted', [ 'name' => $category->name ])->put();
         } else {
             multialerts()->danger('categories.delete_fail')->put();

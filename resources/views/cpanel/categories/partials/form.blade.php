@@ -23,8 +23,8 @@
     {!! Form::textarea('description', null, [ 'id' => 'description', 'class' => 'form-control', 'tabindex' => 4 ]) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('thumbnail', 'Miniatura') !!}
-    {!! Form::file('thumbnail', [ 'id' => 'thumbnail', 'class' => 'form-control', 'tabindex' => 5 ]) !!}
+    {!! Form::label('thumbnail_fake', 'Miniatura') !!}
+    {!! Form::file('thumbnail_fake', [ 'id' => 'thumbnail_fake', 'class' => 'form-control', 'tabindex' => 5 ]) !!}
 </div>
 <div class="form-group">
     {!! Form::submit($submitButtonText, [ 'class' => 'btn btn-lg btn-primary pull-xs-right', 'tabindex' => 6 ]) !!}
