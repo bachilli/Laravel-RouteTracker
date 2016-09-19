@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-assist.git",
-                "reference": "b613e5e20016b9b6465e8533f3f95967eaf13775"
+                "reference": "be631ebbc0129224016badeab13d51c3cb56ff94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-assist/zipball/b613e5e20016b9b6465e8533f3f95967eaf13775",
-                "reference": "b613e5e20016b9b6465e8533f3f95967eaf13775",
+                "url": "https://api.github.com/repos/gsmeira/laravel-assist/zipball/be631ebbc0129224016badeab13d51c3cb56ff94",
+                "reference": "be631ebbc0129224016badeab13d51c3cb56ff94",
                 "shasum": ""
             },
             "require": {
@@ -292,7 +292,7 @@
                 "gsmeira",
                 "laravel-assist"
             ],
-            "time": "2016-09-16 03:16:45"
+            "time": "2016-09-17 19:21:17"
         },
         {
             "name": "gsmeira/laravel-clock",
@@ -300,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-clock.git",
-                "reference": "57d9d3f158bc91cdcf1c522f2fdee20145d9df9a"
+                "reference": "0898a706164063930fba554bc280bf7fde3a9a33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-clock/zipball/57d9d3f158bc91cdcf1c522f2fdee20145d9df9a",
-                "reference": "57d9d3f158bc91cdcf1c522f2fdee20145d9df9a",
+                "url": "https://api.github.com/repos/gsmeira/laravel-clock/zipball/0898a706164063930fba554bc280bf7fde3a9a33",
+                "reference": "0898a706164063930fba554bc280bf7fde3a9a33",
                 "shasum": ""
             },
             "require": {
@@ -328,7 +328,7 @@
                     "GSMeira\\LaravelClock\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -358,7 +358,7 @@
                 "gsmeira",
                 "laravel-clock"
             ],
-            "time": "2016-09-16 03:17:01"
+            "time": "2016-09-17 19:21:38"
         },
         {
             "name": "gsmeira/laravel-filebox",
@@ -366,12 +366,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-filebox.git",
-                "reference": "e778c8b9ee8c0397833186d66692abcb0e943272"
+                "reference": "2b9987eafe2338f45ad1946eb8db7d1f59d83bf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-filebox/zipball/e778c8b9ee8c0397833186d66692abcb0e943272",
-                "reference": "e778c8b9ee8c0397833186d66692abcb0e943272",
+                "url": "https://api.github.com/repos/gsmeira/laravel-filebox/zipball/2b9987eafe2338f45ad1946eb8db7d1f59d83bf2",
+                "reference": "2b9987eafe2338f45ad1946eb8db7d1f59d83bf2",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
                 "gsmeira",
                 "laravel-filebox"
             ],
-            "time": "2016-09-16 03:17:24"
+            "time": "2016-09-17 19:22:08"
         },
         {
             "name": "gsmeira/laravel-flag",
@@ -432,12 +432,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-flag.git",
-                "reference": "a6de9016c3189f631aedd3986e4a69ef6ac41dc9"
+                "reference": "3b458c07f1133f92808e8307675a1ceaaab4c159"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-flag/zipball/a6de9016c3189f631aedd3986e4a69ef6ac41dc9",
-                "reference": "a6de9016c3189f631aedd3986e4a69ef6ac41dc9",
+                "url": "https://api.github.com/repos/gsmeira/laravel-flag/zipball/3b458c07f1133f92808e8307675a1ceaaab4c159",
+                "reference": "3b458c07f1133f92808e8307675a1ceaaab4c159",
                 "shasum": ""
             },
             "require": {
@@ -460,7 +460,7 @@
                     "GSMeira\\LaravelFlag\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -490,7 +490,7 @@
                 "gsmeira",
                 "laravel-flag"
             ],
-            "time": "2016-09-16 03:17:54"
+            "time": "2016-09-17 19:22:25"
         },
         {
             "name": "gsmeira/laravel-input",
@@ -498,12 +498,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-input.git",
-                "reference": "bbb5133d1f7a2ce1f6197a6f78ea48632b202c0e"
+                "reference": "d0b43930eab097f8edb949dc99ec0ebf93214793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-input/zipball/bbb5133d1f7a2ce1f6197a6f78ea48632b202c0e",
-                "reference": "bbb5133d1f7a2ce1f6197a6f78ea48632b202c0e",
+                "url": "https://api.github.com/repos/gsmeira/laravel-input/zipball/d0b43930eab097f8edb949dc99ec0ebf93214793",
+                "reference": "d0b43930eab097f8edb949dc99ec0ebf93214793",
                 "shasum": ""
             },
             "require": {
@@ -526,7 +526,7 @@
                     "GSMeira\\LaravelInput\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -556,7 +556,7 @@
                 "gsmeira",
                 "laravel-input"
             ],
-            "time": "2016-06-12 19:28:59"
+            "time": "2016-09-17 19:22:49"
         },
         {
             "name": "gsmeira/laravel-metatags",
@@ -564,12 +564,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-metatags.git",
-                "reference": "d459a7700d04d873d0b1459237bdee1b918cdf17"
+                "reference": "10b99a717c47fb428747e30bdc3e807d9d127996"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-metatags/zipball/d459a7700d04d873d0b1459237bdee1b918cdf17",
-                "reference": "d459a7700d04d873d0b1459237bdee1b918cdf17",
+                "url": "https://api.github.com/repos/gsmeira/laravel-metatags/zipball/10b99a717c47fb428747e30bdc3e807d9d127996",
+                "reference": "10b99a717c47fb428747e30bdc3e807d9d127996",
                 "shasum": ""
             },
             "require": {
@@ -592,7 +592,7 @@
                     "GSMeira\\LaravelMeta\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -622,7 +622,7 @@
                 "gsmeira",
                 "laravel-metatags"
             ],
-            "time": "2016-09-16 03:18:37"
+            "time": "2016-09-17 19:23:08"
         },
         {
             "name": "gsmeira/laravel-multialerts",
@@ -687,12 +687,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-prep.git",
-                "reference": "764508a539f3c459f17c7e27fdcd8b8eb66e5319"
+                "reference": "ec21394a764970c1d2d32b1469ad1fef13ecd480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-prep/zipball/764508a539f3c459f17c7e27fdcd8b8eb66e5319",
-                "reference": "764508a539f3c459f17c7e27fdcd8b8eb66e5319",
+                "url": "https://api.github.com/repos/gsmeira/laravel-prep/zipball/ec21394a764970c1d2d32b1469ad1fef13ecd480",
+                "reference": "ec21394a764970c1d2d32b1469ad1fef13ecd480",
                 "shasum": ""
             },
             "require": {
@@ -715,7 +715,7 @@
                     "GSMeira\\LaravelPrep\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -745,7 +745,7 @@
                 "gsmeira",
                 "laravel-prep"
             ],
-            "time": "2016-09-16 03:19:18"
+            "time": "2016-09-17 19:23:25"
         },
         {
             "name": "gsmeira/laravel-recaptcha",
@@ -753,12 +753,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-recaptcha.git",
-                "reference": "16da842acf61a8ca8c7849edaeccedf83ac22046"
+                "reference": "29833f631be04d69d5dde904f1fe35216f22818a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-recaptcha/zipball/16da842acf61a8ca8c7849edaeccedf83ac22046",
-                "reference": "16da842acf61a8ca8c7849edaeccedf83ac22046",
+                "url": "https://api.github.com/repos/gsmeira/laravel-recaptcha/zipball/29833f631be04d69d5dde904f1fe35216f22818a",
+                "reference": "29833f631be04d69d5dde904f1fe35216f22818a",
                 "shasum": ""
             },
             "require": {
@@ -781,7 +781,7 @@
                     "GSMeira\\LaravelReCaptcha\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -811,7 +811,7 @@
                 "gsmeira",
                 "laravel-recaptcha"
             ],
-            "time": "2016-09-16 03:19:41"
+            "time": "2016-09-17 19:23:47"
         },
         {
             "name": "gsmeira/laravel-rulebuilder",
@@ -819,12 +819,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-rulebuilder.git",
-                "reference": "c314646000cbed8a84b812152613cab647e41132"
+                "reference": "bcc844b73b4e7662efd50537c282695f0979b69a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-rulebuilder/zipball/c314646000cbed8a84b812152613cab647e41132",
-                "reference": "c314646000cbed8a84b812152613cab647e41132",
+                "url": "https://api.github.com/repos/gsmeira/laravel-rulebuilder/zipball/bcc844b73b4e7662efd50537c282695f0979b69a",
+                "reference": "bcc844b73b4e7662efd50537c282695f0979b69a",
                 "shasum": ""
             },
             "require": {
@@ -847,7 +847,7 @@
                     "GSMeira\\LaravelRuleBuilder\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -877,7 +877,7 @@
                 "gsmeira",
                 "laravel-rulebuilder"
             ],
-            "time": "2016-09-16 03:20:36"
+            "time": "2016-09-17 19:24:05"
         },
         {
             "name": "gsmeira/laravel-throttle",
@@ -885,12 +885,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-throttle.git",
-                "reference": "060ddb35890264c60ba5dde0ea7343214b898b66"
+                "reference": "330cbdbd0db02a24b31b9eb81e8fe38c0bcd46f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-throttle/zipball/060ddb35890264c60ba5dde0ea7343214b898b66",
-                "reference": "060ddb35890264c60ba5dde0ea7343214b898b66",
+                "url": "https://api.github.com/repos/gsmeira/laravel-throttle/zipball/330cbdbd0db02a24b31b9eb81e8fe38c0bcd46f0",
+                "reference": "330cbdbd0db02a24b31b9eb81e8fe38c0bcd46f0",
                 "shasum": ""
             },
             "require": {
@@ -913,7 +913,7 @@
                     "GSMeira\\LaravelThrottle\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -943,7 +943,7 @@
                 "gsmeira",
                 "laravel-throttle"
             ],
-            "time": "2016-09-16 03:21:01"
+            "time": "2016-09-17 19:24:37"
         },
         {
             "name": "gsmeira/laravel-thumbnail",
@@ -951,12 +951,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-thumbnail.git",
-                "reference": "d02856a78e180a13890c8811535818d204709028"
+                "reference": "422341cf400219d96f4174804a6c3a9319a03c77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-thumbnail/zipball/d02856a78e180a13890c8811535818d204709028",
-                "reference": "d02856a78e180a13890c8811535818d204709028",
+                "url": "https://api.github.com/repos/gsmeira/laravel-thumbnail/zipball/422341cf400219d96f4174804a6c3a9319a03c77",
+                "reference": "422341cf400219d96f4174804a6c3a9319a03c77",
                 "shasum": ""
             },
             "require": {
@@ -979,7 +979,7 @@
                     "GSMeira\\LaravelThumbnail\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -1009,7 +1009,7 @@
                 "gsmeira",
                 "laravel-thumbnail"
             ],
-            "time": "2016-09-16 03:21:30"
+            "time": "2016-09-17 19:24:52"
         },
         {
             "name": "gsmeira/laravel-toggle",
@@ -1017,12 +1017,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/laravel-toggle.git",
-                "reference": "ba658ab949e30d384e3ac31ec2c7a13af8522fbd"
+                "reference": "a6d8cae5ff3488f31658266b0a24526a5e062085"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-toggle/zipball/ba658ab949e30d384e3ac31ec2c7a13af8522fbd",
-                "reference": "ba658ab949e30d384e3ac31ec2c7a13af8522fbd",
+                "url": "https://api.github.com/repos/gsmeira/laravel-toggle/zipball/a6d8cae5ff3488f31658266b0a24526a5e062085",
+                "reference": "a6d8cae5ff3488f31658266b0a24526a5e062085",
                 "shasum": ""
             },
             "require": {
@@ -1045,7 +1045,7 @@
                     "GSMeira\\LaravelToggle\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "autoload-dev": {
@@ -1075,7 +1075,7 @@
                 "gsmeira",
                 "laravel-toggle"
             ],
-            "time": "2016-09-16 03:22:00"
+            "time": "2016-09-17 19:25:10"
         },
         {
             "name": "gsmeira/laravel-tracker",
@@ -2005,16 +2005,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "47b254ea51f1d6d5dc04b9b299e88346bf2369e3"
+                "reference": "4dd659edadffdc2143e4753df655d866dbfeedf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/47b254ea51f1d6d5dc04b9b299e88346bf2369e3",
-                "reference": "47b254ea51f1d6d5dc04b9b299e88346bf2369e3",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4dd659edadffdc2143e4753df655d866dbfeedf0",
+                "reference": "4dd659edadffdc2143e4753df655d866dbfeedf0",
                 "shasum": ""
             },
             "require": {
@@ -2052,7 +2052,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-04-19 13:41:41"
+            "time": "2016-09-16 12:04:44"
         },
         {
             "name": "paquettg/php-html-parser",
@@ -3535,16 +3535,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.3",
+            "version": "1.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "94e5ca3e90aa5b34663780393e10914f7438f991"
+                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/94e5ca3e90aa5b34663780393e10914f7438f991",
-                "reference": "94e5ca3e90aa5b34663780393e10914f7438f991",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
+                "reference": "ea74994a3dc7f8d2f65a06009348f2d63c81e61f",
                 "shasum": ""
             },
             "require": {
@@ -3573,7 +3573,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-09-07 15:34:10"
+            "time": "2016-09-16 13:37:59"
         },
         {
             "name": "phpdocumentor/reflection-common",

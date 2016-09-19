@@ -35,6 +35,20 @@ table {
   &.table-show {
     tr {
       td.field { font-weight: bold; background: #f5f5f5; color: #666; }
+      td.value {
+        ul {
+          margin: 0;
+        }
+        .image {
+          margin: 30px;
+          text-align: center;
+          padding: 50px 0;
+          background: url(../img/transparent-bg.png);
+          img {
+            max-width: 500px;
+          }
+        }
+      }
     }
   }
   tr {
@@ -76,6 +90,69 @@ form {
     margin: 0;
     li {
       span { font-weight: bold; text-decoration: underline; }
+    }
+  }
+}
+
+//
+// Uplab ----------------------------------------
+//
+
+.uplab {
+  overflow: hidden;
+  &__options {
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    li {
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 10px 0 10px 0;
+      margin: 0;
+      color: #aaa;
+      width: 100%;
+      cursor: pointer;
+      &:hover {
+        background: #f9f9f9;
+      }
+      &.active {
+        color: #666;
+        font-weight: bold;
+        background: #f1f1f1;
+      }
+    }
+  }
+  &__option {
+    display: none;
+    input {
+      border: 1px solid #ccc;
+      padding: 5px;
+      outline: none;
+      &:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+    &--local {
+      input {
+        width: 100%;
+      }
+    }
+    &--remote {
+      input {
+        width: 80%;
+      }
+      button {
+        padding: 4px;
+        width: 20%;
+      }
+    }
+    &--active {
+      display: block;
     }
   }
 }

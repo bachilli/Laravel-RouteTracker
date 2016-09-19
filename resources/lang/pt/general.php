@@ -13,6 +13,12 @@ return [
 
     // ----------------
 
+    'local' => 'Local',
+    'remote' => 'Remoto',
+    'download' => 'Baixar',
+
+    // ----------------
+
     'are_you_sure' => 'Você tem certeza?',
     'destroy_warning' => 'Você não terá possibilidade de recuperar o registro excluído.',
     'yes_destroy_it' => 'Excluir',
@@ -43,6 +49,7 @@ return [
     'name' => 'Nome',
     'slug' => 'Slug',
     'description' => 'Descrição',
+    'thumbnail' => 'Miniatura',
     'created_at' => 'Data de Criação',
     'updated_at' => 'Data de Atualização',
 

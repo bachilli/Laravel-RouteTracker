@@ -33,7 +33,15 @@
                 </tr>
                 <tr>
                     <td class="field w-25 align-right">{{ trans('general.thumbnail') }}</td>
-                    <td class="value w-75"><img src="{{ storage('public')->url($category->thumbnail->location) }}"></td>
+                    <td class="value w-75">
+                        <div class="image">
+                            @if (storage('public')->exists($category->thumbnail->location))
+                                <a class="fancybox" href="{{ storage('public')->url($category->thumbnail->location) }}">
+                                    <img src="{{ storage('public')->url($category->thumbnail->location) }}">
+                                </a>
+                            @endif
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td class="field w-25 align-right">{{ trans('general.created_at') }}</td>

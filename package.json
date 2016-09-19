@@ -19,12 +19,14 @@
     "vue-resource": "^0.9.3"
   },
   "dependencies": {
+    "fancybox": "^3.0.0",
     "file-system": "^2.2.1",
     "font-awesome": "^4.6.3",
     "gulp-debug": "^2.1.2",
     "gulp-htmlmin": "^2.0.0",
     "gulp-plumber": "^1.1.0",
     "jquery-formlink": "^0.0.6",
+    "jquery-topalert": "0.0.3",
     "sweetalert2": "^4.2.4",
     "tether": "^1.3.4"
   }
