@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel Tracker.
+ * This file is part of Laravel-Tracker.
  *
  * (c) Gustavo Meireles <gustavo@gsmeira.com>
  *
@@ -14,7 +14,7 @@ namespace GSMeira\LaravelTracker;
 use Illuminate\Support\Facades\Facade as BaseFacade;
 
 /**
- * This is the Laravel Tracker facade class.
+ * This is the Laravel-Tracker facade class.
  *
  * @author Gustavo Meireles <gustavo@gsmeira.com>
  * @package GSMeira\LaravelTracker

@@ -1,4 +1,4 @@
-# laravel-tracker
+# Laravel-Tracker
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -52,17 +52,17 @@ If you discover any security related issues, please email gustavo@gsmeira.com in
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/gsmeira/laravel-tracker.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/gsmeira/Laravel-Tracker.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/gsmeira/laravel-tracker/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/gsmeira/laravel-tracker.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/gsmeira/laravel-tracker.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/gsmeira/laravel-tracker.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/gsmeira/Laravel-Tracker/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/gsmeira/Laravel-Tracker.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/gsmeira/Laravel-Tracker.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/gsmeira/Laravel-Tracker.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/gsmeira/laravel-tracker
-[link-travis]: https://travis-ci.org/gsmeira/laravel-tracker
-[link-scrutinizer]: https://scrutinizer-ci.com/g/gsmeira/laravel-tracker/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/gsmeira/laravel-tracker
-[link-downloads]: https://packagist.org/packages/gsmeira/laravel-tracker
+[link-packagist]: https://packagist.org/packages/gsmeira/Laravel-Tracker
+[link-travis]: https://travis-ci.org/gsmeira/Laravel-Tracker
+[link-scrutinizer]: https://scrutinizer-ci.com/g/gsmeira/Laravel-Tracker/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/gsmeira/Laravel-Tracker
+[link-downloads]: https://packagist.org/packages/gsmeira/Laravel-Tracker
 [link-author]: https://github.com/gsmeira
 [link-contributors]: ../../contributors

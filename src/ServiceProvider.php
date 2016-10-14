@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel Tracker.
+ * This file is part of Laravel-Tracker.
  *
  * (c) Gustavo Meireles <gustavo@gsmeira.com>
  *

@@ -50,7 +50,7 @@ class LaravelTracker
     private $isCurrent;
 
     /**
-     * Laravel Tracker class constructor.
+     * Laravel-Tracker class constructor.
      *
      * @param array $namespace
      */

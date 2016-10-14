@@ -4,9 +4,11 @@
     "description": "Extract information from the current route accessed.",
     "keywords": [
         "gsmeira",
-        "laravel-tracker"
+        "laravel-tracker",
+        "laravel",
+        "tracker"
     ],
-    "homepage": "https://github.com/gsmeira/laravel-tracker",
+    "homepage": "https://github.com/gsmeira/Laravel-Tracker",
     "license": "MIT",
     "authors": [
         {

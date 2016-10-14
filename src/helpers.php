@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel Tracker.
+ * This file is part of Laravel-Tracker.
  *
  * (c) Gustavo Meireles <gustavo@gsmeira.com>
  *
@@ -13,7 +13,7 @@ use GSMeira\LaravelTracker\LaravelTracker;
 
 if (! function_exists('tracker')) {
     /**
-     * Returns an instance of Laravel Tracker.
+     * Returns an instance of Laravel-Tracker.
      *
      * @param array $routes
      * @return LaravelTracker
