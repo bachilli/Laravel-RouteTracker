@@ -1,0 +1,40 @@
+//
+// imgrid.scss
+//
+
+@mixin imgrid-variant($prefix) {
+  .imgrid {
+    padding: 5px;
+    img {
+      width: 100% !important;
+      height: auto;
+      display: block;
+    }
+    .row {
+      box-sizing: border-box;
+      &:before,
+      &:after {
+        content: "";
+        display: table;
+      }
+      &:after {
+        clear: both;
+      }
+      [class*="col-"] {
+        position: relative;
+        float: left;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 6px;
+        margin: 5px;
+      }
+      .col {
+        @for $i from 1 through 12 {
+          &-#{$prefix}-#{$i} {
+            width: calc((8.3333333333% * #{$i}) - 10px);
+          }
+        }
+      }
+    }
+  }
+}

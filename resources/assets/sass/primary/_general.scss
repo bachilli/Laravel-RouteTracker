@@ -1,0 +1,17 @@
+//
+// general --------------------------------------
+//
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
