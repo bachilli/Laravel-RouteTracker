@@ -28,6 +28,84 @@ hr {
 }
 
 //
+// select2 --------------------------------------
+//
+
+.select2-container--default {
+  .select2-selection--single {
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    height: 33px !important;
+    outline: none !important;
+    &:focus {
+      border: 1px solid #66afe9 !important;
+    }
+    .select2-selection__arrow {
+      height: 33px !important;
+      right: 7px !important;
+    }
+    .select2-selection__rendered {
+      line-height: 33px !important;
+      height: 33px !important;
+    }
+  }
+}
+
+//
+// textcounter ----------------------------------
+//
+
+.text-count-wrapper {
+  font-size: 12px;
+  color: #aaa;
+  .text-count {
+    font-weight: bold;
+  }
+}
+
+//
+// btn-group ------------------------------------
+//
+
+.btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  .btn,
+  .btn-group {
+    float: none;
+    display: table-cell;
+    width: 1%;
+    .btn {
+      width: 100%;
+    }
+    .dropdown-menu {
+      left: auto;
+    }
+  }
+}
+
+//
+// pre ------------------------------------------
+//
+
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  border: 1px solid #ccc;
+  background: #f1f1f1;
+  font-size: 11px;
+  border-radius: 4px;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+//
 // Tabela (table)  ------------------------------
 //
 
@@ -52,7 +130,7 @@ table {
     }
   }
   tr {
-    &:hover { background: #f5f5f5; font-weight: bold; }
+    &:hover { background: #f5f5f5; }
     th { background: #eee; color: #888; }
     td, th {
       vertical-align: middle;
@@ -115,6 +193,7 @@ form {
       color: #aaa;
       width: 100%;
       cursor: pointer;
+      background: #fcfcfc;
       &:hover {
         background: #f9f9f9;
       }
@@ -132,7 +211,7 @@ form {
       padding: 5px;
       outline: none;
       &:focus {
-        border-color: inherit;
+        border: 1px solid #66afe9;
         -webkit-box-shadow: none;
         box-shadow: none;
       }

@@ -13,19 +13,19 @@
         "graham-campbell/htmlmin": "^4.3",
         "gsmeira/laravel-multialerts": "~v1.0.0",
         "gsmeira/laravel-tracker": "~v1.0.0",
-        "gsmeira/laravel-assist": "dev-master@dev",
-        "gsmeira/laravel-rulebuilder": "dev-master@dev",
-        "gsmeira/laravel-thumbnail": "dev-master@dev",
-        "gsmeira/laravel-filebox": "dev-master@dev",
-        "gsmeira/laravel-metatags": "dev-master@dev",
-        "gsmeira/laravel-prep": "dev-master@dev",
-        "gsmeira/laravel-recaptcha": "dev-master@dev",
-        "gsmeira/laravel-input": "dev-master@dev",
-        "gsmeira/laravel-throttle": "dev-master@dev",
-        "gsmeira/laravel-toggle": "dev-master@dev",
-        "gsmeira/laravel-flag": "dev-master@dev",
-        "gsmeira/laravel-uplab": "dev-master@dev",
-        "gsmeira/laravel-clock": "dev-master@dev"
+        "gsmeira/Laravel-Assist": "dev-master@dev",
+        "gsmeira/Laravel-RuleBuilder": "dev-master@dev",
+        "gsmeira/Laravel-Thumbnail": "dev-master@dev",
+        "gsmeira/Laravel-FileBox": "dev-master@dev",
+        "gsmeira/Laravel-MetaTags": "dev-master@dev",
+        "gsmeira/Laravel-SysVal": "dev-master@dev",
+        "gsmeira/Laravel-reCAPTCHA": "dev-master@dev",
+        "gsmeira/Laravel-Input": "dev-master@dev",
+        "gsmeira/Laravel-Throttle": "dev-master@dev",
+        "gsmeira/Laravel-Toggle": "dev-master@dev",
+        "gsmeira/Laravel-HumanVal": "dev-master@dev",
+        "gsmeira/Laravel-UpLab": "dev-master@dev",
+        "gsmeira/Laravel-Clock": "dev-master@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -69,67 +69,67 @@
     "repositories": [
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-assist.git",
+            "url":  "git@github.com:gsmeira/Laravel-Assist.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-rulebuilder.git",
+            "url":  "git@github.com:gsmeira/Laravel-RuleBuilder.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-thumbnail.git",
+            "url":  "git@github.com:gsmeira/Laravel-Thumbnail.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-filebox.git",
+            "url":  "git@github.com:gsmeira/Laravel-FileBox.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-metatags.git",
+            "url":  "git@github.com:gsmeira/Laravel-MetaTags.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-prep.git",
+            "url":  "git@github.com:gsmeira/Laravel-SysVal.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-recaptcha.git",
+            "url":  "git@github.com:gsmeira/Laravel-reCAPTCHA.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-input.git",
+            "url":  "git@github.com:gsmeira/Laravel-Input.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-throttle.git",
+            "url":  "git@github.com:gsmeira/Laravel-Throttle.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-toggle.git",
+            "url":  "git@github.com:gsmeira/Laravel-Toggle.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-flag.git",
+            "url":  "git@github.com:gsmeira/Laravel-HumanVal.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-clock.git",
+            "url":  "git@github.com:gsmeira/Laravel-Clock.git",
             "no-api": true
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/laravel-uplab.git",
+            "url":  "git@github.com:gsmeira/Laravel-UpLab.git",
             "no-api": true
         }
     ]

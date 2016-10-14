@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Tag extends Model
+class Tag extends BaseModel
 {
     /**
      * Nome da tabela usada pelo modelo.
@@ -18,5 +16,16 @@ class Tag extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'name', 'slug' ];
+    protected $fillable = [
+        'name', 'slug', 'description', 'thumbnail'
+    ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'thumbnail' => 'array',
+    ];
 }

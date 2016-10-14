@@ -3,11 +3,13 @@
 namespace App\Repositories\Tag;
 
 use App\Models\Tag;
+use Exception;
+use Illuminate\Support\Facades\DB;
 
 class EloquentTagRepository implements TagRepository
 {
     /**
-     * Retorna todos os anúncios existentes.
+     * Retorna todas as tags existentes.
      *
      * @param array $columns
      * @return mixed
@@ -18,7 +20,7 @@ class EloquentTagRepository implements TagRepository
     }
 
     /**
-     * Retorna todos os anúncios fazendo uso da paginação.
+     * Retorna todas as tags fazendo uso da paginação.
      *
      * @param int $perPage
      * @param array $columns
@@ -30,7 +32,7 @@ class EloquentTagRepository implements TagRepository
     }
 
     /**
-     * Retorna os anúncios encontrados para uma dada busca.
+     * Retorna as tags encontradas para uma dada busca.
      *
      * @param $q
      * @param int $perPage
@@ -40,14 +42,14 @@ class EloquentTagRepository implements TagRepository
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
     {
         return Tag::where('name', 'ILIKE', '%'.$q.'%')
-            ->orWhere('code', 'ILIKE', '%'.$q.'%')
+            ->orWhere('description', 'ILIKE', '%'.$q.'%')
             ->latest('created_at')
             ->paginate($perPage, $columns)
             ->appends([ 'q' => $q ]);
     }
 
     /**
-     * Retorna um dado anúncio através do campo ID.
+     * Retorna uma dada tag através do campo ID.
      *
      * @param $id
      * @param array $columns
@@ -70,16 +72,18 @@ class EloquentTagRepository implements TagRepository
         DB::beginTransaction();
 
         try {
+            $sysVal = sys_val($values);
+
             $tag = Tag::create([
                 'name' => $values['name'],
-                'slug' => $values['slug'],
+                'slug' => $sysVal->slug('name'),
                 'description' => $values['description'],
-                'thumbnail' => prep($values['thumbnail'])->uplab()
+                'thumbnail' => $sysVal->uplab('thumbnail')
             ]);
 
             DB::commit();
 
-            uplab($values['thumbnail'])->persist($tag->thumbnail->location);
+            uplab($values['thumbnail'])->persist($tag->thumbnail);
 
             return $tag;
         } catch (Exception $e) {
@@ -104,18 +108,20 @@ class EloquentTagRepository implements TagRepository
         DB::beginTransaction();
 
         try {
+            $sysVal = sys_val($values);
+
             $previous = (object) [ 'thumbnail' => $tag->thumbnail ];
 
             $tag->update([
                 'name' => $values['name'],
-                'slug' => $values['slug'],
+                'slug' => $sysVal->slug('name'),
                 'description' => $values['description'],
-                'thumbnail' => prep($values['thumbnail'])->uplab()
+                'thumbnail' => $sysVal->uplab('thumbnail')
             ]);
 
             DB::commit();
 
-            uplab($values['thumbnail'])->persist($tag->thumbnail->location, $previous->thumbnail->location);
+            uplab($values['thumbnail'])->persist($tag->thumbnail, $previous->thumbnail);
 
             return true;
         } catch (Exception $e) {

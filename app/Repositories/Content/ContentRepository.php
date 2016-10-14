@@ -42,32 +42,4 @@ interface ContentRepository
      * @return mixed
      */
     public function findById($id, $columns = [ '*' ]);
-
-    /**
-     * Cria um novo conteúdo de uma dada fonte.
-     *
-     * @param $values
-     * @return .|bool
-     * @throws Exception
-     */
-    public function store($values);
-
-    /**
-     * Realiza a atualização do conteúdo de uma dada fonte.
-     *
-     * @param $values
-     * @param $content
-     * @return Content|bool
-     * @throws Exception
-     */
-    public function update($values, $content);
-
-    /**
-     * Faz a exclusão do conteúdo de uma dada fonte.
-     *
-     * @param $content
-     * @return Content|bool
-     * @throws Exception
-     */
-    public function destroy($content);
 }

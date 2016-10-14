@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
-use App\Repositories\Category\CategoryCrudRepository;
-use App\Repositories\Category\CategoryFetchRepository;
-use App\Repositories\Category\EloquentCategoryCrudRepository;
-use App\Repositories\Category\EloquentCategoryFetchRepository;
+use App\Repositories\Content\ContentRepository;
+use App\Repositories\Content\EloquentContentRepository;
+use App\Repositories\Game\EloquentGameRepository;
+use App\Repositories\Game\GameRepository;
+use App\Repositories\Source\EloquentSourceRepository;
+use App\Repositories\Source\SourceRepository;
+use App\Repositories\Tag\EloquentTagRepository;
+use App\Repositories\Tag\TagRepository;
 use Illuminate\Support\ServiceProvider;
 
 class DatabaseServiceProvider extends ServiceProvider
@@ -27,7 +31,9 @@ class DatabaseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(CategoryCrudRepository::class, EloquentCategoryCrudRepository::class);
-        $this->app->bind(CategoryFetchRepository::class, EloquentCategoryFetchRepository::class);
+        $this->app->bind(ContentRepository::class, EloquentContentRepository::class);
+        $this->app->bind(GameRepository::class, EloquentGameRepository::class);
+        $this->app->bind(SourceRepository::class, EloquentSourceRepository::class);
+        $this->app->bind(TagRepository::class, EloquentTagRepository::class);
     }
 }

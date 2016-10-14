@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateGamesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Executa a migração.
      *
      * @return void
      */
@@ -17,26 +17,28 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->enum('type', [ 'FLASH', 'SHOCKWAVE', 'UNITY3D', 'HTML5' ])->nullable();
-            $table->enum('embed_type', [ 'INSIDE', 'OUTSIDE' ])->nullable();
-            $table->text('embed_src')->nullable();
             $table->text('excerpt')->nullable();
             $table->text('description')->nullable();
-            $table->text('instructions')->nullable();
-            $table->smallInteger('width')->unsigned()->nullable();
-            $table->smallInteger('height')->unsigned()->nullable();
-            $table->enum('classification', [ 'L', '10', '12', '14', '16', '18' ])->default('L')->nullable();
+            $table->enum('type', [ 'FLASH', 'SHOCKWAVE', 'UNITY3D', 'HTML5' ])->nullable();
+            $table->json('embed')->nullable();
+            $table->json('instructions')->nullable();
+            $table->json('dimensions')->nullable();
+            $table->enum('classification', [ 'L', '10', '12', '14', '16', '18' ])->nullable();
+            $table->json('file')->nullable();
+            $table->json('thumbnail')->nullable();
+            $table->boolean('is_published')->default(0);
+            $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverte a migração.
      *
      * @return void
      */
     public function down()
     {
-        Schema::drop('games');
+        Schema::dropIfExists('games');
     }
 }

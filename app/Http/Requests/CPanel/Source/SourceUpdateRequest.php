@@ -5,7 +5,7 @@ namespace App\Http\Requests\CPanel\Game;
 use App\Http\Requests\Request;
 use GSMeira\LaravelRuleBuilder\LaravelRuleBuilder;
 
-class GameUpdateRequest extends Request
+class SourceUpdateRequest extends Request
 {
     /**
      * O usuário é autorizado a realizar está requisição?
@@ -30,19 +30,5 @@ class GameUpdateRequest extends Request
         $validate->input('description')->nullable();
 
         return $validate->rules();
-    }
-
-    /**
-     * Filtragem e tratamento dos inputs.
-     *
-     * @return array
-     */
-    public function all()
-    {
-        $input = (object) parent::all();
-
-        // $input->slug = prep($input->name)->slug();
-
-        return (array) $input;
     }
 }

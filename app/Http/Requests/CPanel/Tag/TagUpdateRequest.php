@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\CPanel\Category;
+namespace App\Http\Requests\CPanel\Tag;
 
 use App\Http\Requests\Request;
 
-class CategoryUpdateRequest extends Request
+class TagUpdateRequest extends Request
 {
     /**
      * O usuário é autorizado a realizar está requisição?
@@ -30,13 +30,11 @@ class CategoryUpdateRequest extends Request
      * Filtragem e tratamento dos inputs.
      *
      * @return array
-     */
+
     public function all()
     {
         $input = (object) parent::all();
 
-        $input->slug = prep($input->name)->slug();
-
         return (array) $input;
-    }
+    }*/
 }

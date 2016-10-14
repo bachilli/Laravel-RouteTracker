@@ -169,7 +169,7 @@ return [
         GSMeira\LaravelMultialerts\ServiceProvider::class,
         GSMeira\LaravelTracker\ServiceProvider::class,
         GSMeira\LaravelRuleBuilder\ServiceProvider::class,
-        GSMeira\LaravelPrep\ServiceProvider::class,
+        GSMeira\LaravelSysVal\ServiceProvider::class,
         GSMeira\LaravelFileBox\ServiceProvider::class,
         GSMeira\LaravelUpLab\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
@@ -180,6 +180,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
         App\Providers\DatabaseServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -242,7 +243,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
         'RuleBuilder' => GSMeira\LaravelRuleBuilder\Facade::class,
-        'Prep' => GSMeira\LaravelPrep\Facade::class,
+        'SysVal' => GSMeira\LaravelSysVal\Facade::class,
         'Tracker' => GSMeira\LaravelTracker\Facade::class,
         'Multialerts' => GSMeira\LaravelMultialerts\Facade::class,
 

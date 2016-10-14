@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Tag;
 
-interface TagFetchRepository
+interface TagRepository
 {
     /**
      * Retorna todas as tags existentes.
@@ -39,4 +39,29 @@ interface TagFetchRepository
      * @return mixed
      */
     public function findById($id, $columns = [ '*' ]);
+
+    /**
+     * Cria uma nova tag.
+     *
+     * @param $data
+     * @return mixed
+     */
+    public function store($data);
+
+    /**
+     * Realiza a atualização de uma tag.
+     *
+     * @param $data
+     * @param $tag
+     * @return bool
+     */
+    public function update($data, $tag);
+
+    /**
+     * Faz a exclusão de uma tag.
+     *
+     * @param $tag
+     * @return bool
+     */
+    public function destroy($tag);
 }

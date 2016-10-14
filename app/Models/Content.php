@@ -2,16 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class SourceContent extends Model
+class Content extends BaseModel
 {
     /**
      * Nome da tabela usada pelo modelo.
      *
      * @var string
      */
-    protected $table = 'source_entries';
+    protected $table = 'contents';
 
     /**
      * Campos permitidos na atribuição em massa.
@@ -30,4 +28,14 @@ class SourceContent extends Model
     protected $casts = [
         'data' => 'array'
     ];
+
+    /**
+     * Retorna a fonte associada ao conteúdo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function source()
+    {
+        return $this->belongsTo(Source::class);
+    }
 }

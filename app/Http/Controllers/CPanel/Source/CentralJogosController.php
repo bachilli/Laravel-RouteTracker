@@ -1,32 +1,44 @@
 <?php
 
-namespace App\Http\Controllers\CPanel\Crawler\ClickJogos;
+namespace App\Http\Controllers\CPanel\Source;
 
-use App\Models\Category;
+use App\Models\Tag;
 use PHPHtmlParser\Dom;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class CentralJogosController extends Controller
 {
     private $categories;
+    private $games;
 
     public function __construct()
     {
         parent::__construct();
 
+        $this->games = [];
         $this->categories = [];
     }
 
-    public function index()
+    public function games()
+    {
+        // ...
+    }
+
+    public function categories()
     {
         $this->getCategories('http://www.clickjogos.com.br/categorias');
 
-        foreach ($this->categories as $category) {
-            Category::create([
-                'name' => $category['name'],
-                'slug' => str_slug($category['name'])
+        foreach ($this->categories as $tag) {
+            Tag::create([
+                'name' => $tag['name'],
+                'slug' => str_slug($tag['name'])
             ]);
         }
+    }
+
+    private function getGames($url)
+    {
+        // ...
     }
 
     private function getCategories($url)
@@ -35,10 +47,10 @@ class CategoryController extends Controller
 
         $dom->loadFromUrl($url);
 
-        foreach ($dom->find('.category h3 a') as $category) {
+        foreach ($dom->find('.category h3 a') as $tag) {
             $this->categories[] = [
-                'name' => $category->text,
-                'url' => $category->href
+                'name' => $tag->text,
+                'url' => $tag->href
             ];
         }
 

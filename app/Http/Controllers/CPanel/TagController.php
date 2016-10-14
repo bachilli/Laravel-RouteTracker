@@ -3,155 +3,143 @@
 namespace App\Http\Controllers\CPanel;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CPanel\Category\CategoryStoreRequest;
-use App\Http\Requests\CPanel\Category\CategoryUpdateRequest;
-use App\Models\Category;
-use App\Repositories\Category\CategoryCrudRepository;
-use App\Repositories\Category\CategoryFetchRepository;
-use Carbon\Carbon;
+use App\Http\Requests\CPanel\Tag\TagStoreRequest;
+use App\Http\Requests\CPanel\Tag\TagUpdateRequest;
+use App\Models\Tag;
+use App\Repositories\Tag\TagRepository;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
     /**
-     * Repositório de CRUD das categorias.
+     * Repositório de CRUD das tags.
      *
-     * @var CategoryCrudRepository
+     * @var TagRepository
      */
-    private $categoryCrudRepository;
+    private $tagRepository;
 
     /**
-     * Repositório de busca das categorias.
+     * Construtor das tags dos jogos.
      *
-     * @var CategoryFetchRepository
+     * @param TagRepository $tagRepository
      */
-    private $categoryFetchRepository;
-
-    /**
-     * Construtor das categorias dos jogos.
-     *
-     * @param CategoryCrudRepository $categoryCrudRepository
-     * @param CategoryFetchRepository $categoryFetchRepository
-     */
-    public function __construct(CategoryCrudRepository $categoryCrudRepository,
-                                CategoryFetchRepository $categoryFetchRepository)
+    public function __construct(TagRepository $tagRepository)
     {
         parent::__construct();
 
-        $this->categoryCrudRepository = $categoryCrudRepository;
-        $this->categoryFetchRepository = $categoryFetchRepository;
+        $this->tagRepository = $tagRepository;
     }
 
     /**
-     * Retorna todas as categorias cadastradas.
+     * Retorna todas as tags cadastradas.
      *
      * @return View
      */
     public function index()
     {
-        $categories = $this->categoryFetchRepository->getPaging();
+        $tags = $this->tagRepository->getPaging();
 
-        return view('cpanel.categories.index', compact('categories'));
+        return view('cpanel.tags.index', compact('tags'));
     }
 
     /**
-     * Visão geral das categorias.
+     * Visão geral das tags.
      * 
      * @return View
      */
     public function overview()
     {
-        return view('cpanel.categories.overview');
+        return view('cpanel.tags.overview');
     }
 
     /**
-     * Retorna a categoria cadastrada.
+     * Retorna uma dada tag cadastrada.
      *
-     * @param Category $category
+     * @param Tag $tag
      * @return View
      */
-    public function show(Category $category)
+    public function show(Tag $tag)
     {
-        return view('cpanel.categories.show', compact('category'));
+        return view('cpanel.tags.show', compact('tag'));
     }
 
     /**
-     * Formulário para criação de uma nova categoria.
+     * Formulário para criação de uma nova tag.
      *
      * @return View
      */
     public function create()
     {
-        return view('cpanel.categories.create');
+        return view('cpanel.tags.create');
     }
 
     /**
-     * Adiciona uma nova categoria.
+     * Adiciona uma nova tag.
      *
-     * @param CategoryStoreRequest $request
+     * @param TagStoreRequest $request
      * @return Redirect
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(TagStoreRequest $request)
     {
-        $category = $this->categoryCrudRepository->store($request->all());
+        $tag = $this->tagRepository->store($request->all());
 
-        if (! empty($category)) {
-            multialerts()->success('categories.successfully_stored', [ 'name' => $category->name ])->put();
+        if (! empty($tag)) {
+            multialerts()->success('tags.successfully_stored', [ 'name' => $tag->name ])->put();
 
-            return to('CPanel\CategoryController@index');
+            return to('CPanel\TagController@index');
         }
 
-        multialerts()->danger('categories.store_fail')->put();
+        multialerts()->danger('tags.store_fail')->put();
 
         return retry();
     }
 
     /**
-     * Formulário para edição da categoria.
+     * Formulário para edição de uma dada tag.
      *
-     * @param Category $category
+     * @param Tag $tag
      * @return View
      */
-    public function edit(Category $category)
+    public function edit(Tag $tag)
     {
-        return view('cpanel.categories.edit', compact('category'));
+        return view('cpanel.tags.edit', compact('tag'));
     }
 
     /**
-     * Realiza a atualização de uma categoria.
+     * Realiza a atualização de uma dada tag.
      *
-     * @param CategoryUpdateRequest $request
-     * @param Category $category
+     * @param TagUpdateRequest $request
+     * @param Tag $tag
      * @return Redirect
      */
-    public function update(CategoryUpdateRequest $request, Category $category)
+    public function update(TagUpdateRequest $request, Tag $tag)
     {
-        if ($this->categoryCrudRepository->update($request->all(), $category)) {
-            multialerts()->success('categories.successfully_updated', [ 'name' => $category->name ])->put();
+        if ($this->tagRepository->update($request->all(), $tag)) {
+            multialerts()->success('tags.successfully_updated', [ 'name' => $tag->name ])->put();
 
-            return to('CPanel\CategoryController@index');
+            return to('CPanel\TagController@index');
         }
 
-        multialerts()->danger('categories.update_fail')->put();
+        multialerts()->danger('tags.update_fail')->put();
 
         return retry();
     }
 
     /**
-     * Faz a exclusão de uma categoria.
+     * Faz a exclusão de uma dada tag.
      *
-     * @param Category $category
+     * @param Tag $tag
      * @return Redirect
      */
-    public function destroy(Category $category)
+    public function destroy(Tag $tag)
     {
-        if (! empty($category) && $this->categoryCrudRepository->destroy($category)) {
-            multialerts()->success('categories.successfully_deleted', [ 'name' => $category->name ])->put();
+        if (! empty($tag) && $this->tagRepository->destroy($tag)) {
+            multialerts()->success('tags.successfully_deleted', [ 'name' => $tag->name ])->put();
         } else {
-            multialerts()->danger('categories.delete_fail')->put();
+            multialerts()->danger('tags.delete_fail')->put();
         }
 
-        return to('CPanel\CategoryController@index');
+        return to('CPanel\TagController@index');
     }
 }

@@ -12,3 +12,5 @@ window.Tether = require('tether');
 
 require('../../../../node_modules/bootstrap/dist/js/bootstrap');
 require('sweetalert2');
+require('jquery-ui/ui/widgets/datepicker');
+require('jquery-ui/ui/widgets/slider');

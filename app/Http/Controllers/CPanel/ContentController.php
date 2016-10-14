@@ -3,49 +3,74 @@
 namespace App\Http\Controllers\CPanel;
 
 use App\Http\Controllers\Controller;
-use App\Models\SourceContent;
+use App\Models\Content;
+use App\Repositories\Content\ContentRepository;
+use Illuminate\View\View;
 
-class SourceContentController extends Controller
+class ContentController extends Controller
 {
-    public function __construct()
+    /**
+     * Repositório de CRUD das tags.
+     *
+     * @var ContentRepository
+     */
+    private $contentRepository;
+
+    /**
+     * Construtor das tags dos jogos.
+     *
+     * @param ContentRepository $contentRepository
+     */
+    public function __construct(ContentRepository $contentRepository)
     {
         parent::__construct();
+
+        $this->contentRepository = $contentRepository;
     }
 
     public function index()
     {
-        $sourceContents = SourceContent::all();
+        $contents = $this->contentRepository->getPaging();
 
-        return view('cpanel.source-contents.index', compact('sourceContents'));
+        return view('cpanel.contents.index', compact('contents'));
     }
 
-    public function show()
+    /**
+     * Visão geral das fontes de conteúdo.
+     *
+     * @return View
+     */
+    public function overview()
     {
-
+        return view('cpanel.contents.overview');
     }
 
-    public function create()
+    /**
+     * Retorna a tag cadastrada.
+     *
+     * @param Content $content
+     * @return View
+     */
+    public function show(Content $content)
     {
-
+        return view('cpanel.contents.show', compact('content'));
     }
 
-    public function store()
+    /**
+     * ...
+     *
+     * @param Content $content
+     */
+    public function famobi(Content $content)
     {
-
+        // ...
     }
 
-    public function edit()
+    /**
+     * @param Content $content
+     */
+    public function clickJogos(Content $content)
     {
-
-    }
-
-    public function update()
-    {
-
-    }
-
-    public function destroy()
-    {
-
+        // ...
     }
 }

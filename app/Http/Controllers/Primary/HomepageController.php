@@ -7,31 +7,31 @@ use App\Http\Controllers\Controller;
 
 class HomepageController extends Controller
 {
-    private $categories;
-    private $games;
+    /*private $categories;
+    private $games;*/
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->games = [];
-        $this->categories = [];
+        /*$this->games = [];
+        $this->categories = [];*/
     }
 
     public function index()
     {
-        ini_set('max_execution_time', 900);
+        /*ini_set('max_execution_time', 900);
         ini_set('max_input_time', 900);
         ini_set('memory_limit', '1024M');
 
-        foreach ($this->categories as $category) {
-            $this->getGames('http://www.clickjogos.com.br'.$category['url']);
-        }
+        foreach ($this->categories as $tag) {
+            $this->getGames('http://www.clickjogos.com.br'.$tag['url']);
+        }*/
 
-        // return view('primary.homepage');
+        return view('primary.homepage');
     }
 
-    public function getGames($url)
+    /*public function getGames($url)
     {
         $dom = new Dom;
 
@@ -55,5 +55,5 @@ class HomepageController extends Controller
         if (sizeof($nextPage) > 0) {
             $this->getGames('http://www.clickjogos.com.br'.$nextPage->href);
         }
-    }
+    }*/
 }

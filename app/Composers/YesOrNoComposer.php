@@ -2,17 +2,15 @@
 
 namespace App\Composers;
 
-class GameTypeComposer
+class YesOrNoComposer
 {
     public function compose($view)
     {
-        $types = [
-            'FLASH' => 'FLASH',
-            'SHOCKWAVE' => 'SHOCKWAVE',
-            'UNITY3D' => 'UNITY3D',
-            'HTML5' => 'HTML5'
+        $yesOrNo = [
+            '1' => 'Sim',
+            '0' => 'Não'
         ];
 
-        $view->with('types', $types);
+        $view->with('yesOrNo', $yesOrNo);
     }
 }

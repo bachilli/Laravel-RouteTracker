@@ -55,7 +55,7 @@
       };
 
       $elements.tabs.on('click', function () {
-        _.changeOption($elements.tabs, $elements.options, $(this));
+        _.changeOption($uplab, $elements.tabs, $elements.options, $(this));
       });
 
       $elements.local.input.on('change', function (e) {
@@ -90,7 +90,9 @@
             html += '<input id="uplab-' + _.settings.name + '-remote-input" type="text">';
             html += '<button id="uplab-' + _.settings.name + '-remote-button" type="button">' + _.settings.trans.download + '</button>';
           html += '</div>';
-          html += '<div id="uplab-' + _.settings.name + '-result" class="uplab__result"></div>';
+          html += '<div id="uplab-' + _.settings.name + '-result" class="uplab__result">'
+            html += '<input type="hidden" name="' + _.settings.name + '" value="">';
+          html += '</div>';
         html += '</div>';
 
         return html;
@@ -99,18 +101,19 @@
     /**
      * Altera a aba.
      *
+     * @param $uplab
      * @param $tabs
      * @param $options
      * @param $tab
      */
-    Uplab.prototype.changeOption = function ($tabs, $options, $tab) {
+    Uplab.prototype.changeOption = function ($uplab, $tabs, $options, $tab) {
       var _ = this;
 
       $tabs.removeClass('active');
       $options.removeClass('uplab__option--active');
 
       $tab.addClass('active');
-      $('#uplab-' + $tab.data('tab') + '-tab').addClass('uplab__option--active');
+      $uplab.find('#uplab-' + $tab.data('tab') + '-tab').addClass('uplab__option--active');
     };
 
     /**
@@ -197,9 +200,10 @@
      * @returns {string}
      */
     Uplab.prototype.showResult = function (response) {
-      var html = '';
+      var _ = this,
+          html = '';
 
-      html += '<input type="hidden" name="thumbnail" value="' + response.upload.location + '">';
+      html += '<input type="hidden" name="' + _.settings.name + '" value="' + response.upload.location + '">';
       html += '<hr>';
       html += '<img src="' + response.upload.url + '" style="max-width: 255px;">';
 

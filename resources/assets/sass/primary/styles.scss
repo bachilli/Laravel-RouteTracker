@@ -1,37 +1,37 @@
 //
-// 1) Variables
+// variables ------------------------------------
 //
 
-@import "vars";
+@import "_vars";
 
 //
-// 2) Mixins
+// mixins ---------------------------------------
 //
 
 @import "_mixins/breakpoints";
 @import "_mixins/imgrid";
 
 //
-// 3) Dependencies
+// dependencies ---------------------------------
 //
 
 @import "../../../../node_modules/normalize-scss/sass/normalize/import-now";
 
 //
-// 4) Styles
+// styles ---------------------------------------
 //
 
-@import "utils";
-@import "general";
+@import "_utils";
+@import "_general";
 
 //
-// 5) Components
+// components -----------------------------------
 //
 
 @import "components/imgrid";
 
 //
-// 6) Modules
+// modules --------------------------------------
 //
 
 @import "modules/header";

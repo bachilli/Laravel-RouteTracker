@@ -2,16 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Feed extends Model
+class Source extends BaseModel
 {
     /**
      * Nome da tabela usada pelo modelo.
      *
      * @var string
      */
-    protected $table = 'feeds';
+    protected $table = 'sources';
 
     /**
      * Campos permitidos na atribuição em massa.

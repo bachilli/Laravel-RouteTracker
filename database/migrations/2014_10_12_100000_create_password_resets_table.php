@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePasswordResetsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Executa a migração.
      *
      * @return void
      */
@@ -21,12 +21,12 @@ class CreatePasswordResetsTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverte a migração.
      *
      * @return void
      */
     public function down()
     {
-        Schema::drop('password_resets');
+        Schema::dropIfExists('password_resets');
     }
 }

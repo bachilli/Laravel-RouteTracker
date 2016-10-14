@@ -2,15 +2,15 @@
 
 namespace App\Composers;
 
-class EmbedTypeComposer
+class GameEmbedTypeComposer
 {
     public function compose($view)
     {
-        $embedTypes = [
+        $gameEmbedTypes = [
             'INTERNAL' => 'Interno',
             'EXTERNAL' => 'Externo'
         ];
 
-        $view->with('embedTypes', $embedTypes);
+        $view->with('gameEmbedTypes', $gameEmbedTypes);
     }
 }

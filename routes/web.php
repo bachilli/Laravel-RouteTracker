@@ -2,28 +2,40 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Rotas Web
 |--------------------------------------------------------------------------
 |
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
+| Neste arquivo é onde você define todas as rotas que são utilizadas pela
+| sua aplicação. Mais informações: https://laravel.com/docs/5.3/routing
 |
 */
 
+//
+// Primary
+//
+
 Route::get('/', 'Primary\HomepageController@index');
 
+// Pesquisar
+Route::get('pesquisar', 'Primary\SearchController@index');
+Route::get('pesquisar/{query}', 'Primary\SearchController@show');
+
+// Jogos
+Route::get('jogos', 'Primary\GameController@index');
+Route::get('jogo/{slug}', 'Primary\GameController@single');
+
+// Tags
+Route::get('tags', 'Primary\TagController@index');
+Route::get('tag/{slug}', 'Primary\TagController@single');
+
 //
-// CPanel
+// Painel de Controle (CPanel)
 //
 
 Route::group([ 'prefix' => 'cpanel' ], function()
 {
+    // Dashboard
     Route::get('/', 'CPanel\DashboardController@index');
-
-    // Categories
-    Route::get('categories/overview', 'CPanel\CategoryController@overview');
-    Route::resource('categories', 'CPanel\CategoryController');
 
     // Tags
     Route::get('tags/overview', 'CPanel\TagController@overview');
@@ -32,17 +44,19 @@ Route::group([ 'prefix' => 'cpanel' ], function()
     // Games
     Route::get('games/overview', 'CPanel\GameController@overview');
     Route::resource('games', 'CPanel\GameController');
-});
 
-//
-// Crawler
-//
+    // Sources
+    Route::get('sources/overview', 'CPanel\SourceController@overview');
+    Route::resource('sources', 'CPanel\SourceController');
 
-Route::group([ 'prefix' => 'crawler' ], function()
-{
-    Route::group([ 'prefix' => 'clickjogos' ], function()
-    {
-        Route::get('categories', 'CPanel\Crawler\ClickJogos\CategoryController@index');
-        Route::get('games', 'CPanel\Crawler\ClickJogos\GameController@index');
-    });
+    // Contents
+    Route::get('contents/overview', 'CPanel\ContentController@overview');
+    Route::resource('contents', 'CPanel\ContentController');
+
+    // Famobi
+    Route::get('source/famobi', 'CPanel\Source\FamobiController@index');
+
+    // ClickJogos
+    Route::get('source/clickjogos/categories', 'CPanel\Source\ClickJogosController@categories');
+    Route::get('source/clickjogos/games', 'CPanel\Source\ClickJogosController@games');
 });

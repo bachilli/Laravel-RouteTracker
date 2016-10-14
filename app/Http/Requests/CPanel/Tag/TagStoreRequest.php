@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\CPanel\Category;
+namespace App\Http\Requests\CPanel\Tag;
 
 use App\Http\Requests\Request;
 use GSMeira\LaravelRuleBuilder\LaravelRuleBuilder;
 
-class CategoryStoreRequest extends Request
+class TagStoreRequest extends Request
 {
     /**
      * O usuário é autorizado a realizar está requisição?
@@ -26,7 +26,6 @@ class CategoryStoreRequest extends Request
     public function rules(LaravelRuleBuilder $validate)
     {
         $validate->input('name')->required();
-        $validate->input('slug')->nullable();
         $validate->input('description')->nullable();
         $validate->input('thumbnail')->uplab_required('image')
             ->uplab_size('max=10MB')
@@ -34,19 +33,5 @@ class CategoryStoreRequest extends Request
             ->uplab_mimes('jpg,png,gif');
 
         return $validate->rules();
-    }
-
-    /**
-     * Filtragem e tratamento dos inputs.
-     *
-     * @return array
-     */
-    public function all()
-    {
-        $input = (object) parent::all();
-
-        $input->slug = prep($input->name)->slug();
-
-        return (array) $input;
     }
 }
