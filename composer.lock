@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "81527c970db9b6fc885963b865876adc",
-    "content-hash": "72260c899e3ba18e49381b105f55fba1",
+    "hash": "80b079c0f0c5214fbc08c196f7378a62",
+    "content-hash": "ec437b793e7b9d2b1ce1f32bc6e320e9",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -231,13 +231,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-assist.git",
-                "reference": "be631ebbc0129224016badeab13d51c3cb56ff94"
+                "url": "git@github.com:gsmeira/Laravel-Assist.git",
+                "reference": "8b8331e13f051cceb8b5259e0ac7992cbf64d1ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-assist/zipball/be631ebbc0129224016badeab13d51c3cb56ff94",
-                "reference": "be631ebbc0129224016badeab13d51c3cb56ff94",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Assist/zipball/8b8331e13f051cceb8b5259e0ac7992cbf64d1ee",
+                "reference": "8b8331e13f051cceb8b5259e0ac7992cbf64d1ee",
                 "shasum": ""
             },
             "require": {
@@ -261,6 +261,7 @@
                 },
                 "files": [
                     "src/file.php",
+                    "src/misc.php",
                     "src/navigation.php",
                     "src/storage.php"
                 ]
@@ -287,25 +288,27 @@
                 }
             ],
             "description": "Bundle of helpers for Laravel.",
-            "homepage": "https://github.com/gsmeira/laravel-assist",
+            "homepage": "https://github.com/gsmeira/Laravel-Assist",
             "keywords": [
+                "assist",
                 "gsmeira",
+                "laravel",
                 "laravel-assist"
             ],
-            "time": "2016-09-17 19:21:17"
+            "time": "2016-10-14 21:45:36"
         },
         {
             "name": "gsmeira/laravel-clock",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-clock.git",
-                "reference": "0898a706164063930fba554bc280bf7fde3a9a33"
+                "url": "git@github.com:gsmeira/Laravel-Clock.git",
+                "reference": "7500b747055ba63eb7ef1bc7cc7f49e0b430675e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-clock/zipball/0898a706164063930fba554bc280bf7fde3a9a33",
-                "reference": "0898a706164063930fba554bc280bf7fde3a9a33",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Clock/zipball/7500b747055ba63eb7ef1bc7cc7f49e0b430675e",
+                "reference": "7500b747055ba63eb7ef1bc7cc7f49e0b430675e",
                 "shasum": ""
             },
             "require": {
@@ -352,26 +355,28 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-clock",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-Clock",
             "keywords": [
+                "clock",
                 "gsmeira",
+                "laravel",
                 "laravel-clock"
             ],
-            "time": "2016-09-17 19:21:38"
+            "time": "2016-10-14 21:46:30"
         },
         {
             "name": "gsmeira/laravel-filebox",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-filebox.git",
-                "reference": "2b9987eafe2338f45ad1946eb8db7d1f59d83bf2"
+                "url": "git@github.com:gsmeira/Laravel-FileBox.git",
+                "reference": "87860470b72fcbf5c1d604fe25cddf065468d6bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-filebox/zipball/2b9987eafe2338f45ad1946eb8db7d1f59d83bf2",
-                "reference": "2b9987eafe2338f45ad1946eb8db7d1f59d83bf2",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-FileBox/zipball/87860470b72fcbf5c1d604fe25cddf065468d6bd",
+                "reference": "87860470b72fcbf5c1d604fe25cddf065468d6bd",
                 "shasum": ""
             },
             "require": {
@@ -418,26 +423,30 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-filebox",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-FileBox",
             "keywords": [
+                "box",
+                "file",
+                "filebox",
                 "gsmeira",
+                "laravel",
                 "laravel-filebox"
             ],
-            "time": "2016-09-17 19:22:08"
+            "time": "2016-10-14 21:46:57"
         },
         {
-            "name": "gsmeira/laravel-flag",
+            "name": "gsmeira/laravel-humanval",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-flag.git",
-                "reference": "3b458c07f1133f92808e8307675a1ceaaab4c159"
+                "url": "git@github.com:gsmeira/Laravel-HumanVal.git",
+                "reference": "d40d9748d42435a0e3030124badb6b80a6dc1dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-flag/zipball/3b458c07f1133f92808e8307675a1ceaaab4c159",
-                "reference": "3b458c07f1133f92808e8307675a1ceaaab4c159",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-HumanVal/zipball/d40d9748d42435a0e3030124badb6b80a6dc1dbc",
+                "reference": "d40d9748d42435a0e3030124badb6b80a6dc1dbc",
                 "shasum": ""
             },
             "require": {
@@ -457,7 +466,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "GSMeira\\LaravelFlag\\": "src"
+                    "GSMeira\\LaravelHumanVal\\": "src"
                 },
                 "files": [
                     "src/app/helpers.php"
@@ -465,7 +474,7 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "GSMeira\\LaravelFlag\\": "tests"
+                    "GSMeira\\LaravelHumanVal\\": "tests"
                 }
             },
             "scripts": {
@@ -484,26 +493,31 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-flag",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-HumanVal",
             "keywords": [
                 "gsmeira",
-                "laravel-flag"
+                "human",
+                "humanval",
+                "laravel",
+                "laravel-humanval",
+                "val",
+                "value"
             ],
-            "time": "2016-09-17 19:22:25"
+            "time": "2016-10-14 21:47:43"
         },
         {
             "name": "gsmeira/laravel-input",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-input.git",
-                "reference": "d0b43930eab097f8edb949dc99ec0ebf93214793"
+                "url": "git@github.com:gsmeira/Laravel-Input.git",
+                "reference": "3a0ef75c93bee79584d80bd8ae1c50a36a5e1453"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-input/zipball/d0b43930eab097f8edb949dc99ec0ebf93214793",
-                "reference": "d0b43930eab097f8edb949dc99ec0ebf93214793",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Input/zipball/3a0ef75c93bee79584d80bd8ae1c50a36a5e1453",
+                "reference": "3a0ef75c93bee79584d80bd8ae1c50a36a5e1453",
                 "shasum": ""
             },
             "require": {
@@ -550,26 +564,28 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-input",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-Input",
             "keywords": [
                 "gsmeira",
+                "input",
+                "laravel",
                 "laravel-input"
             ],
-            "time": "2016-09-17 19:22:49"
+            "time": "2016-10-14 21:48:03"
         },
         {
             "name": "gsmeira/laravel-metatags",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-metatags.git",
-                "reference": "10b99a717c47fb428747e30bdc3e807d9d127996"
+                "url": "git@github.com:gsmeira/Laravel-MetaTags.git",
+                "reference": "5deee6a3af9ac04a9aee7703f071bdeefce9b6b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-metatags/zipball/10b99a717c47fb428747e30bdc3e807d9d127996",
-                "reference": "10b99a717c47fb428747e30bdc3e807d9d127996",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-MetaTags/zipball/5deee6a3af9ac04a9aee7703f071bdeefce9b6b5",
+                "reference": "5deee6a3af9ac04a9aee7703f071bdeefce9b6b5",
                 "shasum": ""
             },
             "require": {
@@ -616,26 +632,30 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-metatags",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-MetaTags",
             "keywords": [
                 "gsmeira",
-                "laravel-metatags"
+                "laravel",
+                "laravel-metatags",
+                "meta",
+                "metatags",
+                "tags"
             ],
-            "time": "2016-09-17 19:23:08"
+            "time": "2016-10-14 21:48:28"
         },
         {
             "name": "gsmeira/laravel-multialerts",
-            "version": "v1.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/gsmeira/laravel-multialerts.git",
-                "reference": "b304bf3cc37ef416f951d562df531442245e0491"
+                "url": "https://github.com/gsmeira/Laravel-MultiAlerts.git",
+                "reference": "334fe90b00b48bae5d50025da0a5ebaa63279cd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-multialerts/zipball/b304bf3cc37ef416f951d562df531442245e0491",
-                "reference": "b304bf3cc37ef416f951d562df531442245e0491",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-MultiAlerts/zipball/334fe90b00b48bae5d50025da0a5ebaa63279cd4",
+                "reference": "334fe90b00b48bae5d50025da0a5ebaa63279cd4",
                 "shasum": ""
             },
             "require": {
@@ -655,7 +675,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "GSMeira\\LaravelMultialerts\\": "src"
+                    "GSMeira\\LaravelMultiAlerts\\": "src"
                 },
                 "files": [
                     "src/helpers.php"
@@ -674,91 +694,30 @@
                 }
             ],
             "description": "A package for managing multiple types and levels of alerts in Laravel.",
-            "homepage": "https://github.com/gsmeira/laravel-multialerts",
+            "homepage": "https://github.com/gsmeira/Laravel-MultiAlerts",
             "keywords": [
+                "alerts",
                 "gsmeira",
-                "laravel-multialerts"
+                "laravel",
+                "laravel-multialerts",
+                "multi",
+                "multialerts",
+                "multiple"
             ],
-            "time": "2016-06-13 22:17:15"
-        },
-        {
-            "name": "gsmeira/laravel-prep",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:gsmeira/laravel-prep.git",
-                "reference": "ec21394a764970c1d2d32b1469ad1fef13ecd480"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-prep/zipball/ec21394a764970c1d2d32b1469ad1fef13ecd480",
-                "reference": "ec21394a764970c1d2d32b1469ad1fef13ecd480",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.1",
-                "php": "~5.5|~7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GSMeira\\LaravelPrep\\": "src"
-                },
-                "files": [
-                    "src/app/helpers.php"
-                ]
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "GSMeira\\LaravelPrep\\": "tests"
-                }
-            },
-            "scripts": {
-                "test": [
-                    "phpunit"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gustavo Meireles",
-                    "email": "gustavo@gsmeira.com",
-                    "homepage": "http://www.gsmeira.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-prep",
-            "keywords": [
-                "gsmeira",
-                "laravel-prep"
-            ],
-            "time": "2016-09-17 19:23:25"
+            "time": "2016-10-14 22:37:14"
         },
         {
             "name": "gsmeira/laravel-recaptcha",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-recaptcha.git",
-                "reference": "29833f631be04d69d5dde904f1fe35216f22818a"
+                "url": "git@github.com:gsmeira/Laravel-reCAPTCHA.git",
+                "reference": "b7c00280e90ea40a01867dac79ba081a83120907"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-recaptcha/zipball/29833f631be04d69d5dde904f1fe35216f22818a",
-                "reference": "29833f631be04d69d5dde904f1fe35216f22818a",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-reCAPTCHA/zipball/b7c00280e90ea40a01867dac79ba081a83120907",
+                "reference": "b7c00280e90ea40a01867dac79ba081a83120907",
                 "shasum": ""
             },
             "require": {
@@ -805,26 +764,28 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-recaptcha",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-reCAPTCHA",
             "keywords": [
                 "gsmeira",
-                "laravel-recaptcha"
+                "laravel",
+                "laravel-recaptcha",
+                "recaptcha"
             ],
-            "time": "2016-09-17 19:23:47"
+            "time": "2016-10-14 21:49:43"
         },
         {
             "name": "gsmeira/laravel-rulebuilder",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-rulebuilder.git",
-                "reference": "bcc844b73b4e7662efd50537c282695f0979b69a"
+                "url": "git@github.com:gsmeira/Laravel-RuleBuilder.git",
+                "reference": "e48f41327970f553443a3c9c252f127354df4610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-rulebuilder/zipball/bcc844b73b4e7662efd50537c282695f0979b69a",
-                "reference": "bcc844b73b4e7662efd50537c282695f0979b69a",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-RuleBuilder/zipball/e48f41327970f553443a3c9c252f127354df4610",
+                "reference": "e48f41327970f553443a3c9c252f127354df4610",
                 "shasum": ""
             },
             "require": {
@@ -872,25 +833,100 @@
                 }
             ],
             "description": "Write Laravel validation rules like schema builder migrations.",
-            "homepage": "https://github.com/gsmeira/laravel-rulebuilder",
+            "homepage": "https://github.com/gsmeira/Laravel-RuleBuilder",
+            "keywords": [
+                "builder",
+                "gsmeira",
+                "laravel",
+                "laravel-rulebuilder",
+                "rule",
+                "rulebuilder"
+            ],
+            "time": "2016-10-14 21:50:05"
+        },
+        {
+            "name": "gsmeira/laravel-sysval",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:gsmeira/Laravel-SysVal.git",
+                "reference": "91ca7d4ca7f720e33cf6e5d1910ef025bfdbd6c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-SysVal/zipball/91ca7d4ca7f720e33cf6e5d1910ef025bfdbd6c9",
+                "reference": "91ca7d4ca7f720e33cf6e5d1910ef025bfdbd6c9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": "~5.5|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GSMeira\\LaravelSysVal\\": "src"
+                },
+                "files": [
+                    "src/app/helpers.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "GSMeira\\LaravelSysVal\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Meireles",
+                    "email": "gustavo@gsmeira.com",
+                    "homepage": "http://www.gsmeira.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-SysVal",
             "keywords": [
                 "gsmeira",
-                "laravel-rulebuilder"
+                "laravel",
+                "laravel-sysval",
+                "sys",
+                "sysval",
+                "val",
+                "value"
             ],
-            "time": "2016-09-17 19:24:05"
+            "time": "2016-10-14 21:50:36"
         },
         {
             "name": "gsmeira/laravel-throttle",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-throttle.git",
-                "reference": "330cbdbd0db02a24b31b9eb81e8fe38c0bcd46f0"
+                "url": "git@github.com:gsmeira/Laravel-Throttle.git",
+                "reference": "c6cad944d93e384d4cd47923b625e7f58c848595"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-throttle/zipball/330cbdbd0db02a24b31b9eb81e8fe38c0bcd46f0",
-                "reference": "330cbdbd0db02a24b31b9eb81e8fe38c0bcd46f0",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Throttle/zipball/c6cad944d93e384d4cd47923b625e7f58c848595",
+                "reference": "c6cad944d93e384d4cd47923b625e7f58c848595",
                 "shasum": ""
             },
             "require": {
@@ -937,26 +973,28 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-throttle",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-Throttle",
             "keywords": [
                 "gsmeira",
-                "laravel-throttle"
+                "laravel",
+                "laravel-throttle",
+                "throttle"
             ],
-            "time": "2016-09-17 19:24:37"
+            "time": "2016-10-14 21:51:01"
         },
         {
             "name": "gsmeira/laravel-thumbnail",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-thumbnail.git",
-                "reference": "422341cf400219d96f4174804a6c3a9319a03c77"
+                "url": "git@github.com:gsmeira/Laravel-Thumbnail.git",
+                "reference": "1545ddc9ba951519739a1a7b06afc59255da892e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-thumbnail/zipball/422341cf400219d96f4174804a6c3a9319a03c77",
-                "reference": "422341cf400219d96f4174804a6c3a9319a03c77",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Thumbnail/zipball/1545ddc9ba951519739a1a7b06afc59255da892e",
+                "reference": "1545ddc9ba951519739a1a7b06afc59255da892e",
                 "shasum": ""
             },
             "require": {
@@ -1003,26 +1041,28 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-thumbnail",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-Thumbnail",
             "keywords": [
                 "gsmeira",
-                "laravel-thumbnail"
+                "laravel",
+                "laravel-thumbnail",
+                "thumbnail"
             ],
-            "time": "2016-09-17 19:24:52"
+            "time": "2016-10-14 21:51:33"
         },
         {
             "name": "gsmeira/laravel-toggle",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-toggle.git",
-                "reference": "a6d8cae5ff3488f31658266b0a24526a5e062085"
+                "url": "git@github.com:gsmeira/Laravel-Toggle.git",
+                "reference": "b5fb08b703a3f18d8c77aff646efbf85d08b8854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-toggle/zipball/a6d8cae5ff3488f31658266b0a24526a5e062085",
-                "reference": "a6d8cae5ff3488f31658266b0a24526a5e062085",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Toggle/zipball/b5fb08b703a3f18d8c77aff646efbf85d08b8854",
+                "reference": "b5fb08b703a3f18d8c77aff646efbf85d08b8854",
                 "shasum": ""
             },
             "require": {
@@ -1069,26 +1109,28 @@
                     "role": "Developer"
                 }
             ],
-            "description": ":package_description",
-            "homepage": "https://github.com/gsmeira/laravel-toggle",
+            "description": "...",
+            "homepage": "https://github.com/gsmeira/Laravel-Toggle",
             "keywords": [
                 "gsmeira",
-                "laravel-toggle"
+                "laravel",
+                "laravel-toggle",
+                "toggle"
             ],
-            "time": "2016-09-17 19:25:10"
+            "time": "2016-10-14 21:52:58"
         },
         {
             "name": "gsmeira/laravel-tracker",
-            "version": "v1.0.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/gsmeira/laravel-tracker.git",
-                "reference": "46c76c1f23f66196ffddb8b4378e93148940823f"
+                "url": "https://github.com/gsmeira/Laravel-Tracker.git",
+                "reference": "5ac8673380959e233190ed525dcdad0ebc973cb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-tracker/zipball/46c76c1f23f66196ffddb8b4378e93148940823f",
-                "reference": "46c76c1f23f66196ffddb8b4378e93148940823f",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Tracker/zipball/5ac8673380959e233190ed525dcdad0ebc973cb2",
+                "reference": "5ac8673380959e233190ed525dcdad0ebc973cb2",
                 "shasum": ""
             },
             "require": {
@@ -1127,25 +1169,27 @@
                 }
             ],
             "description": "Extract information from the current route accessed.",
-            "homepage": "https://github.com/gsmeira/laravel-tracker",
+            "homepage": "https://github.com/gsmeira/Laravel-Tracker",
             "keywords": [
                 "gsmeira",
-                "laravel-tracker"
+                "laravel",
+                "laravel-tracker",
+                "tracker"
             ],
-            "time": "2016-06-08 03:54:15"
+            "time": "2016-10-14 22:40:50"
         },
         {
             "name": "gsmeira/laravel-uplab",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/laravel-uplab.git",
-                "reference": "36a36421a77d114344ac1a94e75b61cb8ed5eddb"
+                "url": "git@github.com:gsmeira/Laravel-UpLab.git",
+                "reference": "9f98c616dfa79a7b6e74f5b9fe5559ab2522b9ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/laravel-uplab/zipball/36a36421a77d114344ac1a94e75b61cb8ed5eddb",
-                "reference": "36a36421a77d114344ac1a94e75b61cb8ed5eddb",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-UpLab/zipball/9f98c616dfa79a7b6e74f5b9fe5559ab2522b9ce",
+                "reference": "9f98c616dfa79a7b6e74f5b9fe5559ab2522b9ce",
                 "shasum": ""
             },
             "require": {
@@ -1197,25 +1241,27 @@
                 }
             ],
             "description": "Handles the application uploads.",
-            "homepage": "https://github.com/gsmeira/laravel-uplab",
+            "homepage": "https://github.com/gsmeira/Laravel-UpLab",
             "keywords": [
                 "gsmeira",
-                "laravel-uplab"
+                "laravel",
+                "laravel-uplab",
+                "uplab"
             ],
-            "time": "2016-09-16 03:22:48"
+            "time": "2016-10-14 21:53:19"
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.1",
+            "version": "6.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "3f808fba627f2c5b69e2501217bf31af349c1427"
+                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/3f808fba627f2c5b69e2501217bf31af349c1427",
-                "reference": "3f808fba627f2c5b69e2501217bf31af349c1427",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
                 "shasum": ""
             },
             "require": {
@@ -1264,7 +1310,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-07-15 17:22:37"
+            "time": "2016-10-08 15:01:37"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1522,16 +1568,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.9",
+            "version": "v5.3.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f6fbb481672f8dc4bc6882d5d654bbfa3588c8ec"
+                "reference": "9bee167d173857c25966c19afdaa66f127ca6784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f6fbb481672f8dc4bc6882d5d654bbfa3588c8ec",
-                "reference": "f6fbb481672f8dc4bc6882d5d654bbfa3588c8ec",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9bee167d173857c25966c19afdaa66f127ca6784",
+                "reference": "9bee167d173857c25966c19afdaa66f127ca6784",
                 "shasum": ""
             },
             "require": {
@@ -1579,6 +1625,7 @@
                 "illuminate/http": "self.version",
                 "illuminate/log": "self.version",
                 "illuminate/mail": "self.version",
+                "illuminate/notifications": "self.version",
                 "illuminate/pagination": "self.version",
                 "illuminate/pipeline": "self.version",
                 "illuminate/queue": "self.version",
@@ -1645,7 +1692,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-09-12 14:08:29"
+            "time": "2016-10-08 01:51:20"
         },
         {
             "name": "laravelcollective/html",
@@ -1708,16 +1755,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.27",
+            "version": "1.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "50e2045ed70a7e75a5e30bc3662904f3b67af8a9"
+                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/50e2045ed70a7e75a5e30bc3662904f3b67af8a9",
-                "reference": "50e2045ed70a7e75a5e30bc3662904f3b67af8a9",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
+                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
                 "shasum": ""
             },
             "require": {
@@ -1787,7 +1834,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-08-10 08:55:11"
+            "time": "2016-10-07 12:20:37"
         },
         {
             "name": "monolog/monolog",
@@ -2249,22 +2296,30 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
+            "require": {
+                "php": ">=5.3.0"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2278,12 +2333,13 @@
                 }
             ],
             "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "psy/psysh",
@@ -2359,16 +2415,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "a6d15c8618ea3951fd54d34e326b68d3d0bc0786"
+                "reference": "a07797b986671b0dc823885a81d5e3516b931599"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/a6d15c8618ea3951fd54d34e326b68d3d0bc0786",
-                "reference": "a6d15c8618ea3951fd54d34e326b68d3d0bc0786",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/a07797b986671b0dc823885a81d5e3516b931599",
+                "reference": "a07797b986671b0dc823885a81d5e3516b931599",
                 "shasum": ""
             },
             "require": {
@@ -2435,7 +2491,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2016-08-02 18:39:32"
+            "time": "2016-10-02 15:51:17"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2492,20 +2548,21 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "8ea494c34f0f772c3954b5fbe00bffc5a435e563"
+                "reference": "6cb0872fb57b38b3b09ff213c21ed693956b9eb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/8ea494c34f0f772c3954b5fbe00bffc5a435e563",
-                "reference": "8ea494c34f0f772c3954b5fbe00bffc5a435e563",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6cb0872fb57b38b3b09ff213c21ed693956b9eb0",
+                "reference": "6cb0872fb57b38b3b09ff213c21ed693956b9eb0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
+                "symfony/debug": "~2.8|~3.0",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
@@ -2548,20 +2605,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-19 06:48:39"
+            "time": "2016-09-28 00:11:12"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "34f6ac18c2974ca5fce68adf419ee7d15def6f11"
+                "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/34f6ac18c2974ca5fce68adf419ee7d15def6f11",
-                "reference": "34f6ac18c2974ca5fce68adf419ee7d15def6f11",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
+                "reference": "e2b3f74a67fc928adc3c1b9027f73e1bc01190a8",
                 "shasum": ""
             },
             "require": {
@@ -2605,11 +2662,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-23 13:39:15"
+            "time": "2016-09-06 11:02:40"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2669,16 +2726,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "e568ef1784f447a0e54dcb6f6de30b9747b0f577"
+                "reference": "205b5ffbb518a98ba2ae60a52656c4a31ab00c6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/e568ef1784f447a0e54dcb6f6de30b9747b0f577",
-                "reference": "e568ef1784f447a0e54dcb6f6de30b9747b0f577",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/205b5ffbb518a98ba2ae60a52656c4a31ab00c6f",
+                "reference": "205b5ffbb518a98ba2ae60a52656c4a31ab00c6f",
                 "shasum": ""
             },
             "require": {
@@ -2714,20 +2771,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-26 12:04:02"
+            "time": "2016-09-28 00:11:12"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "63592e00fd90632b57ee50220a1ddb29b6bf3bb4"
+                "reference": "5114f1becca9f29e3af94374f1689c83c1aa3d97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/63592e00fd90632b57ee50220a1ddb29b6bf3bb4",
-                "reference": "63592e00fd90632b57ee50220a1ddb29b6bf3bb4",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/5114f1becca9f29e3af94374f1689c83c1aa3d97",
+                "reference": "5114f1becca9f29e3af94374f1689c83c1aa3d97",
                 "shasum": ""
             },
             "require": {
@@ -2767,20 +2824,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-22 12:11:19"
+            "time": "2016-09-21 20:55:10"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "aeda215d6b01f119508c090d2a09ebb5b0bc61f3"
+                "reference": "dc339d6eebadfa6e39c52868b4d4a715eff13c69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/aeda215d6b01f119508c090d2a09ebb5b0bc61f3",
-                "reference": "aeda215d6b01f119508c090d2a09ebb5b0bc61f3",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/dc339d6eebadfa6e39c52868b4d4a715eff13c69",
+                "reference": "dc339d6eebadfa6e39c52868b4d4a715eff13c69",
                 "shasum": ""
             },
             "require": {
@@ -2849,7 +2906,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-03 15:28:24"
+            "time": "2016-10-03 19:01:06"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -3020,16 +3077,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "e64e93041c80e77197ace5ab9385dedb5a143697"
+                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/e64e93041c80e77197ace5ab9385dedb5a143697",
-                "reference": "e64e93041c80e77197ace5ab9385dedb5a143697",
+                "url": "https://api.github.com/repos/symfony/process/zipball/66de154ae86b1a07001da9fbffd620206e4faf94",
+                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94",
                 "shasum": ""
             },
             "require": {
@@ -3065,11 +3122,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-16 14:58:24"
+            "time": "2016-09-29 14:13:09"
         },
         {
             "name": "symfony/routing",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -3144,16 +3201,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "a35edc277513c9bc0f063ca174c36b346f974528"
+                "reference": "93013a18d272e59dab8e67f583155b78c68947eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/a35edc277513c9bc0f063ca174c36b346f974528",
-                "reference": "a35edc277513c9bc0f063ca174c36b346f974528",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/93013a18d272e59dab8e67f583155b78c68947eb",
+                "reference": "93013a18d272e59dab8e67f583155b78c68947eb",
                 "shasum": ""
             },
             "require": {
@@ -3204,20 +3261,20 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-05 08:37:39"
+            "time": "2016-09-06 11:02:40"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "62ee73706c421654a4c840028954510277f7dfc8"
+                "reference": "70bfe927b86ba9999aeebd829715b0bb2cd39a10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/62ee73706c421654a4c840028954510277f7dfc8",
-                "reference": "62ee73706c421654a4c840028954510277f7dfc8",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/70bfe927b86ba9999aeebd829715b0bb2cd39a10",
+                "reference": "70bfe927b86ba9999aeebd829715b0bb2cd39a10",
                 "shasum": ""
             },
             "require": {
@@ -3267,7 +3324,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-08-31 09:05:42"
+            "time": "2016-09-29 14:13:09"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3631,16 +3688,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd"
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/9270140b940ff02e58ec577c237274e92cd40cdd",
-                "reference": "9270140b940ff02e58ec577c237274e92cd40cdd",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
                 "shasum": ""
             },
             "require": {
@@ -3672,7 +3729,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-06-10 09:48:41"
+            "time": "2016-09-30 07:12:33"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -4029,24 +4086,24 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.5.4",
+            "version": "5.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3e6e88e56c912133de6e99b87728cca7ed70c5f5"
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3e6e88e56c912133de6e99b87728cca7ed70c5f5",
-                "reference": "3e6e88e56c912133de6e99b87728cca7ed70c5f5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60c32c5b5e79c2248001efa2560f831da11cc2d7",
+                "reference": "60c32c5b5e79c2248001efa2560f831da11cc2d7",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-json": "*",
-                "ext-pcre": "*",
-                "ext-reflection": "*",
-                "ext-spl": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-xml": "*",
                 "myclabs/deep-copy": "~1.3",
                 "php": "^5.6 || ^7.0",
                 "phpspec/prophecy": "^1.3.1",
@@ -4068,7 +4125,11 @@
             "conflict": {
                 "phpdocumentor/reflection-docblock": "3.0.2"
             },
+            "require-dev": {
+                "ext-pdo": "*"
+            },
             "suggest": {
+                "ext-xdebug": "*",
                 "phpunit/php-invoker": "~1.1"
             },
             "bin": [
@@ -4077,7 +4138,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.5.x-dev"
+                    "dev-master": "5.6.x-dev"
                 }
             },
             "autoload": {
@@ -4103,20 +4164,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-08-26 07:11:44"
+            "time": "2016-10-07 13:03:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.7",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "546898a2c0c356ef2891b39dd7d07f5d82c8ed0a"
+                "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/546898a2c0c356ef2891b39dd7d07f5d82c8ed0a",
-                "reference": "546898a2c0c356ef2891b39dd7d07f5d82c8ed0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
+                "reference": "238d7a2723bce689c79eeac9c7d5e1d623bb9dc2",
                 "shasum": ""
             },
             "require": {
@@ -4162,7 +4223,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-09-06 16:07:45"
+            "time": "2016-10-09 07:01:45"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -4679,16 +4740,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "2851e1932d77ce727776154d659b232d061e816a"
+                "reference": "ca809c64072e0fe61c1c7fb3c76cdc32265042ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/2851e1932d77ce727776154d659b232d061e816a",
-                "reference": "2851e1932d77ce727776154d659b232d061e816a",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/ca809c64072e0fe61c1c7fb3c76cdc32265042ac",
+                "reference": "ca809c64072e0fe61c1c7fb3c76cdc32265042ac",
                 "shasum": ""
             },
             "require": {
@@ -4728,11 +4789,11 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-29 05:41:56"
+            "time": "2016-09-06 11:02:40"
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
@@ -4788,16 +4849,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "f291ed25eb1435bddbe8a96caaef16469c2a092d"
+                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/f291ed25eb1435bddbe8a96caaef16469c2a092d",
-                "reference": "f291ed25eb1435bddbe8a96caaef16469c2a092d",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/368b9738d4033c8b93454cb0dbd45d305135a6d3",
+                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3",
                 "shasum": ""
             },
             "require": {
@@ -4833,7 +4894,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-02 02:12:52"
+            "time": "2016-09-25 08:27:07"
         },
         {
             "name": "webmozart/assert",
@@ -4890,17 +4951,19 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "laravelcollective/html": 20,
+        "gsmeira/laravel-multialerts": 20,
+        "gsmeira/laravel-tracker": 20,
         "gsmeira/laravel-assist": 20,
         "gsmeira/laravel-rulebuilder": 20,
         "gsmeira/laravel-thumbnail": 20,
         "gsmeira/laravel-filebox": 20,
         "gsmeira/laravel-metatags": 20,
-        "gsmeira/laravel-prep": 20,
+        "gsmeira/laravel-sysval": 20,
         "gsmeira/laravel-recaptcha": 20,
         "gsmeira/laravel-input": 20,
         "gsmeira/laravel-throttle": 20,
         "gsmeira/laravel-toggle": 20,
-        "gsmeira/laravel-flag": 20,
+        "gsmeira/laravel-humanval": 20,
         "gsmeira/laravel-uplab": 20,
         "gsmeira/laravel-clock": 20
     },

@@ -166,7 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
-        GSMeira\LaravelMultialerts\ServiceProvider::class,
+        GSMeira\LaravelMultiAlerts\ServiceProvider::class,
         GSMeira\LaravelTracker\ServiceProvider::class,
         GSMeira\LaravelRuleBuilder\ServiceProvider::class,
         GSMeira\LaravelSysVal\ServiceProvider::class,
@@ -245,7 +245,7 @@ return [
         'RuleBuilder' => GSMeira\LaravelRuleBuilder\Facade::class,
         'SysVal' => GSMeira\LaravelSysVal\Facade::class,
         'Tracker' => GSMeira\LaravelTracker\Facade::class,
-        'Multialerts' => GSMeira\LaravelMultialerts\Facade::class,
+        'MultiAlerts' => GSMeira\LaravelMultiAlerts\Facade::class,
 
     ],
 
