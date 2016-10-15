@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel-Tracker.
+ * This file is part of Laravel-RouteTracker.
  *
  * (c) Gustavo Meireles <gustavo@gsmeira.com>
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace GSMeira\LaravelTracker;
+namespace GSMeira\LaravelRouteTracker;
 
 use Illuminate\Support\Facades\Facade as BaseFacade;
 
 /**
- * This is the Laravel-Tracker facade class.
+ * This is the Laravel-RouteTracker facade class.
  *
  * @author Gustavo Meireles <gustavo@gsmeira.com>
- * @package GSMeira\LaravelTracker
+ * @package GSMeira\LaravelRouteTracker
  */
 class Facade extends BaseFacade
 {
@@ -28,6 +28,6 @@ class Facade extends BaseFacade
      */
     protected static function getFacadeAccessor()
     {
-        return 'laravel-tracker';
+        return 'laravel-routetracker';
     }
 }

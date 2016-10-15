@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel-Tracker.
+ * This file is part of Laravel-RouteTracker.
  *
  * (c) Gustavo Meireles <gustavo@gsmeira.com>
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-use GSMeira\LaravelTracker\LaravelTracker;
+use GSMeira\LaravelRouteTracker\LaravelRouteTracker;
 
 if (! function_exists('tracker')) {
     /**
-     * Returns an instance of Laravel-Tracker.
+     * Returns an instance of Laravel-RouteTracker.
      *
      * @param array $routes
-     * @return LaravelTracker
+     * @return LaravelRouteTracker
      */
     function tracker($routes = [])
     {
-        return app('laravel-tracker')->setRoutes($routes);
+        return app('laravel-routetracker')->setRoutes($routes);
     }
 }

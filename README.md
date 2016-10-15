@@ -1,4 +1,4 @@
-# Laravel-Tracker
+# Laravel-RouteTracker
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -15,7 +15,7 @@ PSRs you support to avoid any confusion with users and contributors.
 Via Composer
 
 ``` bash
-$ composer require gsmeira/laravel-tracker
+$ composer require gsmeira/laravel-routetracker
 ```
 
 ## Usage
@@ -52,17 +52,17 @@ If you discover any security related issues, please email gustavo@gsmeira.com in
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/gsmeira/Laravel-Tracker.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/gsmeira/Laravel-RouteTracker.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/gsmeira/Laravel-Tracker/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/gsmeira/Laravel-Tracker.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/gsmeira/Laravel-Tracker.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/gsmeira/Laravel-Tracker.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/gsmeira/Laravel-RouteTracker/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/gsmeira/Laravel-RouteTracker.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/gsmeira/Laravel-RouteTracker.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/gsmeira/Laravel-RouteTracker.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/gsmeira/Laravel-Tracker
-[link-travis]: https://travis-ci.org/gsmeira/Laravel-Tracker
-[link-scrutinizer]: https://scrutinizer-ci.com/g/gsmeira/Laravel-Tracker/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/gsmeira/Laravel-Tracker
-[link-downloads]: https://packagist.org/packages/gsmeira/Laravel-Tracker
+[link-packagist]: https://packagist.org/packages/gsmeira/Laravel-RouteTracker
+[link-travis]: https://travis-ci.org/gsmeira/Laravel-RouteTracker
+[link-scrutinizer]: https://scrutinizer-ci.com/g/gsmeira/Laravel-RouteTracker/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/gsmeira/Laravel-RouteTracker
+[link-downloads]: https://packagist.org/packages/gsmeira/Laravel-RouteTracker
 [link-author]: https://github.com/gsmeira
 [link-contributors]: ../../contributors

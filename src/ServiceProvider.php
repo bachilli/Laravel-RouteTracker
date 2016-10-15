@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel-Tracker.
+ * This file is part of Laravel-RouteTracker.
  *
  * (c) Gustavo Meireles <gustavo@gsmeira.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GSMeira\LaravelTracker;
+namespace GSMeira\LaravelRouteTracker;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -34,10 +34,10 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        $this->app->bind('laravel-tracker', function ($app) {
+        $this->app->bind('laravel-routetracker', function ($app) {
             $namespace = $app->config->get('gsmeira.tracker.controllers_namespace', 'App\Http\Controllers');
 
-            return new LaravelTracker($namespace);
+            return new LaravelRouteTracker($namespace);
         });
     }
 }

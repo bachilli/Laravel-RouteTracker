@@ -1,14 +1,15 @@
 {
-    "name": "gsmeira/laravel-tracker",
+    "name": "gsmeira/laravel-routetracker",
     "type": "library",
     "description": "Extract information from the current route accessed.",
     "keywords": [
         "gsmeira",
-        "laravel-tracker",
+        "laravel-routetracker",
         "laravel",
+        "route",
         "tracker"
     ],
-    "homepage": "https://github.com/gsmeira/Laravel-Tracker",
+    "homepage": "https://github.com/gsmeira/Laravel-RouteTracker",
     "license": "MIT",
     "authors": [
         {
@@ -29,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "GSMeira\\LaravelTracker\\": "src"
+            "GSMeira\\LaravelRouteTracker\\": "src"
         },
         "files": [
             "src/helpers.php"
@@ -37,7 +38,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "GSMeira\\LaravelTracker\\": "tests"
+            "GSMeira\\LaravelRouteTracker\\": "tests"
         }
     },
     "scripts": {

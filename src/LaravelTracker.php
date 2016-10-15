@@ -1,11 +1,11 @@
 <?php
 
-namespace GSMeira\LaravelTracker;
+namespace GSMeira\LaravelRouteTracker;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
-class LaravelTracker
+class LaravelRouteTracker
 {
     /**
      * Routes to be analysed.
@@ -50,7 +50,7 @@ class LaravelTracker
     private $isCurrent;
 
     /**
-     * Laravel-Tracker class constructor.
+     * Laravel-RouteTracker class constructor.
      *
      * @param array $namespace
      */
