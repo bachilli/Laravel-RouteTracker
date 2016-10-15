@@ -23,7 +23,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('gsmeira/tracker.php'),
+            __DIR__.'/../config/config.php' => config_path('gsmeira/routetracker.php'),
         ]);
     }
 
@@ -35,7 +35,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->bind('laravel-routetracker', function ($app) {
-            $namespace = $app->config->get('gsmeira.tracker.controllers_namespace', 'App\Http\Controllers');
+            $namespace = $app->config->get('gsmeira.routetracker.controllers_namespace', 'App\Http\Controllers');
 
             return new LaravelRouteTracker($namespace);
         });

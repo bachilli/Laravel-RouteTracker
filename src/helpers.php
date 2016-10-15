@@ -11,14 +11,14 @@
 
 use GSMeira\LaravelRouteTracker\LaravelRouteTracker;
 
-if (! function_exists('tracker')) {
+if (! function_exists('route_tracker')) {
     /**
      * Returns an instance of Laravel-RouteTracker.
      *
      * @param array $routes
      * @return LaravelRouteTracker
      */
-    function tracker($routes = [])
+    function route_tracker($routes = [])
     {
         return app('laravel-routetracker')->setRoutes($routes);
     }
