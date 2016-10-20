@@ -23,7 +23,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('gsmeira/routetracker.php'),
+            __DIR__.'/config/config.php' => config_path('gsmeira/routetracker.php'),
         ]);
     }
 

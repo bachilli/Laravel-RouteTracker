@@ -33,7 +33,7 @@
             "GSMeira\\LaravelRouteTracker\\": "src"
         },
         "files": [
-            "src/helpers.php"
+            "src/app/helpers.php"
         ]
     },
     "autoload-dev": {
