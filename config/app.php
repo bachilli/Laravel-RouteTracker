@@ -166,14 +166,20 @@ return [
         /*
          * Package Service Providers...
          */
+        GSMeira\LaravelToggleLink\ServiceProvider::class,
         GSMeira\LaravelMultiAlerts\ServiceProvider::class,
-        GSMeira\LaravelTracker\ServiceProvider::class,
+        GSMeira\LaravelRouteTracker\ServiceProvider::class,
         GSMeira\LaravelRuleBuilder\ServiceProvider::class,
         GSMeira\LaravelSysVal\ServiceProvider::class,
         GSMeira\LaravelFileBox\ServiceProvider::class,
         GSMeira\LaravelUpLab\ServiceProvider::class,
+        GSMeira\LaravelHumanVal\ServiceProvider::class,
+        GSMeira\LaravelThumbMaker\ServiceProvider::class,
+        GSMeira\LaravelInputChecker\ServiceProvider::class,
+        GSMeira\LaravelMetaTags\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -242,10 +248,16 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
+        'Image' => Intervention\Image\Facades\Image::class,
         'RuleBuilder' => GSMeira\LaravelRuleBuilder\Facade::class,
         'SysVal' => GSMeira\LaravelSysVal\Facade::class,
-        'Tracker' => GSMeira\LaravelTracker\Facade::class,
+        'RouteTrack' => GSMeira\LaravelRouteTracker\Facade::class,
         'MultiAlerts' => GSMeira\LaravelMultiAlerts\Facade::class,
+        'HumanVal' => GSMeira\LaravelHumanVal\Facade::class,
+        'ThumbMaker' => GSMeira\LaravelThumbMaker\Facade::class,
+        'InputChecker' => GSMeira\LaravelInputChecker\Facade::class,
+        'ToggleLink' => GSMeira\LaravelToggleLink\Facade::class,
+        'MetaTags' => GSMeira\LaravelMetaTags\Facade::class,
 
     ],
 

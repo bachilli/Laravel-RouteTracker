@@ -12,20 +12,21 @@
         "laravelcollective/html": "@dev",
         "graham-campbell/htmlmin": "^4.3",
         "gsmeira/laravel-multialerts": "dev-master@dev",
-        "gsmeira/laravel-tracker": "dev-master@dev",
-        "gsmeira/Laravel-assist": "dev-master@dev",
-        "gsmeira/Laravel-rulebuilder": "dev-master@dev",
-        "gsmeira/Laravel-thumbnail": "dev-master@dev",
-        "gsmeira/Laravel-filebox": "dev-master@dev",
-        "gsmeira/Laravel-metatags": "dev-master@dev",
-        "gsmeira/Laravel-sysval": "dev-master@dev",
-        "gsmeira/Laravel-recaptcha": "dev-master@dev",
-        "gsmeira/Laravel-input": "dev-master@dev",
-        "gsmeira/Laravel-throttle": "dev-master@dev",
-        "gsmeira/Laravel-toggle": "dev-master@dev",
-        "gsmeira/Laravel-humanval": "dev-master@dev",
-        "gsmeira/Laravel-uplab": "dev-master@dev",
-        "gsmeira/Laravel-clock": "dev-master@dev"
+        "gsmeira/laravel-routetracker": "dev-master@dev",
+        "gsmeira/laravel-assist": "dev-master@dev",
+        "gsmeira/laravel-rulebuilder": "dev-master@dev",
+        "gsmeira/laravel-thumbmaker": "dev-master@dev",
+        "gsmeira/laravel-filebox": "dev-master@dev",
+        "gsmeira/laravel-metatags": "dev-master@dev",
+        "gsmeira/laravel-sysval": "dev-master@dev",
+        "gsmeira/laravel-recaptcha": "dev-master@dev",
+        "gsmeira/laravel-inputchecker": "dev-master@dev",
+        "gsmeira/laravel-throttle": "dev-master@dev",
+        "gsmeira/laravel-togglelink": "dev-master@dev",
+        "gsmeira/laravel-humanval": "dev-master@dev",
+        "gsmeira/laravel-uplab": "dev-master@dev",
+        "gsmeira/laravel-clock": "dev-master@dev",
+        "intervention/image": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -79,7 +80,7 @@
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/Laravel-Thumbnail.git",
+            "url":  "git@github.com:gsmeira/Laravel-ThumbMaker.git",
             "no-api": true
         },
         {
@@ -104,7 +105,7 @@
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/Laravel-Input.git",
+            "url":  "git@github.com:gsmeira/Laravel-InputChecker.git",
             "no-api": true
         },
         {
@@ -114,7 +115,7 @@
         },
         {
             "type": "vcs",
-            "url":  "git@github.com:gsmeira/Laravel-Toggle.git",
+            "url":  "git@github.com:gsmeira/Laravel-ToggleLink.git",
             "no-api": true
         },
         {

@@ -18,11 +18,10 @@ Route::get('/', 'Primary\HomepageController@index');
 
 // Pesquisar
 Route::get('pesquisar', 'Primary\SearchController@index');
-Route::get('pesquisar/{query}', 'Primary\SearchController@show');
 
 // Jogos
 Route::get('jogos', 'Primary\GameController@index');
-Route::get('jogo/{slug}', 'Primary\GameController@single');
+Route::get('jogos/{slug}', 'Primary\GameController@single');
 
 // Tags
 Route::get('tags', 'Primary\TagController@index');
@@ -42,21 +41,22 @@ Route::group([ 'prefix' => 'cpanel' ], function()
     Route::resource('tags', 'CPanel\TagController');
 
     // Games
+    Route::get('games/publish/{game}', 'CPanel\GameController@publish');
     Route::get('games/overview', 'CPanel\GameController@overview');
     Route::resource('games', 'CPanel\GameController');
 
-    // Sources
-    Route::get('sources/overview', 'CPanel\SourceController@overview');
-    Route::resource('sources', 'CPanel\SourceController');
+    // Distributors
+    Route::get('distributors/overview', 'CPanel\DistributorController@overview');
+    Route::resource('distributors', 'CPanel\DistributorController');
 
-    // Contents
-    Route::get('contents/overview', 'CPanel\ContentController@overview');
-    Route::resource('contents', 'CPanel\ContentController');
+    // Publications
+    Route::get('publications/overview', 'CPanel\PublicationController@overview');
+    Route::resource('publications', 'CPanel\PublicationController');
 
     // Famobi
-    Route::get('source/famobi', 'CPanel\Source\FamobiController@index');
+    Route::get('source/famobi', 'CPanel\Distributors\FamobiController@index');
 
     // ClickJogos
-    Route::get('source/clickjogos/categories', 'CPanel\Source\ClickJogosController@categories');
-    Route::get('source/clickjogos/games', 'CPanel\Source\ClickJogosController@games');
+    Route::get('source/clickjogos/categories', 'CPanel\Distributor\ClickJogosController@categories');
+    Route::get('source/clickjogos/games', 'CPanel\Distributor\ClickJogosController@games');
 });

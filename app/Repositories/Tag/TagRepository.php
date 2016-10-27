@@ -41,6 +41,15 @@ interface TagRepository
     public function findById($id, $columns = [ '*' ]);
 
     /**
+     * Retorna uma dada tag através do campo slug.
+     *
+     * @param $slug
+     * @param array $columns
+     * @return mixed
+     */
+    public function findBySlug($slug, $columns = [ '*' ]);
+
+    /**
      * Cria uma nova tag.
      *
      * @param $data

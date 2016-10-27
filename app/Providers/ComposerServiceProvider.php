@@ -2,24 +2,14 @@
 
 namespace App\Providers;
 
-use App\Composers\GameClassificationComposer;
-use App\Composers\GameEmbedTypeComposer;
-use App\Composers\GameTypeComposer;
+use App\Composers\Game\AgeRangeComposer as GameAgeRangeComposer;
+use App\Composers\Game\EmbedTypeComposer as GameEmbedTypeComposer;
+use App\Composers\Game\TagComposer as GameTagComposer;
 use App\Composers\YesOrNoComposer;
 use Illuminate\Support\ServiceProvider;
 
 class ComposerServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        // ...
-    }
-
     /**
      * Register any application services.
      *
@@ -27,31 +17,42 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->view->share('pageTitle', '');
-        $this->app->view->share('metaDescription', '');
+        $compositions['primary.*'] = [ GameTagComposer::class ];
 
-        //
-        // Games / CPanel
-        //
+        $compositions['cpanel.tags.create'] = [ YesOrNoComposer::class ];
 
-        $this->app->view->composer([
-            'cpanel.games.create',
-            'cpanel.games.edit'
-        ], GameTypeComposer::class);
+        $compositions['cpanel.tags.edit'] = [ YesOrNoComposer::class ];
 
-        $this->app->view->composer([
-            'cpanel.games.create',
-            'cpanel.games.edit'
-        ], GameEmbedTypeComposer::class);
+        $compositions['cpanel.games.create'] = [
+            GameEmbedTypeComposer::class,
+            GameAgeRangeComposer::class,
+            YesOrNoComposer::class,
+            GameTagComposer::class
+        ];
 
-        $this->app->view->composer([
-            'cpanel.games.create',
-            'cpanel.games.edit'
-        ], GameClassificationComposer::class);
+        $compositions['cpanel.games.edit'] = [
+            GameEmbedTypeComposer::class,
+            GameAgeRangeComposer::class,
+            YesOrNoComposer::class,
+            GameTagComposer::class
+        ];
 
-        $this->app->view->composer([
-            'cpanel.games.create',
-            'cpanel.games.edit'
-        ], YesOrNoComposer::class);
+        foreach ($compositions as $view => $composers) {
+            $this->dataShare($composers, $view);
+        }
+    }
+
+    /**
+     * ...
+     *
+     * @param $composers
+     * @param $view
+     * @return void
+     */
+    private function dataShare($composers, $view)
+    {
+        foreach ($composers as $composer) {
+            $this->app->view->composer($view, $composer);
+        }
     }
 }

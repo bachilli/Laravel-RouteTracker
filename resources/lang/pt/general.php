@@ -13,6 +13,11 @@ return [
 
     // ----------------
 
+    'yes' => 'Sim',
+    'no' => 'Não',
+
+    // ----------------
+
     'local' => 'Local',
     'remote' => 'Remoto',
     'download' => 'Baixar',
@@ -35,12 +40,16 @@ return [
 
     // ----------------
 
-    'contents' => 'Conteúdos',
-    'content' => 'Conteúdo',
+    'users' => 'Usuários',
+    'user' => 'Usuário',
+    'options' => 'Opções',
+    'option' => 'Opção',
+    'publications' => 'Publicações',
+    'publication' => 'Publicação',
     'games' => 'Games',
     'game' => 'Game',
-    'sources' => 'Fontes',
-    'source' => 'Fonte',
+    'distributors' => 'Distribuidoras',
+    'distributor' => 'Distribuidora',
     'tags' => 'Tags',
     'tag' => 'Tag',
 
@@ -65,14 +74,14 @@ return [
     'width' => 'Largura',
     'height' => 'Altura',
     'aspect_ratio' => 'Proporção da Tela',
-    'classification' => 'Classificação',
+    'age_range' => 'Faixa Etária',
     'instructions' => 'Instruções',
     'description' => 'Descrição',
     'thumbnail' => 'Miniatura',
     'created_at' => 'Data de Criação',
     'updated_at' => 'Data de Atualização',
     'published_at' => 'Data de Publicação',
-    'is_published' => 'Publicado?',
+    'is_visible' => 'Visível?',
     'embed_type' => 'Tipo Embed',
     'embed_src' => 'SRC Embed',
     'file' => 'Arquivo'

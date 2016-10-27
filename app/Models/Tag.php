@@ -17,7 +17,12 @@ class Tag extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'name', 'slug', 'description', 'thumbnail'
+        'name',
+        'slug',
+        'description',
+        'thumbnail',
+        'published_at',
+        'is_visible'
     ];
 
     /**
@@ -27,5 +32,6 @@ class Tag extends BaseModel
      */
     protected $casts = [
         'thumbnail' => 'array',
+        'is_visible' => 'integer'
     ];
 }

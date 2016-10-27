@@ -41,41 +41,41 @@
         </tr>
         <tr>
           <td class="field w-25 align-right">{{ trans('general.embed') }}</td>
-          <td class="value w-75"><pre>{{ pretty_json($game->embed) }}</pre></td>
+          <td class="value w-75"><pre>{{ human_val($game->embed)->json() }}</pre></td>
         </tr>
         <tr>
           <td class="field w-25 align-right">{{ trans('general.instructions') }}</td>
-          <td class="value w-75"><pre>{{ pretty_json($game->instructions) }}</pre></td>
+          <td class="value w-75"><pre>{{ human_val($game->instructions)->json() }}</pre></td>
         </tr>
         <tr>
           <td class="field w-25 align-right">{{ trans('general.dimensions') }}</td>
-          <td class="value w-75"><pre>{{ pretty_json($game->dimensions) }}</pre></td>
+          <td class="value w-75"><pre>{{ human_val($game->dimensions)->json() }}</pre></td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.classification') }}</td>
-          <td class="value w-75">{{ $game->classification }}</td>
+          <td class="field w-25 align-right">{{ trans('general.age_range') }}</td>
+          <td class="value w-75">{{ $game->age_range }}</td>
         </tr>
         <tr>
           <td class="field w-25 align-right">{{ trans('general.file') }}</td>
-          <td class="value w-75"><pre>{{ pretty_json($game->file) }}</pre></td>
+          <td class="value w-75"><pre>{{ human_val($game->file)->json() }}</pre></td>
         </tr>
         <tr>
           <td class="field w-25 align-right">{{ trans('general.thumbnail') }}</td>
           <td class="value w-75">
-            @if (storage_exists($game->thumbnail))
+            @if (uplab($game->thumbnail)->exists())
               <div class="image">
-                <a class="fancybox" href="{{ storage_url($game->thumbnail) }}">
-                  <img src="{{ storage_url($game->thumbnail) }}">
+                <a class="fancybox" href="{{ uplab($game->thumbnail)->url() }}">
+                  <img src="{{ uplab($game->thumbnail)->url() }}">
                 </a>
               </div>
               <hr>
             @endif
-            <pre>{{ pretty_json($game->thumbnail) }}</pre>
+            <pre>{{ human_val($game->thumbnail)->json() }}</pre>
           </td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.is_published') }}</td>
-          <td class="value w-75">{{ $game->is_published ? 'Y' : 'N' }}</td>
+          <td class="field w-25 align-right">{{ trans('general.is_visible') }}</td>
+          <td class="value w-75">{{ human_val($game->is_visible)->yesOrNo() }}</td>
         </tr>
         <tr>
           <td class="field w-25 align-right">{{ trans('general.published_at') }}</td>
@@ -96,22 +96,23 @@
             <div class="pull-xs-right">
               <a class="btn btn-primary btn-lg"
                  href="{{ action('CPanel\GameController@edit', $game->id) }}"
-                 data-toggle="tooltip"
-                 title="{{ trans('general.edit') }}"><i class="fa fa-pencil-square"></i></a>
+                 title="{{ trans('general.edit') }}"
+                 data-toggle="tooltip"><i class="fa fa-pencil-square"></i></a>
               <a class="btn btn-danger btn-lg"
-                 data-formlink="DELETE"
-                 data-formlink-confirm-text="{{ trans('general.are_you_sure') }} {{ trans('general.destroy_warning') }}"
-                 data-formlink-sweat='{
-                                    "type": "warning",
-                                    "showCancelButton": "true",
-                                    "confirmButtonColor": "#d9534f",
-                                    "title": "{{ trans('general.are_you_sure') }}",
-                                    "text": "{{ trans('general.destroy_warning') }}",
-                                    "confirmButtonText": "{{ trans('general.yes_destroy_it') }}",
-                                    "cancelButtonText": "{{ trans('general.no_keep_it') }}"
-                                 }'
                  href="{{ action('CPanel\GameController@destroy', $game->id) }}"
-                 data-toggle="tooltip" title="{{ trans('general.destroy') }}"><i class="fa fa-times"></i></a>
+                 title="{{ trans('general.destroy') }}"
+                 data-toggle="tooltip"
+                 data-formlink="DELETE"
+                 data-formlink-confirm-text="{{ sprintf('%s %s', trans('general.are_you_sure'), trans('general.destroy_warning')) }}"
+                 data-formlink-sweat='{
+                  "type": "warning",
+                  "showCancelButton": "true",
+                  "confirmButtonColor": "#d9534f",
+                  "title": "{{ trans('general.are_you_sure') }}",
+                  "text": "{{ trans('general.destroy_warning') }}",
+                  "confirmButtonText": "{{ trans('general.yes_destroy_it') }}",
+                  "cancelButtonText": "{{ trans('general.no_keep_it') }}"
+                 }'><i class="fa fa-times"></i></a>
             </div>
           </td>
         </tr>

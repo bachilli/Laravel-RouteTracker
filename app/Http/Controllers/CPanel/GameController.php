@@ -10,19 +10,25 @@ use App\Repositories\Game\GameRepository;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+/**
+ * Classe responsável pelos jogos do site.
+ *
+ * @package App\Http\Controllers\CPanel
+ */
 class GameController extends Controller
 {
     /**
-     * Repositório de CRUD dos jogos.
+     * Repositório da entidade jogos.
      *
      * @var GameRepository
      */
     private $gameRepository;
 
     /**
-     * Construtor dos jogos.
+     * Construtor da funcionalidade jogos.
      *
      * @param GameRepository $gameRepository
+     * @return void
      */
     public function __construct(GameRepository $gameRepository)
     {
@@ -85,12 +91,12 @@ class GameController extends Controller
         $game = $this->gameRepository->store($request->all());
 
         if (! empty($game)) {
-            multialerts()->success('games.successfully_stored', [ 'name' => $game->name ])->put();
+            multi_alerts()->success('games.successfully_stored', [ 'name' => $game->name ])->put();
 
             return to('CPanel\GameController@index');
         }
 
-        multialerts()->danger('games.store_fail')->put();
+        multi_alerts()->danger('games.store_fail')->put();
 
         return retry();
     }
@@ -116,12 +122,12 @@ class GameController extends Controller
     public function update(GameUpdateRequest $request, Game $game)
     {
         if ($this->gameRepository->update($request->all(), $game)) {
-            multialerts()->success('games.successfully_updated', [ 'name' => $game->name ])->put();
+            multi_alerts()->success('games.successfully_updated', [ 'name' => $game->name ])->put();
 
             return to('CPanel\GameController@index');
         }
 
-        multialerts()->danger('games.update_fail')->put();
+        multi_alerts()->danger('games.update_fail')->put();
 
         return retry();
     }
@@ -135,9 +141,28 @@ class GameController extends Controller
     public function destroy(Game $game)
     {
         if (! empty($game) && $this->gameRepository->destroy($game)) {
-            multialerts()->success('games.successfully_deleted', [ 'name' => $game->name ])->put();
+            multi_alerts()->success('games.successfully_deleted', [ 'name' => $game->name ])->put();
         } else {
-            multialerts()->danger('games.delete_fail')->put();
+            multi_alerts()->danger('games.delete_fail')->put();
+        }
+
+        return to('CPanel\GameController@index');
+    }
+
+    /**
+     * Publica ou despublica um artigo.
+     *
+     * @param $game
+     * @return Redirect
+     */
+    public function publish(Game $game)
+    {
+        $this->gameRepository->publish($game);
+
+        if ($game->is_visible) {
+            multi_alerts()->success('games.successfully_visible', [ 'name' => $game->name ])->put();
+        } else {
+            multi_alerts()->success('games.successfully_invisible', [ 'name' => $game->name ])->put();
         }
 
         return to('CPanel\GameController@index');

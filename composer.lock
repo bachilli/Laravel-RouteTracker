@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80b079c0f0c5214fbc08c196f7378a62",
-    "content-hash": "ec437b793e7b9d2b1ce1f32bc6e320e9",
+    "hash": "b705fa5c51bcbe9d2856ae22f31d24be",
+    "content-hash": "45a36700350525e3c396b7edfdf4c1b1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-Assist.git",
-                "reference": "8b8331e13f051cceb8b5259e0ac7992cbf64d1ee"
+                "reference": "e04e9662fdfd6469b35e7037f4b0bc8cb6d8ef19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Assist/zipball/8b8331e13f051cceb8b5259e0ac7992cbf64d1ee",
-                "reference": "8b8331e13f051cceb8b5259e0ac7992cbf64d1ee",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Assist/zipball/e04e9662fdfd6469b35e7037f4b0bc8cb6d8ef19",
+                "reference": "e04e9662fdfd6469b35e7037f4b0bc8cb6d8ef19",
                 "shasum": ""
             },
             "require": {
@@ -262,8 +262,7 @@
                 "files": [
                     "src/file.php",
                     "src/misc.php",
-                    "src/navigation.php",
-                    "src/storage.php"
+                    "src/navigation.php"
                 ]
             },
             "autoload-dev": {
@@ -295,7 +294,7 @@
                 "laravel",
                 "laravel-assist"
             ],
-            "time": "2016-10-14 21:45:36"
+            "time": "2016-10-18 17:54:46"
         },
         {
             "name": "gsmeira/laravel-clock",
@@ -303,12 +302,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-Clock.git",
-                "reference": "7500b747055ba63eb7ef1bc7cc7f49e0b430675e"
+                "reference": "fdfbc95ae91258833e02f776ce870498f1ad06cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Clock/zipball/7500b747055ba63eb7ef1bc7cc7f49e0b430675e",
-                "reference": "7500b747055ba63eb7ef1bc7cc7f49e0b430675e",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Clock/zipball/fdfbc95ae91258833e02f776ce870498f1ad06cb",
+                "reference": "fdfbc95ae91258833e02f776ce870498f1ad06cb",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +362,7 @@
                 "laravel",
                 "laravel-clock"
             ],
-            "time": "2016-10-14 21:46:30"
+            "time": "2016-10-18 17:13:14"
         },
         {
             "name": "gsmeira/laravel-filebox",
@@ -371,12 +370,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-FileBox.git",
-                "reference": "87860470b72fcbf5c1d604fe25cddf065468d6bd"
+                "reference": "7c6d0e2a56720339de826fce02e2fad90e1927cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-FileBox/zipball/87860470b72fcbf5c1d604fe25cddf065468d6bd",
-                "reference": "87860470b72fcbf5c1d604fe25cddf065468d6bd",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-FileBox/zipball/7c6d0e2a56720339de826fce02e2fad90e1927cc",
+                "reference": "7c6d0e2a56720339de826fce02e2fad90e1927cc",
                 "shasum": ""
             },
             "require": {
@@ -433,7 +432,7 @@
                 "laravel",
                 "laravel-filebox"
             ],
-            "time": "2016-10-14 21:46:57"
+            "time": "2016-10-18 17:13:35"
         },
         {
             "name": "gsmeira/laravel-humanval",
@@ -441,12 +440,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-HumanVal.git",
-                "reference": "d40d9748d42435a0e3030124badb6b80a6dc1dbc"
+                "reference": "0a37770cc9ab0e8310ace8daa4ddfbd5a02d62e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-HumanVal/zipball/d40d9748d42435a0e3030124badb6b80a6dc1dbc",
-                "reference": "d40d9748d42435a0e3030124badb6b80a6dc1dbc",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-HumanVal/zipball/0a37770cc9ab0e8310ace8daa4ddfbd5a02d62e7",
+                "reference": "0a37770cc9ab0e8310ace8daa4ddfbd5a02d62e7",
                 "shasum": ""
             },
             "require": {
@@ -504,20 +503,20 @@
                 "val",
                 "value"
             ],
-            "time": "2016-10-14 21:47:43"
+            "time": "2016-10-16 17:25:37"
         },
         {
-            "name": "gsmeira/laravel-input",
+            "name": "gsmeira/laravel-inputchecker",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/Laravel-Input.git",
-                "reference": "3a0ef75c93bee79584d80bd8ae1c50a36a5e1453"
+                "url": "git@github.com:gsmeira/Laravel-InputChecker.git",
+                "reference": "02a624a2658d214f74f308ca26ced18f5691bad9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Input/zipball/3a0ef75c93bee79584d80bd8ae1c50a36a5e1453",
-                "reference": "3a0ef75c93bee79584d80bd8ae1c50a36a5e1453",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-InputChecker/zipball/02a624a2658d214f74f308ca26ced18f5691bad9",
+                "reference": "02a624a2658d214f74f308ca26ced18f5691bad9",
                 "shasum": ""
             },
             "require": {
@@ -537,7 +536,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "GSMeira\\LaravelInput\\": "src"
+                    "GSMeira\\LaravelInputChecker\\": "src"
                 },
                 "files": [
                     "src/app/helpers.php"
@@ -545,7 +544,7 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "GSMeira\\LaravelInput\\": "tests"
+                    "GSMeira\\LaravelInputChecker\\": "tests"
                 }
             },
             "scripts": {
@@ -565,14 +564,15 @@
                 }
             ],
             "description": "...",
-            "homepage": "https://github.com/gsmeira/Laravel-Input",
+            "homepage": "https://github.com/gsmeira/Laravel-InputChecker",
             "keywords": [
+                "checker",
                 "gsmeira",
                 "input",
                 "laravel",
-                "laravel-input"
+                "laravel-inputchecker"
             ],
-            "time": "2016-10-14 21:48:03"
+            "time": "2016-10-18 17:14:07"
         },
         {
             "name": "gsmeira/laravel-metatags",
@@ -580,12 +580,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-MetaTags.git",
-                "reference": "5deee6a3af9ac04a9aee7703f071bdeefce9b6b5"
+                "reference": "68fa721c12ad82f2d27dcd5fcf99f20e70ef3b2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-MetaTags/zipball/5deee6a3af9ac04a9aee7703f071bdeefce9b6b5",
-                "reference": "5deee6a3af9ac04a9aee7703f071bdeefce9b6b5",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-MetaTags/zipball/68fa721c12ad82f2d27dcd5fcf99f20e70ef3b2b",
+                "reference": "68fa721c12ad82f2d27dcd5fcf99f20e70ef3b2b",
                 "shasum": ""
             },
             "require": {
@@ -605,7 +605,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "GSMeira\\LaravelMeta\\": "src"
+                    "GSMeira\\LaravelMetaTags\\": "src"
                 },
                 "files": [
                     "src/app/helpers.php"
@@ -613,7 +613,7 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "GSMeira\\LaravelMeta\\": "tests"
+                    "GSMeira\\LaravelMetaTags\\": "tests"
                 }
             },
             "scripts": {
@@ -642,7 +642,7 @@
                 "metatags",
                 "tags"
             ],
-            "time": "2016-10-14 21:48:28"
+            "time": "2016-10-20 18:23:40"
         },
         {
             "name": "gsmeira/laravel-multialerts",
@@ -650,12 +650,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gsmeira/Laravel-MultiAlerts.git",
-                "reference": "334fe90b00b48bae5d50025da0a5ebaa63279cd4"
+                "reference": "f09f2a80b7de9465c53fc84d0125855c37bcc0d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-MultiAlerts/zipball/334fe90b00b48bae5d50025da0a5ebaa63279cd4",
-                "reference": "334fe90b00b48bae5d50025da0a5ebaa63279cd4",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-MultiAlerts/zipball/f09f2a80b7de9465c53fc84d0125855c37bcc0d0",
+                "reference": "f09f2a80b7de9465c53fc84d0125855c37bcc0d0",
                 "shasum": ""
             },
             "require": {
@@ -678,7 +678,7 @@
                     "GSMeira\\LaravelMultiAlerts\\": "src"
                 },
                 "files": [
-                    "src/helpers.php"
+                    "src/app/helpers.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -704,7 +704,7 @@
                 "multialerts",
                 "multiple"
             ],
-            "time": "2016-10-14 22:37:14"
+            "time": "2016-10-20 18:24:21"
         },
         {
             "name": "gsmeira/laravel-recaptcha",
@@ -712,12 +712,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-reCAPTCHA.git",
-                "reference": "b7c00280e90ea40a01867dac79ba081a83120907"
+                "reference": "dcfca76f96df10c2f9841fd07a971c3e5faa2a14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-reCAPTCHA/zipball/b7c00280e90ea40a01867dac79ba081a83120907",
-                "reference": "b7c00280e90ea40a01867dac79ba081a83120907",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-reCAPTCHA/zipball/dcfca76f96df10c2f9841fd07a971c3e5faa2a14",
+                "reference": "dcfca76f96df10c2f9841fd07a971c3e5faa2a14",
                 "shasum": ""
             },
             "require": {
@@ -772,7 +772,67 @@
                 "laravel-recaptcha",
                 "recaptcha"
             ],
-            "time": "2016-10-14 21:49:43"
+            "time": "2016-10-18 17:15:29"
+        },
+        {
+            "name": "gsmeira/laravel-routetracker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gsmeira/Laravel-RouteTracker.git",
+                "reference": "b443b8801fcaaef8806388e0e6524eee8cb7100e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-RouteTracker/zipball/b443b8801fcaaef8806388e0e6524eee8cb7100e",
+                "reference": "b443b8801fcaaef8806388e0e6524eee8cb7100e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": "~5.5|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GSMeira\\LaravelRouteTracker\\": "src"
+                },
+                "files": [
+                    "src/app/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Meireles",
+                    "email": "gustavo@gsmeira.com",
+                    "homepage": "http://www.gsmeira.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Extract information from the current route accessed.",
+            "homepage": "https://github.com/gsmeira/Laravel-RouteTracker",
+            "keywords": [
+                "gsmeira",
+                "laravel",
+                "laravel-routetracker",
+                "route",
+                "tracker"
+            ],
+            "time": "2016-10-20 18:25:38"
         },
         {
             "name": "gsmeira/laravel-rulebuilder",
@@ -780,12 +840,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-RuleBuilder.git",
-                "reference": "e48f41327970f553443a3c9c252f127354df4610"
+                "reference": "005fd589e5896d2f25dc16caaac72f02262fc16e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-RuleBuilder/zipball/e48f41327970f553443a3c9c252f127354df4610",
-                "reference": "e48f41327970f553443a3c9c252f127354df4610",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-RuleBuilder/zipball/005fd589e5896d2f25dc16caaac72f02262fc16e",
+                "reference": "005fd589e5896d2f25dc16caaac72f02262fc16e",
                 "shasum": ""
             },
             "require": {
@@ -842,7 +902,7 @@
                 "rule",
                 "rulebuilder"
             ],
-            "time": "2016-10-14 21:50:05"
+            "time": "2016-10-18 17:15:56"
         },
         {
             "name": "gsmeira/laravel-sysval",
@@ -850,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-SysVal.git",
-                "reference": "91ca7d4ca7f720e33cf6e5d1910ef025bfdbd6c9"
+                "reference": "8d9b4fca18f5d87e035b68444512ab780bea42cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-SysVal/zipball/91ca7d4ca7f720e33cf6e5d1910ef025bfdbd6c9",
-                "reference": "91ca7d4ca7f720e33cf6e5d1910ef025bfdbd6c9",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-SysVal/zipball/8d9b4fca18f5d87e035b68444512ab780bea42cf",
+                "reference": "8d9b4fca18f5d87e035b68444512ab780bea42cf",
                 "shasum": ""
             },
             "require": {
@@ -913,7 +973,7 @@
                 "val",
                 "value"
             ],
-            "time": "2016-10-14 21:50:36"
+            "time": "2016-10-18 17:16:16"
         },
         {
             "name": "gsmeira/laravel-throttle",
@@ -921,12 +981,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-Throttle.git",
-                "reference": "c6cad944d93e384d4cd47923b625e7f58c848595"
+                "reference": "eadfe4b2abb44331ee294b4fbb3eb3e8d642dedc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Throttle/zipball/c6cad944d93e384d4cd47923b625e7f58c848595",
-                "reference": "c6cad944d93e384d4cd47923b625e7f58c848595",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-Throttle/zipball/eadfe4b2abb44331ee294b4fbb3eb3e8d642dedc",
+                "reference": "eadfe4b2abb44331ee294b4fbb3eb3e8d642dedc",
                 "shasum": ""
             },
             "require": {
@@ -981,20 +1041,20 @@
                 "laravel-throttle",
                 "throttle"
             ],
-            "time": "2016-10-14 21:51:01"
+            "time": "2016-10-18 17:16:39"
         },
         {
-            "name": "gsmeira/laravel-thumbnail",
+            "name": "gsmeira/laravel-thumbmaker",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/Laravel-Thumbnail.git",
-                "reference": "1545ddc9ba951519739a1a7b06afc59255da892e"
+                "url": "git@github.com:gsmeira/Laravel-ThumbMaker.git",
+                "reference": "bc0e1fbb6d9195887c8e744814a577e61e7c0ac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Thumbnail/zipball/1545ddc9ba951519739a1a7b06afc59255da892e",
-                "reference": "1545ddc9ba951519739a1a7b06afc59255da892e",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-ThumbMaker/zipball/bc0e1fbb6d9195887c8e744814a577e61e7c0ac9",
+                "reference": "bc0e1fbb6d9195887c8e744814a577e61e7c0ac9",
                 "shasum": ""
             },
             "require": {
@@ -1014,7 +1074,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "GSMeira\\LaravelThumbnail\\": "src"
+                    "GSMeira\\LaravelThumbMaker\\": "src"
                 },
                 "files": [
                     "src/app/helpers.php"
@@ -1022,7 +1082,7 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "GSMeira\\LaravelThumbnail\\": "tests"
+                    "GSMeira\\LaravelThumbMaker\\": "tests"
                 }
             },
             "scripts": {
@@ -1042,27 +1102,28 @@
                 }
             ],
             "description": "...",
-            "homepage": "https://github.com/gsmeira/Laravel-Thumbnail",
+            "homepage": "https://github.com/gsmeira/Laravel-ThumbMaker",
             "keywords": [
                 "gsmeira",
                 "laravel",
-                "laravel-thumbnail",
+                "laravel-thumbmaker",
+                "maker",
                 "thumbnail"
             ],
-            "time": "2016-10-14 21:51:33"
+            "time": "2016-10-18 17:17:05"
         },
         {
-            "name": "gsmeira/laravel-toggle",
+            "name": "gsmeira/laravel-togglelink",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:gsmeira/Laravel-Toggle.git",
-                "reference": "b5fb08b703a3f18d8c77aff646efbf85d08b8854"
+                "url": "git@github.com:gsmeira/Laravel-ToggleLink.git",
+                "reference": "78ae37f81ef44d8d9b9ab2e295c7c5b84f60ce9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Toggle/zipball/b5fb08b703a3f18d8c77aff646efbf85d08b8854",
-                "reference": "b5fb08b703a3f18d8c77aff646efbf85d08b8854",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-ToggleLink/zipball/78ae37f81ef44d8d9b9ab2e295c7c5b84f60ce9f",
+                "reference": "78ae37f81ef44d8d9b9ab2e295c7c5b84f60ce9f",
                 "shasum": ""
             },
             "require": {
@@ -1082,7 +1143,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "GSMeira\\LaravelToggle\\": "src"
+                    "GSMeira\\LaravelToggleLink\\": "src"
                 },
                 "files": [
                     "src/app/helpers.php"
@@ -1090,7 +1151,7 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "GSMeira\\LaravelToggle\\": "tests"
+                    "GSMeira\\LaravelToggleLink\\": "tests"
                 }
             },
             "scripts": {
@@ -1110,73 +1171,15 @@
                 }
             ],
             "description": "...",
-            "homepage": "https://github.com/gsmeira/Laravel-Toggle",
+            "homepage": "https://github.com/gsmeira/Laravel-ToggleLink",
             "keywords": [
                 "gsmeira",
                 "laravel",
-                "laravel-toggle",
+                "laravel-togglelink",
+                "link",
                 "toggle"
             ],
-            "time": "2016-10-14 21:52:58"
-        },
-        {
-            "name": "gsmeira/laravel-tracker",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gsmeira/Laravel-Tracker.git",
-                "reference": "5ac8673380959e233190ed525dcdad0ebc973cb2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-Tracker/zipball/5ac8673380959e233190ed525dcdad0ebc973cb2",
-                "reference": "5ac8673380959e233190ed525dcdad0ebc973cb2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.1",
-                "php": "~5.5|~7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GSMeira\\LaravelTracker\\": "src"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gustavo Meireles",
-                    "email": "gustavo@gsmeira.com",
-                    "homepage": "http://www.gsmeira.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Extract information from the current route accessed.",
-            "homepage": "https://github.com/gsmeira/Laravel-Tracker",
-            "keywords": [
-                "gsmeira",
-                "laravel",
-                "laravel-tracker",
-                "tracker"
-            ],
-            "time": "2016-10-14 22:40:50"
+            "time": "2016-10-20 18:26:54"
         },
         {
             "name": "gsmeira/laravel-uplab",
@@ -1184,12 +1187,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gsmeira/Laravel-UpLab.git",
-                "reference": "9f98c616dfa79a7b6e74f5b9fe5559ab2522b9ce"
+                "reference": "5f26124dd13cde899b761b447e989c0196a6c120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gsmeira/Laravel-UpLab/zipball/9f98c616dfa79a7b6e74f5b9fe5559ab2522b9ce",
-                "reference": "9f98c616dfa79a7b6e74f5b9fe5559ab2522b9ce",
+                "url": "https://api.github.com/repos/gsmeira/Laravel-UpLab/zipball/5f26124dd13cde899b761b447e989c0196a6c120",
+                "reference": "5f26124dd13cde899b761b447e989c0196a6c120",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1251,7 @@
                 "laravel-uplab",
                 "uplab"
             ],
-            "time": "2016-10-14 21:53:19"
+            "time": "2016-10-18 17:20:52"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1422,6 +1425,68 @@
             "time": "2016-06-24 23:00:38"
         },
         {
+            "name": "intervention/image",
+            "version": "2.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "4064a980324f6c3bfa2bd981dfb247afa705ec3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/4064a980324f6c3bfa2bd981dfb247afa705ec3c",
+                "reference": "4064a980324f6c3bfa2bd981dfb247afa705ec3c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2016-09-01 17:04:03"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -1568,16 +1633,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.18",
+            "version": "v5.3.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "9bee167d173857c25966c19afdaa66f127ca6784"
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/9bee167d173857c25966c19afdaa66f127ca6784",
-                "reference": "9bee167d173857c25966c19afdaa66f127ca6784",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
+                "reference": "f1a5bb417b3e0d1949fe84617eacd1a14d75d7f1",
                 "shasum": ""
             },
             "require": {
@@ -1659,7 +1724,7 @@
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~2.0).",
                 "symfony/css-selector": "Required to use some of the crawler integration testing tools (3.1.*).",
                 "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (3.1.*).",
-                "symfony/psr-http-message-bridge": "Required to psr7 bridging features (0.2.*)."
+                "symfony/psr-http-message-bridge": "Required to use psr7 bridging features (0.2.*)."
             },
             "type": "library",
             "extra": {
@@ -1692,7 +1757,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-10-08 01:51:20"
+            "time": "2016-10-17 19:35:14"
         },
         {
             "name": "laravelcollective/html",
@@ -1755,20 +1820,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.28",
+            "version": "1.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044"
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
-                "reference": "a9663643ff2d16d7f66ed1e0d3212c5491bc9044",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
@@ -1834,7 +1899,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-07 12:20:37"
+            "time": "2016-10-19 20:38:46"
         },
         {
             "name": "monolog/monolog",
@@ -2198,16 +2263,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -2242,7 +2307,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03 06:00:07"
+            "time": "2016-10-17 15:23:22"
         },
         {
             "name": "psr/http-message",
@@ -4952,17 +5017,17 @@
     "stability-flags": {
         "laravelcollective/html": 20,
         "gsmeira/laravel-multialerts": 20,
-        "gsmeira/laravel-tracker": 20,
+        "gsmeira/laravel-routetracker": 20,
         "gsmeira/laravel-assist": 20,
         "gsmeira/laravel-rulebuilder": 20,
-        "gsmeira/laravel-thumbnail": 20,
+        "gsmeira/laravel-thumbmaker": 20,
         "gsmeira/laravel-filebox": 20,
         "gsmeira/laravel-metatags": 20,
         "gsmeira/laravel-sysval": 20,
         "gsmeira/laravel-recaptcha": 20,
-        "gsmeira/laravel-input": 20,
+        "gsmeira/laravel-inputchecker": 20,
         "gsmeira/laravel-throttle": 20,
-        "gsmeira/laravel-toggle": 20,
+        "gsmeira/laravel-togglelink": 20,
         "gsmeira/laravel-humanval": 20,
         "gsmeira/laravel-uplab": 20,
         "gsmeira/laravel-clock": 20

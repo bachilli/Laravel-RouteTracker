@@ -44,6 +44,15 @@ interface GameRepository
     public function findById($id, $columns = [ '*' ]);
 
     /**
+     * Retorna um dado jogo através do campo slug.
+     *
+     * @param $slug
+     * @param array $columns
+     * @return mixed
+     */
+    public function findBySlug($slug, $columns = [ '*' ]);
+
+    /**
      * Cria um novo jogo.
      *
      * @param $values
@@ -70,4 +79,12 @@ interface GameRepository
      * @throws Exception
      */
     public function destroy($game);
+
+    /**
+     * Publica ou despublica um artigo.
+     *
+     * @param $game
+     * @return bool
+     */
+    public function publish($game);
 }

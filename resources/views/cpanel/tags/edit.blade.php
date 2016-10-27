@@ -8,7 +8,7 @@
     <h3 class="card-title">{{ trans('tags.edit') }}</h3>
     <hr>
     {!! Form::model($tag, [ 'method' => 'PATCH', 'action' => [ 'CPanel\TagController@update', $tag->id, 'files' => true ] ]) !!}
-    @include('cpanel.tags.partials.form', [ 'submitButtonText' => trans('general.update'), 'isUpdate' => true ])
+      @include('cpanel.tags.partials.form', [ 'submitButtonText' => trans('general.update'), 'isUpdate' => true ])
     {!! Form::close() !!}
   </div>
 @endsection

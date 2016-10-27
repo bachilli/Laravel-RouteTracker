@@ -10,19 +10,25 @@ use App\Repositories\Tag\TagRepository;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+/**
+ * Classe responsável pelas tags dos jogos.
+ *
+ * @package App\Http\Controllers\CPanel
+ */
 class TagController extends Controller
 {
     /**
-     * Repositório de CRUD das tags.
+     * Repositório da entidade tags.
      *
      * @var TagRepository
      */
     private $tagRepository;
 
     /**
-     * Construtor das tags dos jogos.
+     * Construtor da funcionalidade tags.
      *
      * @param TagRepository $tagRepository
+     * @return void
      */
     public function __construct(TagRepository $tagRepository)
     {
@@ -85,12 +91,12 @@ class TagController extends Controller
         $tag = $this->tagRepository->store($request->all());
 
         if (! empty($tag)) {
-            multialerts()->success('tags.successfully_stored', [ 'name' => $tag->name ])->put();
+            multi_alerts()->success('tags.successfully_stored', [ 'name' => $tag->name ])->put();
 
             return to('CPanel\TagController@index');
         }
 
-        multialerts()->danger('tags.store_fail')->put();
+        multi_alerts()->danger('tags.store_fail')->put();
 
         return retry();
     }
@@ -116,12 +122,12 @@ class TagController extends Controller
     public function update(TagUpdateRequest $request, Tag $tag)
     {
         if ($this->tagRepository->update($request->all(), $tag)) {
-            multialerts()->success('tags.successfully_updated', [ 'name' => $tag->name ])->put();
+            multi_alerts()->success('tags.successfully_updated', [ 'name' => $tag->name ])->put();
 
             return to('CPanel\TagController@index');
         }
 
-        multialerts()->danger('tags.update_fail')->put();
+        multi_alerts()->danger('tags.update_fail')->put();
 
         return retry();
     }
@@ -135,9 +141,9 @@ class TagController extends Controller
     public function destroy(Tag $tag)
     {
         if (! empty($tag) && $this->tagRepository->destroy($tag)) {
-            multialerts()->success('tags.successfully_deleted', [ 'name' => $tag->name ])->put();
+            multi_alerts()->success('tags.successfully_deleted', [ 'name' => $tag->name ])->put();
         } else {
-            multialerts()->danger('tags.delete_fail')->put();
+            multi_alerts()->danger('tags.delete_fail')->put();
         }
 
         return to('CPanel\TagController@index');

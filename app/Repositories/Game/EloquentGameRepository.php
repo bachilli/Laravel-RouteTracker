@@ -3,7 +3,6 @@
 namespace App\Repositories\Game;
 
 use App\Models\Game;
-use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +16,9 @@ class EloquentGameRepository implements GameRepository
      */
     public function getAll($columns = [ '*' ])
     {
-        return Game::latest('created_at')->get($columns);
+        $games = Game::latest('created_at');
+
+        return $games->get($columns);
     }
 
     /**
@@ -29,7 +30,9 @@ class EloquentGameRepository implements GameRepository
      */
     public function getPaging($perPage = 15, $columns = [ '*' ])
     {
-        return Game::latest('id')->paginate($perPage, $columns);
+        $games = Game::latest('created_at');
+
+        return $games->paginate($perPage, $columns);
     }
 
     /**
@@ -62,6 +65,18 @@ class EloquentGameRepository implements GameRepository
     }
 
     /**
+     * Retorna um dado jogo através do campo slug.
+     *
+     * @param $slug
+     * @param array $columns
+     * @return mixed
+     */
+    public function findBySlug($slug, $columns = [ '*' ])
+    {
+        return Game::where('slug', $slug)->first($columns);
+    }
+
+    /**
      * Cria um novo jogo.
      *
      * @param $values
@@ -73,23 +88,33 @@ class EloquentGameRepository implements GameRepository
         DB::beginTransaction();
 
         try {
-            $sysVal = sys_val($values);
-
             $game = Game::create([
-                'published_at' => Carbon::now(),
                 'name' => $values['name'],
-                'slug' => $sysVal->slug('name'),
+                'slug' => sys_val($values['name'])->slug(),
                 'excerpt' => $values['excerpt'],
                 'description' => $values['description'],
-                'instructions' => $sysVal->keyTips('instructions'),
-                'dimensions' => $sysVal->dimensions([ 'width', 'height', 'aspect_ratio' ]),
-                'classification' => $values['classification'],
-                'type' => $values['type'],
-                'embed' => $sysVal->embed([ 'embed_src', 'embed_type' ]),
-                'is_published' => $sysVal->bool('is_published'),
-                'file' => $sysVal->uplab('file'),
-                'thumbnail' => $sysVal->uplab('thumbnail')
+                'instructions' => sys_val($values['instructions'])->keytips(),
+                'dimensions' => sys_val([
+                    $values['width'],
+                    $values['height'],
+                    $values['aspect_ratio']
+                ])->dimensions(),
+                'age_range' => $values['age_range'],
+                'embed' => sys_val([
+                    $values['embed_src'],
+                    $values['embed_type']
+                ])->embed(),
+                'file' => sys_val($values['file'])->uplab(),
+                'thumbnail' => sys_val($values['thumbnail'])->uplab(),
+                'published_at' => sys_val($values['published_at'])->date(),
+                'is_visible' => sys_val($values['is_visible'])->boolean()
             ]);
+
+            $tagList = [];
+
+            if (array_key_exists('tag_list', $values)) $tagList = $values['tag_list'];
+
+            $game->tags()->sync($tagList);
 
             DB::commit();
 
@@ -119,15 +144,13 @@ class EloquentGameRepository implements GameRepository
         DB::beginTransaction();
 
         try {
-            $sysVal = sys_val($values);
-
             $previous = (object) [ 'thumbnail' => $game->thumbnail ];
 
             $game->update([
                 'name' => $values['name'],
-                'slug' => $sysVal->slug('name'),
+                'slug' => sys_val($values['name'])->slug(),
                 'description' => $values['description'],
-                'thumbnail' => $sysVal->uplab('thumbnail')
+                'thumbnail' => sys_val($values['thumbnail'])->uplab()
             ]);
 
             DB::commit();
@@ -160,9 +183,35 @@ class EloquentGameRepository implements GameRepository
 
             DB::commit();
 
-            storage()->deleteDirectory($game->thumbnail->dir);
+            uplab($game->thumbnail)->delete();
 
             return $game;
+        } catch (Exception $e) {
+            DB::rollback();
+
+            if (env('APP_DEBUG')) throw $e;
+
+            return false;
+        }
+    }
+
+    /**
+     * Publica ou despublica um artigo.
+     *
+     * @param $game
+     * @return bool
+     * @throws Exception
+     */
+    public function publish($game)
+    {
+        DB::beginTransaction();
+
+        try {
+            $game->update([ 'is_visible' => ! $game->is_visible ]);
+
+            DB::commit();
+
+            return true;
         } catch (Exception $e) {
             DB::rollback();
 

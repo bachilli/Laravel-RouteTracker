@@ -28,20 +28,9 @@ class BaseModel extends Model
         parent::boot();
 
         static::saving(function($model) {
-            self::setNullables($model);
+            foreach ($model->nullable as $field) {
+                if ($model->{$field} === '') $model->{$field} = null;
+            }
         });
-    }
-
-    /**
-     * Atribui "null" aos campos que podem ser nulos.
-     *
-     * @param object $model
-     * @return void
-     */
-    protected static function setNullables($model)
-    {
-        foreach ($model->nullable as $field) {
-            if ($model->{$field} === '') $model->{$field} = null;
-        }
     }
 }

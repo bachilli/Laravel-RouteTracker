@@ -11,6 +11,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * Construtor do controlador base da aplicação.
+     *
+     * @return void
+     */
     public function __construct()
     {
         // ...

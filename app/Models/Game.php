@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 class Game extends BaseModel
 {
     /**
@@ -17,19 +19,18 @@ class Game extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'published_at',
         'name',
         'slug',
         'excerpt',
         'description',
         'instructions',
         'dimensions',
-        'classification',
-        'type',
+        'age_range',
         'embed',
-        'is_published',
+        'is_visible',
         'file',
-        'thumbnail'
+        'thumbnail',
+        'published_at'
     ];
 
     /**
@@ -38,17 +39,16 @@ class Game extends BaseModel
      * @var array
      */
     protected $nullable = [
-        'published_at',
         'excerpt',
         'description',
         'instructions',
         'dimensions',
-        'classification',
-        'type',
+        'age_range',
         'embed',
-        'is_published',
         'file',
-        'thumbnail'
+        'thumbnail',
+        'published_at',
+        'is_visible'
     ];
 
     /**
@@ -68,6 +68,19 @@ class Game extends BaseModel
         'instructions' => 'object',
         'dimensions' => 'object',
         'file' => 'object',
-        'thumbnail' => 'object'
+        'thumbnail' => 'object',
+        'is_visible' => 'integer'
     ];
+
+    /**
+     * Retorna as tags associadas aos jogos.
+     *
+     * @return BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'categorizations')
+            ->withTimestamps()
+            ->orderBy('name', 'ASC');
+    }
 }

@@ -25,16 +25,4 @@ class TagUpdateRequest extends Request
     {
         return [];
     }
-
-    /**
-     * Filtragem e tratamento dos inputs.
-     *
-     * @return array
-
-    public function all()
-    {
-        $input = (object) parent::all();
-
-        return (array) $input;
-    }*/
 }

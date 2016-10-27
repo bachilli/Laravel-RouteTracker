@@ -16,7 +16,9 @@ class EloquentTagRepository implements TagRepository
      */
     public function getAll($columns = [ '*' ])
     {
-        return Tag::latest('created_at')->get($columns);
+        $tags = Tag::latest('created_at');
+
+        return $tags->get($columns);
     }
 
     /**
@@ -28,7 +30,9 @@ class EloquentTagRepository implements TagRepository
      */
     public function getPaging($perPage = 15, $columns = [ '*' ])
     {
-        return Tag::latest('id')->paginate($perPage, $columns);
+        $tags = Tag::latest('created_at');
+
+        return $tags->paginate($perPage, $columns);
     }
 
     /**
@@ -61,6 +65,18 @@ class EloquentTagRepository implements TagRepository
     }
 
     /**
+     * Retorna uma dada tag através do campo slug.
+     *
+     * @param $slug
+     * @param array $columns
+     * @return mixed
+     */
+    public function findBySlug($slug, $columns = [ '*' ])
+    {
+        return Tag::where('slug', $slug)->first($columns);
+    }
+
+    /**
      * Cria uma nova tag.
      *
      * @param $values
@@ -72,13 +88,13 @@ class EloquentTagRepository implements TagRepository
         DB::beginTransaction();
 
         try {
-            $sysVal = sys_val($values);
-
             $tag = Tag::create([
                 'name' => $values['name'],
-                'slug' => $sysVal->slug('name'),
+                'slug' => sys_val($values['name'])->slug(),
                 'description' => $values['description'],
-                'thumbnail' => $sysVal->uplab('thumbnail')
+                'thumbnail' => sys_val($values['thumbnail'])->uplab(),
+                'published_at' => sys_val($values['published_at'])->date(),
+                'is_visible' => sys_val($values['is_visible'])->boolean()
             ]);
 
             DB::commit();
@@ -108,15 +124,15 @@ class EloquentTagRepository implements TagRepository
         DB::beginTransaction();
 
         try {
-            $sysVal = sys_val($values);
-
             $previous = (object) [ 'thumbnail' => $tag->thumbnail ];
 
             $tag->update([
                 'name' => $values['name'],
-                'slug' => $sysVal->slug('name'),
+                'slug' => sys_val($values['name'])->slug(),
                 'description' => $values['description'],
-                'thumbnail' => $sysVal->uplab('thumbnail')
+                'thumbnail' => sys_val($values['thumbnail'])->uplab(),
+                'published_at' => sys_val($values['published_at'])->date(),
+                'is_visible' => sys_val($values['is_visible'])->boolean()
             ]);
 
             DB::commit();
