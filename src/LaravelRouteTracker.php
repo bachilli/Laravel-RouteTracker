@@ -53,6 +53,7 @@ class LaravelRouteTracker
      * Laravel-RouteTracker class constructor.
      *
      * @param array $namespace
+     * @return void
      */
     public function __construct($namespace)
     {
