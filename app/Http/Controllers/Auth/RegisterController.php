@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 
-/**
- * Classe que realiza o registro do usuário.
- *
- * @package App\Http\Controllers\Auth
- */
 class RegisterController extends Controller
 {
+    /**
+     * ...
+     *
+     * @return void
+     */
     public function __construct()
     {
         // ...

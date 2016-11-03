@@ -26,7 +26,7 @@ class Publication extends BaseModel
     ];
 
     /**
-     * The attributes that should be casted to native types.
+     * Atributos que devem ser convertidos para seus tipos nativos.
      *
      * @var array
      */

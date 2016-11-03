@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 
-/**
- * Classe que realiza a recuperação de senha do usuário.
- *
- * @package App\Http\Controllers\Auth
- */
 class RecoverController extends Controller
 {
+    /**
+     * ...
+     *
+     * @return void
+     */
     public function __construct()
     {
         // ...

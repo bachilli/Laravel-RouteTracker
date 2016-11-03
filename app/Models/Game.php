@@ -19,6 +19,7 @@ class Game extends BaseModel
      * @var array
      */
     protected $fillable = [
+        'distributor_id',
         'name',
         'slug',
         'excerpt',
@@ -28,7 +29,6 @@ class Game extends BaseModel
         'age_range',
         'embed',
         'is_visible',
-        'file',
         'thumbnail',
         'published_at'
     ];
@@ -39,16 +39,15 @@ class Game extends BaseModel
      * @var array
      */
     protected $nullable = [
+        'distributor_id',
         'excerpt',
         'description',
         'instructions',
         'dimensions',
         'age_range',
         'embed',
-        'file',
-        'thumbnail',
-        'published_at',
-        'is_visible'
+        'is_visible',
+        'thumbnail'
     ];
 
     /**
@@ -59,7 +58,7 @@ class Game extends BaseModel
     protected $dates = [ 'published_at' ];
 
     /**
-     * The attributes that should be casted to native types.
+     * Atributos que devem ser convertidos para seus tipos nativos.
      *
      * @var array
      */
@@ -67,10 +66,28 @@ class Game extends BaseModel
         'embed' => 'object',
         'instructions' => 'object',
         'dimensions' => 'object',
-        'file' => 'object',
         'thumbnail' => 'object',
         'is_visible' => 'integer'
     ];
+
+    /**
+     * Campos do tipo uplab da tabela.
+     *
+     * @var array
+     */
+    protected $uplab = [
+        'thumbnail'
+    ];
+
+    /**
+     * Retorna a lista de tags associadas ao artigo.
+     *
+     * @return array
+     */
+    public function getTagListAttribute()
+    {
+        return $this->tags->pluck('id')->toArray();
+    }
 
     /**
      * Retorna as tags associadas aos jogos.

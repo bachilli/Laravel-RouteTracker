@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests\CPanel\Distributor;
 
-use App\Http\Requests\Request;
+use App\Http\Requests\BaseRequest;
 use GSMeira\LaravelRuleBuilder\LaravelRuleBuilder;
 
-class DistributorUpdateRequest extends Request
+class DistributorUpdateRequest extends BaseRequest
 {
     /**
      * O usuário é autorizado a realizar está requisição?

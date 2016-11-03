@@ -12,11 +12,11 @@ class EloquentDistributorRepository implements DistributorRepository
      * Retorna todas as fontes de conteúdo existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function getAll($columns = [ '*' ])
     {
-        return Distributor::latest('created_at')->get($columns);
+        return Distributor::latest('id')->latest('created_at')->get($columns);
     }
 
     /**
@@ -24,11 +24,11 @@ class EloquentDistributorRepository implements DistributorRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function getPaging($perPage = 15, $columns = [ '*' ])
     {
-        return Distributor::latest('created_at')->paginate($perPage, $columns);
+        return Distributor::latest('id')->latest('created_at')->paginate($perPage, $columns);
     }
 
     /**
@@ -37,12 +37,13 @@ class EloquentDistributorRepository implements DistributorRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
     {
         return Distributor::where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
+            ->latest('id')
             ->latest('created_at')
             ->paginate($perPage, $columns)
             ->appends([ 'q' => $q ]);
@@ -53,7 +54,7 @@ class EloquentDistributorRepository implements DistributorRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function findById($id, $columns = [ '*' ])
     {
@@ -64,7 +65,7 @@ class EloquentDistributorRepository implements DistributorRepository
      * Cria uma nova fonte de conteúdo.
      *
      * @param $values
-     * @return Distributor|bool
+     * @return Distributor|null
      * @throws Exception
      */
     public function store($values)
@@ -87,9 +88,7 @@ class EloquentDistributorRepository implements DistributorRepository
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
@@ -98,7 +97,7 @@ class EloquentDistributorRepository implements DistributorRepository
      *
      * @param $values
      * @param $distributor
-     * @return Distributor|bool
+     * @return Distributor|null
      * @throws Exception
      */
     public function update($values, $distributor)
@@ -119,13 +118,11 @@ class EloquentDistributorRepository implements DistributorRepository
 
             uplab($values['thumbnail'])->persist($distributor->thumbnail, $previous->thumbnail);
 
-            return true;
+            return $distributor;
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
@@ -133,7 +130,7 @@ class EloquentDistributorRepository implements DistributorRepository
      * Faz a exclusão de uma fonte de conteúdo.
      *
      * @param $distributor
-     * @return Distributor|bool
+     * @return Distributor|null
      * @throws Exception
      */
     public function destroy($distributor)
@@ -151,9 +148,7 @@ class EloquentDistributorRepository implements DistributorRepository
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 }

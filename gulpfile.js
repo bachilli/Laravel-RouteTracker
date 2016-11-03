@@ -87,8 +87,8 @@ elixir(function (mix) {
     'node_modules/jquery-ui-timepicker-addon/dist/jquery-ui-timepicker-addon.js',
     'node_modules/jquery-text-counter/textcounter.js',
     'node_modules/jquery-mask-plugin/dist/jquery.mask.js',
-    'resources/assets/js/_common/uplab.js',
-    'resources/assets/js/cpanel/tweaks.js'
+    'resources/assets/js/_common/jquery.uplab.js',
+    'resources/assets/js/_common/jquery.slugger.js'
   ], 'public/js/cpanel.js', __dirname);
 
   //
@@ -130,7 +130,7 @@ gulp.task('compress', function () {
     .pipe(debug())
     .pipe(htmlmin({
       collapseWhitespace: true,
-      removeAttributeQuotes: true,
+      // removeAttributeQuotes: true,
       removeComments: true,
       minifyJS: true
     }))

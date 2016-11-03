@@ -2,13 +2,16 @@
 
 namespace App\Repositories\Tag;
 
+use App\Models\Tag;
+use Exception;
+
 interface TagRepository
 {
     /**
      * Retorna todas as tags existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function getAll($columns = [ '*' ]);
 
@@ -17,7 +20,7 @@ interface TagRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function getPaging($perPage = 15, $columns = [ '*' ]);
 
@@ -27,7 +30,7 @@ interface TagRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
 
@@ -36,7 +39,7 @@ interface TagRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function findById($id, $columns = [ '*' ]);
 
@@ -45,7 +48,7 @@ interface TagRepository
      *
      * @param $slug
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function findBySlug($slug, $columns = [ '*' ]);
 
@@ -53,7 +56,8 @@ interface TagRepository
      * Cria uma nova tag.
      *
      * @param $data
-     * @return mixed
+     * @return Tag|null
+     * @throws Exception
      */
     public function store($data);
 
@@ -62,7 +66,8 @@ interface TagRepository
      *
      * @param $data
      * @param $tag
-     * @return bool
+     * @return Tag|null
+     * @throws Exception
      */
     public function update($data, $tag);
 
@@ -70,7 +75,17 @@ interface TagRepository
      * Faz a exclusão de uma tag.
      *
      * @param $tag
-     * @return bool
+     * @return Tag|null
+     * @throws Exception
      */
     public function destroy($tag);
+
+    /**
+     * Torna visível ou invisível um artigo.
+     *
+     * @param $tag
+     * @return Tag|null
+     * @throws Exception
+     */
+    public function visibility($tag);
 }

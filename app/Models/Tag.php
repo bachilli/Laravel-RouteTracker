@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 class Tag extends BaseModel
 {
     /**
@@ -19,14 +21,15 @@ class Tag extends BaseModel
     protected $fillable = [
         'name',
         'slug',
+        'excerpt',
         'description',
         'thumbnail',
-        'published_at',
+        'icon',
         'is_visible'
     ];
 
     /**
-     * The attributes that should be casted to native types.
+     * Atributos que devem ser convertidos para seus tipos nativos.
      *
      * @var array
      */
@@ -34,4 +37,16 @@ class Tag extends BaseModel
         'thumbnail' => 'array',
         'is_visible' => 'integer'
     ];
+
+    /**
+     * Retorna as tags associadas aos jogos.
+     *
+     * @return belongsTo
+     */
+    public function games()
+    {
+        return $this->belongsToMany(Game::class, 'categorizations')
+            ->withTimestamps()
+            ->orderBy('name', 'ASC');
+    }
 }

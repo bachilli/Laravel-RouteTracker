@@ -10995,6 +10995,144 @@ return $.ui.keyCode = {
   'use strict';
 
   var $document = $(document),
+      _token = $('meta[name="_token"]').attr('content');
+
+  /**
+   * Slugger wrapper.
+   *
+   * @returns {Slugger}
+   */
+  var Slugger = function () {
+
+    function Slugger(element, options) {
+      var _ = this,
+          $element = $(element),
+          defaults = {
+        url: '',
+        input: '',
+        output: ''
+      };
+
+      _.settings = $.extend({}, defaults, options);
+
+      var $input = $(_.settings.input),
+          $output = $(_.settings.output);
+
+      var trigger = function trigger() {
+        var str = $input.val().length != 0 ? $input.val() : $element.val();
+
+        if (str.length != 0) {
+          _.makeSlug(str, $output);
+        } else {
+          _.output('', $output);
+        }
+      };
+
+      $element.add($input).is(trigger);
+      $element.add($input).keyup(trigger);
+      $element.add($input).focusin(trigger);
+      $element.add($input).focusout(trigger);
+    }
+
+    /**
+     * Faz a requisição que irá retornar a string na forma de slug.
+     *
+     * @param str
+     * @param $output
+     */
+    Slugger.prototype.makeSlug = function (str, $output) {
+      var _ = this;
+
+      $.ajax({
+        url: _.settings.url,
+        type: 'POST',
+        data: {
+          'str': str,
+          '_token': _token
+        },
+        dataType: 'json',
+
+        /**
+         * ...
+         *
+         * @param response
+         */
+        success: function success(response) {
+          if (response.success) {
+            _.output(response.str, $output);
+          }
+        }
+      });
+    };
+
+    /**
+     * ....
+     *
+     * @param str
+     * @param $output
+     */
+    Slugger.prototype.output = function (str, $output) {
+      if ($output.is('input') || $output.is('textarea')) {
+        $output.val(str);
+      } else {
+        $output.html(str);
+      }
+    };
+
+    return Slugger;
+  }();
+
+  $.fn.slugger = function (options) {
+    var _ = this,
+        l = _.length,
+        i;
+
+    for (i = 0; i < l; i++) {
+      _[i] = new Slugger(_[i], options);
+    }
+
+    return _;
+  };
+
+  $document.ready(function () {
+    dataSearch();
+  });
+
+  /**
+   * ...
+   *
+   * @return {undefined}
+   */
+  function dataSearch() {
+    var $sluggers = $('[data-slugger]');
+
+    $sluggers.each(function () {
+      var $el = $(this),
+          url = $el.data('slugger'),
+          input = $el.data('slugger-input'),
+          output = $el.data('slugger-output');
+
+      $el.slugger({
+        url: url,
+        input: input,
+        output: output
+      });
+    });
+  }
+})(jQuery, window, document);
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+"use strict";
+'use strict';
+
+;(function ($, window, document, undefined) {
+
+  'use strict';
+
+  var $document = $(document),
       instances = [],
       _token = $('meta[name="_token"]').attr('content');
 
@@ -11212,6 +11350,15 @@ return $.ui.keyCode = {
   };
 
   $document.ready(function () {
+    dataSearch();
+  });
+
+  /**
+   * ...
+   *
+   * @return {undefined}
+   */
+  function dataSearch() {
     var $uplabs = $('[data-uplab]');
 
     $uplabs.each(function () {
@@ -11235,50 +11382,62 @@ return $.ui.keyCode = {
         trans: trans
       });
     });
-  });
+  }
 })(jQuery, window, document);
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 'use strict';
 
 //
-// Vars
+// Scripts Requeridos ---------------------------
 //
 
 window._ = __webpack_require__(19);
 window.$ = window.jQuery = __webpack_require__(0);
 window.Tether = __webpack_require__(21);
 
-//
-// Requires
-//
-
 __webpack_require__(14);
 __webpack_require__(20);
 __webpack_require__(16);
 __webpack_require__(18);
 
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-"use strict";
-'use strict';
+//
+// Inicializações -------------------------------
+//
 
 $(document).ready(function () {
+  initializations();
+});
+
+/**
+ * Realiza as inicializações necessárias.
+ *
+ * @return {undefined}
+ */
+function initializations() {
+  // Fancybox
   $(".fancybox").fancybox();
 
+  // Tooltip
   $('[data-toggle="tooltip"]').tooltip();
 
-  $('.select2').select2({
-    width: '100%',
-    minimumResultsForSearch: 10
-  });
-});
+  // Popover
+  $('[data-toggle="popover"]').popover();
+
+  // Select2
+  var $select2 = {
+    options: {
+      width: '100%',
+      minimumResultsForSearch: 10
+    }
+  };
+
+  $('.select2').select2($select2.options);
+}
 
 /***/ },
 /* 7 */
@@ -48035,7 +48194,7 @@ module.exports = function(module) {
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
-__webpack_require__(5);
+__webpack_require__(6);
 __webpack_require__(8);
 __webpack_require__(11);
 __webpack_require__(7);
@@ -48043,8 +48202,8 @@ __webpack_require__(13);
 __webpack_require__(12);
 __webpack_require__(10);
 __webpack_require__(9);
-__webpack_require__(4);
-module.exports = __webpack_require__(6);
+__webpack_require__(5);
+module.exports = __webpack_require__(4);
 
 
 /***/ }

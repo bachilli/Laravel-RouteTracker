@@ -34,7 +34,7 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $games = $this->gameRepository->getPaging();
+        $games = $this->gameRepository->getPaging(500);
 
         meta_tags()->title('Título...');
         meta_tags()->description('Descrição...');

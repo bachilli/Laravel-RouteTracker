@@ -29,6 +29,11 @@ class PublicationController extends Controller
         $this->publicationRepository = $publicationRepository;
     }
 
+    /**
+     * Retorna todos as publicações cadastradas.
+     *
+     * @return View
+     */
     public function index()
     {
         $publications = $this->publicationRepository->getPaging();
@@ -37,7 +42,7 @@ class PublicationController extends Controller
     }
 
     /**
-     * Visão geral das fontes de conteúdo.
+     * ...
      *
      * @return View
      */
@@ -47,7 +52,7 @@ class PublicationController extends Controller
     }
 
     /**
-     * Retorna a tag cadastrada.
+     * ...
      *
      * @param Publication $publication
      * @return View
@@ -55,15 +60,5 @@ class PublicationController extends Controller
     public function show(Publication $publication)
     {
         return view('cpanel.publications.show', compact('publication'));
-    }
-
-    /**
-     * ...
-     *
-     * @param Publication $publication
-     */
-    public function famobi(Publication $publication)
-    {
-        // ...
     }
 }

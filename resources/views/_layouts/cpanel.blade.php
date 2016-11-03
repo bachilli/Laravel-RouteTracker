@@ -15,25 +15,31 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Principal</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{ action('CPanel\GameController@index') }}">{{ trans('general.games') }}</a>
-              <a class="dropdown-item" href="{{ action('CPanel\TagController@index') }}">{{ trans('general.tags') }}</a>
+              <a class="dropdown-item" href="{{ action('CPanel\GameController@index') }}">{{ __('general.games') }}</a>
+              <a class="dropdown-item" href="{{ action('CPanel\TagController@index') }}">{{ __('general.tags') }}</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Conteúdo</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{ action('CPanel\DistributorController@index') }}">{{ trans('general.distributors') }}</a>
-              <a class="dropdown-item" href="{{ action('CPanel\PublicationController@index') }}">{{ trans('general.publications') }}</a>
+              <a class="dropdown-item" href="{{ action('CPanel\DistributorController@index') }}">{{ __('general.distributors') }}</a>
+              <a class="dropdown-item" href="{{ action('CPanel\PublicationController@index') }}">{{ __('general.publications') }}</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Gerenciamento</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">{{ trans('general.users') }}</a>
-              <a class="dropdown-item" href="#">{{ trans('general.options') }}</a>
+              <a class="dropdown-item" href="#">{{ __('general.users') }}</a>
             </div>
           </li>
-          <li class="nav-item pull-xs-right"><a class="nav-link" href="#">{{ trans('general.logout') }}</a></li>
+          <li class="nav-item dropdown pull-xs-right">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Gustavo</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">{{ __('general.profile') }}</a>
+              <a class="dropdown-item" href="#">{{ __('general.logout') }}</a>
+            </div>
+          </li>
+          <li class="nav-item pull-xs-right"><a class="nav-link" href="{{ action('Primary\HomepageController@index') }}" target="_blank">&larr; {{ __('general.go_to_site') }}</a></li>
         </ul>
       </div>
     </nav>

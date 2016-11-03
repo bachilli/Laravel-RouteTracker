@@ -11,7 +11,7 @@ interface GameRepository
      * Retorna todos os jogos existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function getAll($columns = [ '*' ]);
 
@@ -20,7 +20,7 @@ interface GameRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function getPaging($perPage = 15, $columns = [ '*' ]);
 
@@ -30,7 +30,7 @@ interface GameRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
 
@@ -39,7 +39,7 @@ interface GameRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function findById($id, $columns = [ '*' ]);
 
@@ -48,7 +48,7 @@ interface GameRepository
      *
      * @param $slug
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function findBySlug($slug, $columns = [ '*' ]);
 
@@ -56,7 +56,7 @@ interface GameRepository
      * Cria um novo jogo.
      *
      * @param $values
-     * @return Game|bool
+     * @return Game|null
      * @throws Exception
      */
     public function store($values);
@@ -66,7 +66,7 @@ interface GameRepository
      *
      * @param $values
      * @param $game
-     * @return Game|bool
+     * @return Game|null
      * @throws Exception
      */
     public function update($values, $game);
@@ -75,16 +75,17 @@ interface GameRepository
      * Faz a exclusão de um jogo.
      *
      * @param $game
-     * @return Game|bool
+     * @return Game|null
      * @throws Exception
      */
     public function destroy($game);
 
     /**
-     * Publica ou despublica um artigo.
+     * Torna visível ou invisível um artigo.
      *
      * @param $game
-     * @return bool
+     * @return Game|null
+     * @throws Exception
      */
-    public function publish($game);
+    public function visibility($game);
 }

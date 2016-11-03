@@ -30,11 +30,11 @@ class DistributorsTableSeeder extends Seeder
         return [
             [
                 // 1
-                'name' => 'Famobi'
+                'name' => 'SpilGames'
             ],
             [
                 // 2
-                'name' => 'ClickJogos'
+                'name' => 'Famobi'
             ]
         ];
     }

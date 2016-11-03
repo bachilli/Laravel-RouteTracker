@@ -48,10 +48,14 @@ return [
     'publication' => 'Publicação',
     'games' => 'Games',
     'game' => 'Game',
+    'images' => 'Imagens',
+    'image' => 'Imagem',
     'distributors' => 'Distribuidoras',
     'distributor' => 'Distribuidora',
     'tags' => 'Tags',
     'tag' => 'Tag',
+    'profiles' => 'Perfis',
+    'profile' => 'Perfil',
 
     // ----------------
 
@@ -82,8 +86,27 @@ return [
     'updated_at' => 'Data de Atualização',
     'published_at' => 'Data de Publicação',
     'is_visible' => 'Visível?',
-    'embed_type' => 'Tipo Embed',
-    'embed_src' => 'SRC Embed',
-    'file' => 'Arquivo'
+    'url' => 'URL',
+    'is_responsive' => 'Responsivo?',
+    'file' => 'Arquivo',
+    'not_specified' => 'Não Especificado',
+    'inside' => 'Interno',
+    'outside' => 'Externo',
+    'dimensions' => 'Dimensões',
+    'embed' => 'Embed',
+    'embed_url' => 'Embed URL',
+    'embed_type' => 'Embed Type',
+
+    // ----------------
+
+    'basic_information' => 'Informações Básicas',
+    'extra_information' => 'Informações Extras',
+    'publication_information' => 'Informações para Publicação',
+
+    // ----------------
+
+    'see_on_site' => 'Ver no site',
+    'go_to_site' => 'Ir para site',
+    'choose_a_option' => 'Escolha uma opção',
 
 ];

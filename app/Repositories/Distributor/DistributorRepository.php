@@ -11,7 +11,7 @@ interface DistributorRepository
      * Retorna todas as fontes de conteúdo existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function getAll($columns = [ '*' ]);
 
@@ -20,7 +20,7 @@ interface DistributorRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function getPaging($perPage = 15, $columns = [ '*' ]);
 
@@ -30,7 +30,7 @@ interface DistributorRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
 
@@ -39,7 +39,7 @@ interface DistributorRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Distributor
      */
     public function findById($id, $columns = [ '*' ]);
 
@@ -47,7 +47,7 @@ interface DistributorRepository
      * Cria uma nova fonte de conteúdo.
      *
      * @param $values
-     * @return Distributor|bool
+     * @return Distributor|null
      * @throws Exception
      */
     public function store($values);
@@ -57,7 +57,7 @@ interface DistributorRepository
      *
      * @param $values
      * @param $distributor
-     * @return Distributor|bool
+     * @return Distributor|null
      * @throws Exception
      */
     public function update($values, $distributor);
@@ -66,7 +66,7 @@ interface DistributorRepository
      * Faz a exclusão de uma fonte de conteúdo.
      *
      * @param $distributor
-     * @return Distributor|bool
+     * @return Distributor|null
      * @throws Exception
      */
     public function destroy($distributor);

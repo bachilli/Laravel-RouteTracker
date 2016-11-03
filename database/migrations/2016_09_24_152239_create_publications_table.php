@@ -23,6 +23,7 @@ class CreatePublicationsTable extends Migration
             $table->json('data');
             $table->timestamps();
 
+            // Define a chave ESTRANGEIRA: distributor_id.
             $table->foreign('distributor_id')->references('id')->on('distributors')->onDelete('cascade');
         });
     }

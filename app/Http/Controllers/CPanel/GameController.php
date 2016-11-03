@@ -10,11 +10,6 @@ use App\Repositories\Game\GameRepository;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
-/**
- * Classe responsável pelos jogos do site.
- *
- * @package App\Http\Controllers\CPanel
- */
 class GameController extends Controller
 {
     /**
@@ -44,7 +39,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = $this->gameRepository->getPaging();
+        $games = $this->gameRepository->getPaging(100);
 
         return view('cpanel.games.index', compact('games'));
     }
@@ -124,7 +119,7 @@ class GameController extends Controller
         if ($this->gameRepository->update($request->all(), $game)) {
             multi_alerts()->success('games.successfully_updated', [ 'name' => $game->name ])->put();
 
-            return to('CPanel\GameController@index');
+            return to('CPanel\GameController@edit', $game->id);
         }
 
         multi_alerts()->danger('games.update_fail')->put();
@@ -150,14 +145,14 @@ class GameController extends Controller
     }
 
     /**
-     * Publica ou despublica um artigo.
+     * Torna um artigo visível ou invisível.
      *
      * @param $game
      * @return Redirect
      */
-    public function publish(Game $game)
+    public function visibility(Game $game)
     {
-        $this->gameRepository->publish($game);
+        $this->gameRepository->visibility($game);
 
         if ($game->is_visible) {
             multi_alerts()->success('games.successfully_visible', [ 'name' => $game->name ])->put();

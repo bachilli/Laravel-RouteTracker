@@ -754,16 +754,21 @@ header {
         width: 500px; } }
 
 .game-player {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-  margin: 20px 0 60px 0; }
+  text-align: center;
+  margin-bottom: 60px; }
   .game-player iframe {
-    position: absolute;
     border: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
+    overflow: hidden; }
+  .game-player--responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    margin: 20px 0 60px 0; }
+    .game-player--responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }

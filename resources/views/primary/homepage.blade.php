@@ -4,7 +4,7 @@
   <div class="container">
     <div class="imgrid hide js-imgrid-loader">
       <div class="row">
-        @forelse($games->where('is_visible', true) as $game)
+        @forelse($games as $game)
           <div class="col-xs-6 col-md-4 col-lg-3">
             <a href="{{ action('Primary\GameController@single', $game->slug)  }}"></a>
             <img src="{{ thumb_maker($game->thumbnail, 288, 216) }}">
@@ -28,10 +28,10 @@
   <script type="text/javascript">
     var $imgrids = $('.js-imgrid-loader');
 
-    $imgrids.each(function () {
+    $imgrids.each(function() {
       var $imgrid = $(this);
 
-      $imgrid.imagesLoaded(function () {
+      $imgrid.imagesLoaded(function() {
         $imgrid.removeClass('hide');
       });
     });

@@ -17,9 +17,11 @@
       {!! Form::open([ 'action' => 'Primary\SearchController@index', 'method' => 'GET' ]) !!}
         {{ Form::text('q', null) }}
       {!! Form::close() !!}
-      @foreach ($tags as $tag)
-        {{ $tag->name }}<br>
-      @endforeach
+      <ul>
+        @foreach ($tags as $tag)
+          <li><a href="{{ action('Primary\TagController@single', $tag->slug) }}">{{ $tag->name }}</a></li>
+        @endforeach
+      </ul>
     </header>
     @yield('content')
     <script src="{{ elixir('js/primary.js') }}"></script>

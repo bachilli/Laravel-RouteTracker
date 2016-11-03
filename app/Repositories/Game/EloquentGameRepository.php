@@ -12,11 +12,11 @@ class EloquentGameRepository implements GameRepository
      * Retorna todos os jogos existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function getAll($columns = [ '*' ])
     {
-        $games = Game::latest('created_at');
+        $games = Game::latest('id')->latest('published_at');
 
         return $games->get($columns);
     }
@@ -26,11 +26,11 @@ class EloquentGameRepository implements GameRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function getPaging($perPage = 15, $columns = [ '*' ])
     {
-        $games = Game::latest('created_at');
+        $games = Game::latest('id')->latest('published_at');
 
         return $games->paginate($perPage, $columns);
     }
@@ -41,13 +41,14 @@ class EloquentGameRepository implements GameRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
     {
         return Game::where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
-            ->latest('created_at')
+            ->latest('id')
+            ->latest('published_at')
             ->paginate($perPage, $columns)
             ->appends([ 'q' => $q ]);
     }
@@ -57,7 +58,7 @@ class EloquentGameRepository implements GameRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function findById($id, $columns = [ '*' ])
     {
@@ -69,7 +70,7 @@ class EloquentGameRepository implements GameRepository
      *
      * @param $slug
      * @param array $columns
-     * @return mixed
+     * @return Game
      */
     public function findBySlug($slug, $columns = [ '*' ])
     {
@@ -80,7 +81,7 @@ class EloquentGameRepository implements GameRepository
      * Cria um novo jogo.
      *
      * @param $values
-     * @return Game|bool
+     * @return Game|null
      * @throws Exception
      */
     public function store($values)
@@ -88,46 +89,21 @@ class EloquentGameRepository implements GameRepository
         DB::beginTransaction();
 
         try {
-            $game = Game::create([
-                'name' => $values['name'],
-                'slug' => sys_val($values['name'])->slug(),
-                'excerpt' => $values['excerpt'],
-                'description' => $values['description'],
-                'instructions' => sys_val($values['instructions'])->keytips(),
-                'dimensions' => sys_val([
-                    $values['width'],
-                    $values['height'],
-                    $values['aspect_ratio']
-                ])->dimensions(),
-                'age_range' => $values['age_range'],
-                'embed' => sys_val([
-                    $values['embed_src'],
-                    $values['embed_type']
-                ])->embed(),
-                'file' => sys_val($values['file'])->uplab(),
-                'thumbnail' => sys_val($values['thumbnail'])->uplab(),
-                'published_at' => sys_val($values['published_at'])->date(),
-                'is_visible' => sys_val($values['is_visible'])->boolean()
-            ]);
+            $game = Game::create($values);
 
-            $tagList = [];
-
-            if (array_key_exists('tag_list', $values)) $tagList = $values['tag_list'];
-
-            $game->tags()->sync($tagList);
+            $game->tags()->sync(
+                array_key_exists('tag_list', $values) ? $values['tag_list'] : []
+            );
 
             DB::commit();
 
-            uplab($values['file'])->persist($game->file);
             uplab($values['thumbnail'])->persist($game->thumbnail);
 
             return $game;
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
@@ -136,7 +112,7 @@ class EloquentGameRepository implements GameRepository
      *
      * @param $values
      * @param $game
-     * @return Game|bool
+     * @return Game|null
      * @throws Exception
      */
     public function update($values, $game)
@@ -144,26 +120,23 @@ class EloquentGameRepository implements GameRepository
         DB::beginTransaction();
 
         try {
-            $previous = (object) [ 'thumbnail' => $game->thumbnail ];
+            $bkp = (object) [ 'thumbnail' => $game->thumbnail ];
 
-            $game->update([
-                'name' => $values['name'],
-                'slug' => sys_val($values['name'])->slug(),
-                'description' => $values['description'],
-                'thumbnail' => sys_val($values['thumbnail'])->uplab()
-            ]);
+            $game->update($values);
+
+            $game->tags()->sync(
+                array_key_exists('tag_list', $values) ? $values['tag_list'] : []
+            );
 
             DB::commit();
 
-            uplab($values['thumbnail'])->persist($game->thumbnail, $previous->thumbnail);
+            uplab($values['thumbnail'])->persist($game->thumbnail, $bkp->thumbnail);
 
-            return true;
+            return $game;
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
@@ -171,7 +144,7 @@ class EloquentGameRepository implements GameRepository
      * Faz a exclusão de um jogo.
      *
      * @param $game
-     * @return Game|bool
+     * @return Game|null
      * @throws Exception
      */
     public function destroy($game)
@@ -189,20 +162,18 @@ class EloquentGameRepository implements GameRepository
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
     /**
-     * Publica ou despublica um artigo.
+     * Torna visível ou invisível um artigo.
      *
      * @param $game
-     * @return bool
+     * @return Tag|
      * @throws Exception
      */
-    public function publish($game)
+    public function visibility($game)
     {
         DB::beginTransaction();
 
@@ -211,13 +182,11 @@ class EloquentGameRepository implements GameRepository
 
             DB::commit();
 
-            return true;
+            return $game;
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 }

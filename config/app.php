@@ -159,9 +159,15 @@ return [
         Illuminate\Redis\RedisServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
-        Illuminate\Validation\ValidationServiceProvider::class,
+        // Illuminate\Translation\TranslationServiceProvider::class,
+        // Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        /*
+         * Extensions of Laravel Service Providers...
+         */
+        App\Extensions\Translation\TranslationServiceProvider::class,
+        App\Extensions\Validation\ValidationServiceProvider::class,
 
         /*
          * Package Service Providers...

@@ -7,8 +7,8 @@ class EmbedTypeComposer
     public function compose($view)
     {
         $embedType = [
-            'INSIDE' => 'Interno',
-            'OUTSIDE' => 'Externo'
+            'INSIDE' => __('general.inside'),
+            'OUTSIDE' => __('general.outside')
         ];
 
         $view->with('embedType', $embedType);

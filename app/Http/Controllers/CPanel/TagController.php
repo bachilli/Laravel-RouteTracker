@@ -10,11 +10,6 @@ use App\Repositories\Tag\TagRepository;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
-/**
- * Classe responsável pelas tags dos jogos.
- *
- * @package App\Http\Controllers\CPanel
- */
 class TagController extends Controller
 {
     /**
@@ -124,7 +119,7 @@ class TagController extends Controller
         if ($this->tagRepository->update($request->all(), $tag)) {
             multi_alerts()->success('tags.successfully_updated', [ 'name' => $tag->name ])->put();
 
-            return to('CPanel\TagController@index');
+            return to('CPanel\TagController@edit', $tag->id);
         }
 
         multi_alerts()->danger('tags.update_fail')->put();
@@ -144,6 +139,25 @@ class TagController extends Controller
             multi_alerts()->success('tags.successfully_deleted', [ 'name' => $tag->name ])->put();
         } else {
             multi_alerts()->danger('tags.delete_fail')->put();
+        }
+
+        return to('CPanel\TagController@index');
+    }
+
+    /**
+     * Torna uma tag visível ou invisível.
+     *
+     * @param $tag
+     * @return Redirect
+     */
+    public function visibility(Tag $tag)
+    {
+        $this->tagRepository->visibility($tag);
+
+        if ($tag->is_visible) {
+            multi_alerts()->success('tags.successfully_visible', [ 'name' => $tag->name ])->put();
+        } else {
+            multi_alerts()->success('tags.successfully_invisible', [ 'name' => $tag->name ])->put();
         }
 
         return to('CPanel\TagController@index');

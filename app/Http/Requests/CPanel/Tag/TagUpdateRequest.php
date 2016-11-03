@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\CPanel\Tag;
 
-use App\Http\Requests\Request;
+use GSMeira\LaravelRuleBuilder\LaravelRuleBuilder;
 
-class TagUpdateRequest extends Request
+class TagUpdateRequest extends TagRequest
 {
     /**
      * O usuário é autorizado a realizar está requisição?
@@ -19,10 +19,18 @@ class TagUpdateRequest extends Request
     /**
      * Regras de validação aplicadas na requisição.
      *
+     * @param LaravelRuleBuilder $validate
      * @return array
      */
-    public function rules()
+    public function rules(LaravelRuleBuilder $validate)
     {
-        return [];
+        $validate->input('name')->present()->required();
+        $validate->input('slug')->present();
+        $validate->input('excerpt')->present();
+        $validate->input('description')->present();
+        $validate->input('thumbnail')->present();
+        $validate->input('is_visible')->present()->in(0, 1);
+
+        return $validate->rules();
     }
 }

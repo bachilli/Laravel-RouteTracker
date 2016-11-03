@@ -7,6 +7,7 @@ class AgeRangeComposer
     public function compose($view)
     {
         $ageRange = [
+            'NOT_SPECIFIED' => __('general.not_specified'),
             'L' => 'L',
             '10' => '10',
             '12' => '12',

@@ -17,6 +17,7 @@ class Distributor extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'name', 'slug'
+        'name',
+        'slug'
     ];
 }

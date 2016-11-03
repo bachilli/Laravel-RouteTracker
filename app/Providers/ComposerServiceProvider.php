@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Composers\DistributorComposer;
 use App\Composers\Game\AgeRangeComposer as GameAgeRangeComposer;
 use App\Composers\Game\EmbedTypeComposer as GameEmbedTypeComposer;
 use App\Composers\Game\TagComposer as GameTagComposer;
@@ -24,6 +25,7 @@ class ComposerServiceProvider extends ServiceProvider
         $compositions['cpanel.tags.edit'] = [ YesOrNoComposer::class ];
 
         $compositions['cpanel.games.create'] = [
+            DistributorComposer::class,
             GameEmbedTypeComposer::class,
             GameAgeRangeComposer::class,
             YesOrNoComposer::class,
@@ -31,6 +33,7 @@ class ComposerServiceProvider extends ServiceProvider
         ];
 
         $compositions['cpanel.games.edit'] = [
+            DistributorComposer::class,
             GameEmbedTypeComposer::class,
             GameAgeRangeComposer::class,
             YesOrNoComposer::class,
@@ -38,7 +41,7 @@ class ComposerServiceProvider extends ServiceProvider
         ];
 
         foreach ($compositions as $view => $composers) {
-            $this->dataShare($composers, $view);
+            $this->compose($composers, $view);
         }
     }
 
@@ -49,7 +52,7 @@ class ComposerServiceProvider extends ServiceProvider
      * @param $view
      * @return void
      */
-    private function dataShare($composers, $view)
+    private function compose($composers, $view)
     {
         foreach ($composers as $composer) {
             $this->app->view->composer($view, $composer);

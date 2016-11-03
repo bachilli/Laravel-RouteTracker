@@ -4,11 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class BaseModel
- *
- * @package App\Acme\Models
- */
 class BaseModel extends Model
 {
     /**
@@ -17,6 +12,13 @@ class BaseModel extends Model
      * @var array
      */
     protected $nullable = [];
+
+    /**
+     * Campos do tipo uplab da tabela.
+     *
+     * @var array
+     */
+    protected $uplab = [];
 
     /**
      * Executa toda vez que um novo registro é salvo no BD.
@@ -28,8 +30,22 @@ class BaseModel extends Model
         parent::boot();
 
         static::saving(function($model) {
+            // Define os campos nulos.
             foreach ($model->nullable as $field) {
-                if ($model->{$field} === '') $model->{$field} = null;
+                if (str_empty($model->{$field})) {
+                    $model->{$field} = null;
+                }
+            }
+
+            // Define os campos do tipo uplab.
+            foreach ($model->uplab as $field) {
+                if (! empty($model->{$field})) {
+                    $model->{$field} = [
+                        'name' => $model->{$field}->name,
+                        'dir' => str_replace('_uplab/', '', $model->{$field}->dir),
+                        'location' => str_replace('_uplab/', '', $model->{$field}->location)
+                    ];
+                }
             }
         });
     }

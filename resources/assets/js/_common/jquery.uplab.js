@@ -1,4 +1,4 @@
-;(function ($, window, document, undefined) {
+;(function($, window, document, undefined) {
 
   'use strict';
 
@@ -11,7 +11,7 @@
    *
    * @returns {Uplab}
    */
-  var Uplab = (function () {
+  var Uplab = (function() {
 
     function Uplab(element, options) {
       var _ = this,
@@ -54,17 +54,17 @@
         }
       };
 
-      $elements.tabs.on('click', function () {
+      $elements.tabs.on('click', function() {
         _.changeOption($uplab, $elements.tabs, $elements.options, $(this));
       });
 
-      $elements.local.input.on('change', function (e) {
+      $elements.local.input.on('change', function(e) {
         _.localFile(e, $elements.result);
-      }).on('click', function () {
+      }).on('click', function() {
         this.value = null;
       });
 
-      $elements.remote.button.on('click', function () {
+      $elements.remote.button.on('click', function() {
         _.remoteFile($elements.result, $elements.remote);
       });
     }
@@ -74,7 +74,7 @@
      *
      * @returns {string}
      */
-    Uplab.prototype.buildComponent = function () {
+    Uplab.prototype.buildComponent = function() {
       var _ = this,
         html = '';
 
@@ -106,7 +106,7 @@
      * @param $options
      * @param $tab
      */
-    Uplab.prototype.changeOption = function ($uplab, $tabs, $options, $tab) {
+    Uplab.prototype.changeOption = function($uplab, $tabs, $options, $tab) {
       var _ = this;
 
       $tabs.removeClass('active');
@@ -122,13 +122,13 @@
      * @param e
      * @param $result
      */
-    Uplab.prototype.localFile = function (e, $result) {
+    Uplab.prototype.localFile = function(e, $result) {
       var _ = this,
         params = new FormData();
 
       params.append('_token', _token);
 
-      $.each(e.target.files, function (key, file) {
+      $.each(e.target.files, function(key, file) {
         params.append('upload', file);
       });
 
@@ -140,8 +140,8 @@
         contentType: false,
         processData: false,
         dataType: 'json',
-        beforeSend: function (xhr) {},
-        success: function (response) {
+        beforeSend: function(xhr) {},
+        success: function(response) {
           if (response.success) {
             $result.html(
               _.showResult(response)
@@ -150,7 +150,7 @@
             window.TopAlert('Sucesso!', { type: 'success', delay: 5000 });
           }
         },
-        error: function (xhr, status, error) {
+        error: function(xhr, status, error) {
           var response = xhr.responseJSON ? xhr.responseJSON : error;
 
           window.TopAlert(response, { type: 'error', delay: 5000 });
@@ -164,7 +164,7 @@
      * @param $result
      * @param $remote
      */
-    Uplab.prototype.remoteFile = function ($result, $remote) {
+    Uplab.prototype.remoteFile = function($result, $remote) {
       var _ = this;
 
       $.ajax({
@@ -175,8 +175,8 @@
           url: $remote.input.val()
         },
         dataType: 'json',
-        beforeSend: function (xhr) {},
-        success: function (response) {
+        beforeSend: function(xhr) {},
+        success: function(response) {
           if (response.success) {
             $result.html(
               _.showResult(response)
@@ -185,7 +185,7 @@
             window.TopAlert('Sucesso!', { type: 'success', delay: 5000 });
           }
         },
-        error: function (xhr, status, error) {
+        error: function(xhr, status, error) {
           var response = xhr.responseJSON ? xhr.responseJSON : error;
 
           window.TopAlert(response, { type: 'error', delay: 5000 });
@@ -199,7 +199,7 @@
      * @param response
      * @returns {string}
      */
-    Uplab.prototype.showResult = function (response) {
+    Uplab.prototype.showResult = function(response) {
       var _ = this,
           html = '';
 
@@ -214,7 +214,7 @@
 
   })();
 
-  $.fn.uplab = function (options) {
+  $.fn.uplab = function(options) {
     var _ = this,
       l = _.length,
       i;
@@ -226,10 +226,19 @@
     return _;
   };
 
-  $document.ready(function () {
+  $document.ready(function() {
+    dataSearch();
+  });
+
+  /**
+   * ...
+   *
+   * @return {undefined}
+   */
+  function dataSearch() {
     var $uplabs = $('[data-uplab]');
 
-    $uplabs.each(function () {
+    $uplabs.each(function() {
       var $el = $(this),
         name = $el.data('uplab'),
         value = $el.data('uplab-value'),
@@ -250,6 +259,6 @@
         trans: trans
       });
     });
-  });
+  }
 
 })(jQuery, window, document);

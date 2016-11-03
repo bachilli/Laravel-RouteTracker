@@ -2,7 +2,7 @@
   <div class="alert alert-{{ $level }}">
     <ul>
       @foreach ($alerts as $alert)
-        <li>{{ $alert['message'] }}</li>
+        <li>{!! $alert['message'] !!}</li>
       @endforeach
     </ul>
   </div>

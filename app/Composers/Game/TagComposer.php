@@ -23,6 +23,11 @@ class TagComposer
         $this->tagRepository = $tagRepository;
     }
 
+    /**
+     * ...
+     *
+     * @param $view
+     */
     public function compose($view)
     {
         $tags = $this->tagRepository->getAll();

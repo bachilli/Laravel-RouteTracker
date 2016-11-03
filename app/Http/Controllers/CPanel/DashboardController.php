@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CPanel;
 
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
@@ -16,6 +17,11 @@ class DashboardController extends Controller
         parent::__construct();
     }
 
+    /**
+     * ...
+     *
+     * @return View
+     */
     public function index()
     {
         return view('cpanel.dashboard.index');

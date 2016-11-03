@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests\CPanel\Tag;
 
-use App\Http\Requests\Request;
 use GSMeira\LaravelRuleBuilder\LaravelRuleBuilder;
 
-class TagStoreRequest extends Request
+class TagStoreRequest extends TagRequest
 {
     /**
      * O usuário é autorizado a realizar está requisição?
@@ -25,12 +24,12 @@ class TagStoreRequest extends Request
      */
     public function rules(LaravelRuleBuilder $validate)
     {
-        $validate->input('name')->required();
-        $validate->input('description')->nullable();
-        $validate->input('thumbnail')->uplab_required('image')
-            ->uplab_size('max=10MB')
-            ->uplab_dimensions('min_width=800,min_height=600')
-            ->uplab_mimes('jpg,png,gif');
+        $validate->input('name')->present()->required();
+        $validate->input('slug')->present();
+        $validate->input('excerpt')->present();
+        $validate->input('description')->present();
+        $validate->input('thumbnail')->present();
+        $validate->input('is_visible')->present()->in(0, 1);
 
         return $validate->rules();
     }

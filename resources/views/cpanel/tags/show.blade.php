@@ -4,36 +4,41 @@
   @include('cpanel.tags.partials.menu')
   <div class="card card-block">
     <h3 class="card-title">
-      {{ trans('general.tag') }}: <strong>{{ $tag->name }}</strong>
+      {{ __('general.tag') }}: <strong>{{ $tag->name }}</strong>
     </h3>
+    <a href="{{ action('Primary\TagController@single', $tag->slug) }}" target="_blank">&larr; {{ __('general.see_on_site') }}</a>
     <hr>
     <table class="table table-show table-bordered">
       <thead>
         <tr>
-          <th class="field w-25 align-right">{{ trans('general.field') }}</th>
-          <th class="value w-75">{{ trans('general.value') }}</th>
+          <th class="column-field w-25 align-right">{{ __('general.field') }}</th>
+          <th class="column-value w-75">{{ __('general.value') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.id') }}</td>
-          <td class="value w-75">{{ $tag->id }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.id') }}</td>
+          <td class="column-value w-75">{{ $tag->id }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.name') }}</td>
-          <td class="value w-75">{{ $tag->name }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.name') }}</td>
+          <td class="column-value w-75">{{ $tag->name }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.slug') }}</td>
-          <td class="value w-75">{{ $tag->slug }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.slug') }}</td>
+          <td class="column-value w-75">{{ $tag->slug }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.description') }}</td>
-          <td class="value w-75">{{ $tag->description }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.excerpt') }}</td>
+          <td class="column-value w-75">{{ $tag->excerpt }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.thumbnail') }}</td>
-          <td class="value w-75">
+          <td class="column-field w-25 align-right">{{ __('general.description') }}</td>
+          <td class="column-value w-75">{{ $tag->description }}</td>
+        </tr>
+        <tr>
+          <td class="column-field w-25 align-right">{{ __('general.thumbnail') }}</td>
+          <td class="column-value w-75">
             @if (uplab($tag->thumbnail)->exists())
               <div class="image">
                 <a class="fancybox" href="{{ uplab($tag->thumbnail)->url() }}">
@@ -46,16 +51,16 @@
           </td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.is_visible') }}</td>
-          <td class="value w-75">{{ human_val($tag->is_visible)->yesOrNo() }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.is_visible') }}</td>
+          <td class="column-value w-75">{{ human_val($tag->is_visible)->str() }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.created_at') }}</td>
-          <td class="value w-75">{{ $tag->created_at }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.created_at') }}</td>
+          <td class="column-value w-75">{{ $tag->created_at }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.updated_at') }}</td>
-          <td class="value w-75">{{ $tag->updated_at }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.updated_at') }}</td>
+          <td class="column-value w-75">{{ $tag->updated_at }}</td>
         </tr>
       </tbody>
       <tfoot>
@@ -65,21 +70,21 @@
               <a class="btn btn-primary btn-lg"
                  href="{{ action('CPanel\TagController@edit', $tag->id) }}"
                  data-toggle="tooltip"
-                 title="{{ trans('general.edit') }}"><i class="fa fa-pencil-square"></i></a>
+                 title="{{ __('general.edit') }}"><i class="fa fa-pencil-square"></i></a>
               <a class="btn btn-danger btn-lg"
                  href="{{ action('CPanel\TagController@destroy', $tag->id) }}"
-                 title="{{ trans('general.destroy') }}"
+                 title="{{ __('general.destroy') }}"
                  data-toggle="tooltip"
                  data-formlink="DELETE"
-                 data-formlink-confirm-text="{{ sprintf('%s %s', trans('general.are_you_sure'), trans('general.destroy_warning')) }}"
+                 data-formlink-confirm-text="{{ sprintf('%s %s', __('general.are_you_sure'), __('general.destroy_warning')) }}"
                  data-formlink-sweat='{
                   "type": "warning",
                   "showCancelButton": "true",
                   "confirmButtonColor": "#d9534f",
-                  "title": "{{ trans('general.are_you_sure') }}",
-                  "text": "{{ trans('general.destroy_warning') }}",
-                  "confirmButtonText": "{{ trans('general.yes_destroy_it') }}",
-                  "cancelButtonText": "{{ trans('general.no_keep_it') }}"
+                  "title": "{{ __('general.are_you_sure') }}",
+                  "text": "{{ __('general.destroy_warning') }}",
+                  "confirmButtonText": "{{ __('general.yes_destroy_it') }}",
+                  "cancelButtonText": "{{ __('general.no_keep_it') }}"
                  }'><i class="fa fa-times"></i></a>
             </div>
           </td>

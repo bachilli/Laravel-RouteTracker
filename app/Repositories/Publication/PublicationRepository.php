@@ -11,7 +11,7 @@ interface PublicationRepository
      * Retorna todos os conteúdos das fontes existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Publication
      */
     public function getAll($columns = [ '*' ]);
 
@@ -20,7 +20,7 @@ interface PublicationRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Publication
      */
     public function getPaging($perPage = 15, $columns = [ '*' ]);
 
@@ -30,7 +30,7 @@ interface PublicationRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Publication
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
 
@@ -39,7 +39,36 @@ interface PublicationRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Publication
      */
     public function findById($id, $columns = [ '*' ]);
+
+    /**
+     * Retorna uma dada publicação através do distribuidor.
+     *
+     * @param $distributorId
+     * @param $type
+     * @param array $columns
+     * @return Publication
+     */
+    public function findByDistributorId($distributorId, $type, $columns = [ '*' ]);
+
+    /**
+     * Verifica se uma dada publicação já existe.
+     *
+     * @param $key
+     * @param $distributorId
+     * @param $type
+     * @return Publication
+     */
+    public function exists($key, $distributorId, $type);
+
+    /**
+     * Cria uma nova publicação.
+     *
+     * @param $values
+     * @return Publication|null
+     * @throws Exception
+     */
+    public function store($values);
 }

@@ -12,11 +12,11 @@ class EloquentTagRepository implements TagRepository
      * Retorna todas as tags existentes.
      *
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function getAll($columns = [ '*' ])
     {
-        $tags = Tag::latest('created_at');
+        $tags = Tag::latest('id')->latest('created_at');
 
         return $tags->get($columns);
     }
@@ -26,11 +26,11 @@ class EloquentTagRepository implements TagRepository
      *
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function getPaging($perPage = 15, $columns = [ '*' ])
     {
-        $tags = Tag::latest('created_at');
+        $tags = Tag::latest('id')->latest('created_at');
 
         return $tags->paginate($perPage, $columns);
     }
@@ -41,12 +41,13 @@ class EloquentTagRepository implements TagRepository
      * @param $q
      * @param int $perPage
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
     {
         return Tag::where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
+            ->latest('id')
             ->latest('created_at')
             ->paginate($perPage, $columns)
             ->appends([ 'q' => $q ]);
@@ -57,7 +58,7 @@ class EloquentTagRepository implements TagRepository
      *
      * @param $id
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function findById($id, $columns = [ '*' ])
     {
@@ -69,7 +70,7 @@ class EloquentTagRepository implements TagRepository
      *
      * @param $slug
      * @param array $columns
-     * @return mixed
+     * @return Tag
      */
     public function findBySlug($slug, $columns = [ '*' ])
     {
@@ -80,7 +81,7 @@ class EloquentTagRepository implements TagRepository
      * Cria uma nova tag.
      *
      * @param $values
-     * @return Tag|bool
+     * @return Tag|null
      * @throws Exception
      */
     public function store($values)
@@ -88,14 +89,7 @@ class EloquentTagRepository implements TagRepository
         DB::beginTransaction();
 
         try {
-            $tag = Tag::create([
-                'name' => $values['name'],
-                'slug' => sys_val($values['name'])->slug(),
-                'description' => $values['description'],
-                'thumbnail' => sys_val($values['thumbnail'])->uplab(),
-                'published_at' => sys_val($values['published_at'])->date(),
-                'is_visible' => sys_val($values['is_visible'])->boolean()
-            ]);
+            $tag = Tag::create($values);
 
             DB::commit();
 
@@ -105,9 +99,7 @@ class EloquentTagRepository implements TagRepository
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
@@ -116,7 +108,7 @@ class EloquentTagRepository implements TagRepository
      *
      * @param $values
      * @param $tag
-     * @return Tag|bool
+     * @return Tag|null
      * @throws Exception
      */
     public function update($values, $tag)
@@ -124,28 +116,19 @@ class EloquentTagRepository implements TagRepository
         DB::beginTransaction();
 
         try {
-            $previous = (object) [ 'thumbnail' => $tag->thumbnail ];
+            $bkp = (object) [ 'thumbnail' => $tag->thumbnail ];
 
-            $tag->update([
-                'name' => $values['name'],
-                'slug' => sys_val($values['name'])->slug(),
-                'description' => $values['description'],
-                'thumbnail' => sys_val($values['thumbnail'])->uplab(),
-                'published_at' => sys_val($values['published_at'])->date(),
-                'is_visible' => sys_val($values['is_visible'])->boolean()
-            ]);
+            $tag->update($values);
 
             DB::commit();
 
-            uplab($values['thumbnail'])->persist($tag->thumbnail, $previous->thumbnail);
+            uplab($values['thumbnail'])->persist($tag->thumbnail, $bkp->thumbnail);
 
-            return true;
+            return $tag;
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
-
-            return false;
+            return show_debug($e);
         }
     }
 
@@ -153,7 +136,7 @@ class EloquentTagRepository implements TagRepository
      * Faz a exclusão de uma tag.
      *
      * @param $tag
-     * @return Tag|bool
+     * @return Tag|null
      * @throws Exception
      */
     public function destroy($tag)
@@ -165,15 +148,37 @@ class EloquentTagRepository implements TagRepository
 
             DB::commit();
 
-            storage()->deleteDirectory($tag->thumbnail->dir);
+            uplab($tag->thumbnail)->delete();
 
             return $tag;
         } catch (Exception $e) {
             DB::rollback();
 
-            if (env('APP_DEBUG')) throw $e;
+            return show_debug($e);
+        }
+    }
 
-            return false;
+    /**
+     * Torna visível ou invisível uma tag.
+     *
+     * @param $tag
+     * @return Tag|null
+     * @throws Exception
+     */
+    public function visibility($tag)
+    {
+        DB::beginTransaction();
+
+        try {
+            $tag->update([ 'is_visible' => ! $tag->is_visible ]);
+
+            DB::commit();
+
+            return $tag;
+        } catch (Exception $e) {
+            DB::rollback();
+
+            return show_debug($e);
         }
     }
 }

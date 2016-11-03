@@ -4,11 +4,16 @@ namespace App\Composers;
 
 class YesOrNoComposer
 {
+    /**
+     * ...
+     *
+     * @param $view
+     */
     public function compose($view)
     {
         $yesOrNo = [
-            '1' => trans('general.yes'),
-            '0' => trans('general.no')
+            '1' => __('general.yes'),
+            '0' => __('general.no')
         ];
 
         $view->with('yesOrNo', $yesOrNo);

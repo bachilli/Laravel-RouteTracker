@@ -4,64 +4,57 @@
   @include('cpanel.games.partials.menu')
   <div class="card card-block">
     <h3 class="card-title">
-      {{ trans('general.game') }}: <strong>{{ $game->name }}</strong>
+      {{ __('general.game') }}: <strong>{{ $game->name }}</strong>
     </h3>
+    <a href="{{ action('Primary\GameController@single', $game->slug) }}" target="_blank">&larr; {{ __('general.see_on_site') }}</a>
     <hr>
     <table class="table table-show table-bordered">
       <thead>
         <tr>
-          <th class="field w-25 align-right">{{ trans('general.field') }}</th>
-          <th class="value w-75">{{ trans('general.value') }}</th>
+          <th class="column-field w-25 align-right">{{ __('general.field') }}</th>
+          <th class="column-value w-75">{{ __('general.value') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.id') }}</td>
-          <td class="value w-75">{{ $game->id }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.id') }}</td>
+          <td class="column-value w-75">{{ $game->id }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.name') }}</td>
-          <td class="value w-75">{{ $game->name }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.name') }}</td>
+          <td class="column-value w-75">{{ $game->name }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.slug') }}</td>
-          <td class="value w-75">{{ $game->slug }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.slug') }}</td>
+          <td class="column-value w-75">{{ $game->slug }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.excerpt') }}</td>
-          <td class="value w-75">{{ $game->excerpt }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.excerpt') }}</td>
+          <td class="column-value w-75">{{ $game->excerpt }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.description') }}</td>
-          <td class="value w-75">{{ $game->description }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.description') }}</td>
+          <td class="column-value w-75">{{ $game->description }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.type') }}</td>
-          <td class="value w-75">{{ $game->type }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.embed') }}</td>
+          <td class="column-value w-75"><pre>{{ human_val($game->embed)->json() }}</pre></td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.embed') }}</td>
-          <td class="value w-75"><pre>{{ human_val($game->embed)->json() }}</pre></td>
+          <td class="column-field w-25 align-right">{{ __('general.instructions') }}</td>
+          <td class="column-value w-75"><pre>{{ human_val($game->instructions)->json() }}</pre></td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.instructions') }}</td>
-          <td class="value w-75"><pre>{{ human_val($game->instructions)->json() }}</pre></td>
+          <td class="column-field w-25 align-right">{{ __('general.dimensions') }}</td>
+          <td class="column-value w-75"><pre>{{ human_val($game->dimensions)->json() }}</pre></td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.dimensions') }}</td>
-          <td class="value w-75"><pre>{{ human_val($game->dimensions)->json() }}</pre></td>
+          <td class="column-field w-25 align-right">{{ __('general.age_range') }}</td>
+          <td class="column-value w-75">{{ human_val($game->age_range)->str() }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.age_range') }}</td>
-          <td class="value w-75">{{ $game->age_range }}</td>
-        </tr>
-        <tr>
-          <td class="field w-25 align-right">{{ trans('general.file') }}</td>
-          <td class="value w-75"><pre>{{ human_val($game->file)->json() }}</pre></td>
-        </tr>
-        <tr>
-          <td class="field w-25 align-right">{{ trans('general.thumbnail') }}</td>
-          <td class="value w-75">
+          <td class="column-field w-25 align-right">{{ __('general.thumbnail') }}</td>
+          <td class="column-value w-75">
             @if (uplab($game->thumbnail)->exists())
               <div class="image">
                 <a class="fancybox" href="{{ uplab($game->thumbnail)->url() }}">
@@ -74,20 +67,20 @@
           </td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.is_visible') }}</td>
-          <td class="value w-75">{{ human_val($game->is_visible)->yesOrNo() }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.is_visible') }}</td>
+          <td class="column-value w-75">{{ human_val($game->is_visible)->str() }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.published_at') }}</td>
-          <td class="value w-75">{{ $game->published_at }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.published_at') }}</td>
+          <td class="column-value w-75">{{ $game->published_at }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.created_at') }}</td>
-          <td class="value w-75">{{ $game->created_at }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.created_at') }}</td>
+          <td class="column-value w-75">{{ $game->created_at }}</td>
         </tr>
         <tr>
-          <td class="field w-25 align-right">{{ trans('general.updated_at') }}</td>
-          <td class="value w-75">{{ $game->updated_at }}</td>
+          <td class="column-field w-25 align-right">{{ __('general.updated_at') }}</td>
+          <td class="column-value w-75">{{ $game->updated_at }}</td>
         </tr>
       </tbody>
       <tfoot>
@@ -96,22 +89,22 @@
             <div class="pull-xs-right">
               <a class="btn btn-primary btn-lg"
                  href="{{ action('CPanel\GameController@edit', $game->id) }}"
-                 title="{{ trans('general.edit') }}"
+                 title="{{ __('general.edit') }}"
                  data-toggle="tooltip"><i class="fa fa-pencil-square"></i></a>
               <a class="btn btn-danger btn-lg"
                  href="{{ action('CPanel\GameController@destroy', $game->id) }}"
-                 title="{{ trans('general.destroy') }}"
+                 title="{{ __('general.destroy') }}"
                  data-toggle="tooltip"
                  data-formlink="DELETE"
-                 data-formlink-confirm-text="{{ sprintf('%s %s', trans('general.are_you_sure'), trans('general.destroy_warning')) }}"
+                 data-formlink-confirm-text="{{ sprintf('%s %s', __('general.are_you_sure'), __('general.destroy_warning')) }}"
                  data-formlink-sweat='{
                   "type": "warning",
                   "showCancelButton": "true",
                   "confirmButtonColor": "#d9534f",
-                  "title": "{{ trans('general.are_you_sure') }}",
-                  "text": "{{ trans('general.destroy_warning') }}",
-                  "confirmButtonText": "{{ trans('general.yes_destroy_it') }}",
-                  "cancelButtonText": "{{ trans('general.no_keep_it') }}"
+                  "title": "{{ __('general.are_you_sure') }}",
+                  "text": "{{ __('general.destroy_warning') }}",
+                  "confirmButtonText": "{{ __('general.yes_destroy_it') }}",
+                  "cancelButtonText": "{{ __('general.no_keep_it') }}"
                  }'><i class="fa fa-times"></i></a>
             </div>
           </td>
