@@ -168,14 +168,15 @@ class LaravelRouteTracker
      * If it is the current route returns the string.
      *
      * @param $str
+     * @param $default
      * @return string
      */
-    public function ifIsCurrentOutput($str)
+    public function ifIsCurrentOutput($str, $default = '')
     {
         if ($this->isCurrent) {
-            return $str;
+            return sprintf('%s %s', $default, $str);
         }
 
-        return '';
+        return $default;
     }
 }
