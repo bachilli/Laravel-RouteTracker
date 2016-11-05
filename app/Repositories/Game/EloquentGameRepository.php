@@ -3,53 +3,76 @@
 namespace App\Repositories\Game;
 
 use App\Models\Game;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Facades\DB;
 
 class EloquentGameRepository implements GameRepository
 {
     /**
+     * EloquentGameRepository constructor.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->table = DB::table('games');
+        $this->restriction = [];
+        $this->sort = [];
+        $this->limit = 20;
+        $this->offset = 0;
+
+        $this->setSort('id:DESC|published_at:DESC');
+    }
+
+    /**
      * Retorna todos os jogos existentes.
      *
      * @param array $columns
      * @return Game
      */
-    public function getAll($columns = [ '*' ])
+    public function getOnly($columns = [ '*' ])
     {
-        $games = Game::latest('id')->latest('published_at');
+        $this->queryLimit();
 
-        return $games->get($columns);
+        $this->queryRestriction();
+
+        $this->querySort();
+
+        return $this->table->get($columns);
     }
 
     /**
      * Retorna todos os jogos fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Game
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ])
+    public function getAndPage($columns = [ '*' ])
     {
-        $games = Game::latest('id')->latest('published_at');
+        $this->queryRestriction();
 
-        return $games->paginate($perPage, $columns);
+        $this->querySort();
+
+        return $this->table->paginate($this->limit, $columns);
     }
 
     /**
      * Retorna os jogos encontrados para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Game
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
+    public function searchOnly($q, $columns = [ '*' ])
     {
-        return Game::where('name', 'ILIKE', '%'.$q.'%')
+        $this->queryRestriction();
+
+        $this->querySort();
+
+        return $this->table->where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
-            ->latest('id')
-            ->latest('published_at')
-            ->paginate($perPage, $columns)
+            ->paginate($this->limit, $columns)
             ->appends([ 'q' => $q ]);
     }
 
@@ -62,7 +85,11 @@ class EloquentGameRepository implements GameRepository
      */
     public function findById($id, $columns = [ '*' ])
     {
-        return Game::find($id, $columns);
+        $this->queryRestriction();
+
+        $this->querySort();
+
+        return $this->table->find($id, $columns);
     }
 
     /**
@@ -74,7 +101,11 @@ class EloquentGameRepository implements GameRepository
      */
     public function findBySlug($slug, $columns = [ '*' ])
     {
-        return Game::where('slug', $slug)->first($columns);
+        $this->queryRestriction();
+
+        $this->querySort();
+
+        return $this->table->where('slug', $slug)->first($columns);
     }
 
     /**
@@ -170,7 +201,7 @@ class EloquentGameRepository implements GameRepository
      * Torna visível ou invisível um artigo.
      *
      * @param $game
-     * @return Tag|
+     * @return Game|null
      * @throws Exception
      */
     public function visibility($game)
@@ -187,6 +218,24 @@ class EloquentGameRepository implements GameRepository
             DB::rollback();
 
             return show_debug($e);
+        }
+    }
+
+    /**
+     * Limita a consulta de acordo com as restrições definidas.
+     *
+     * @return void
+     */
+    private function queryRestriction()
+    {
+        foreach ($this->restriction as $restriction) {
+            if ($restriction == 'visible') {
+                $this->table->where('is_visible', true);
+            }
+
+            if ($restriction == 'published') {
+                $this->table->where('published_at', '<=', Carbon::now());
+            }
         }
     }
 }

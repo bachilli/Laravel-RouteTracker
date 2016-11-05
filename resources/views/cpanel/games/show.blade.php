@@ -87,6 +87,9 @@
         <tr>
           <td colspan="2">
             <div class="pull-xs-right">
+              {!! toggle_link('CPanel\GameController@visibility', $game->id)->state($game->is_visible)
+              ->attrs([ 'class' => 'btn btn-lg btn-secondary' ], [ 'class' => 'btn btn-lg btn-secondary' ])
+              ->icon('fa fa-compact fa-eye fa-lg fa-active', 'fa fa-compact fa-eye-slash fa-lg fa-disabled')->show() !!}
               <a class="btn btn-primary btn-lg"
                  href="{{ action('CPanel\GameController@edit', $game->id) }}"
                  title="{{ __('general.edit') }}"

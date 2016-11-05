@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Primary;
 
+use App\Models\Game;
 use App\Repositories\Game\GameRepository;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 
@@ -34,7 +36,9 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $games = $this->gameRepository->getPaging(500);
+        $games = $this->gameRepository
+            ->setRestriction('visible|published')
+            ->getOnly();
 
         meta_tags()->title('Título...');
         meta_tags()->description('Descrição...');

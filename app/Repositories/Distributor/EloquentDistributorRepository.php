@@ -9,48 +9,44 @@ use Illuminate\Support\Facades\DB;
 class EloquentDistributorRepository implements DistributorRepository
 {
     /**
-     * Retorna todas as fontes de conteúdo existentes.
+     * Retorna todas as distribuidoras existentes.
      *
      * @param array $columns
      * @return Distributor
      */
-    public function getAll($columns = [ '*' ])
+    public function getOnly($columns = [ '*' ])
     {
-        return Distributor::latest('id')->latest('created_at')->get($columns);
+        return Distributor::get($columns);
     }
 
     /**
-     * Retorna todas as fontes de conteúdo fazendo uso da paginação.
+     * Retorna todas as distribuidoras fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Distributor
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ])
+    public function getAndPage($columns = [ '*' ])
     {
-        return Distributor::latest('id')->latest('created_at')->paginate($perPage, $columns);
+        return Distributor::paginate($this->limit, $columns);
     }
 
     /**
-     * Retorna as fontes de conteúdo encontradas para uma dada busca.
+     * Retorna as distribuidoras para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Distributor
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
+    public function searchOnly($q, $columns = [ '*' ])
     {
         return Distributor::where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
-            ->latest('id')
-            ->latest('created_at')
-            ->paginate($perPage, $columns)
+            ->paginate($this->limit, $columns)
             ->appends([ 'q' => $q ]);
     }
 
     /**
-     * Retorna uma dada fonte de conteúdo através do campo ID.
+     * Retorna uma distribuidora através do campo ID.
      *
      * @param $id
      * @param array $columns
@@ -62,7 +58,7 @@ class EloquentDistributorRepository implements DistributorRepository
     }
 
     /**
-     * Cria uma nova fonte de conteúdo.
+     * Cria uma nova distribuidora.
      *
      * @param $values
      * @return Distributor|null
@@ -93,7 +89,7 @@ class EloquentDistributorRepository implements DistributorRepository
     }
 
     /**
-     * Realiza a atualização de uma fonte de conteúdo.
+     * Realiza a atualização de uma distribuidora.
      *
      * @param $values
      * @param $distributor
@@ -127,7 +123,7 @@ class EloquentDistributorRepository implements DistributorRepository
     }
 
     /**
-     * Faz a exclusão de uma fonte de conteúdo.
+     * Faz a exclusão de uma distribuidora.
      *
      * @param $distributor
      * @return Distributor|null

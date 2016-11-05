@@ -13,26 +13,24 @@ interface TagRepository
      * @param array $columns
      * @return Tag
      */
-    public function getAll($columns = [ '*' ]);
+    public function getOnly($columns = [ '*' ]);
 
     /**
      * Retorna todas as tags fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Tag
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ]);
+    public function getAndPage($columns = [ '*' ]);
 
     /**
      * Retorna as tags encontradas para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Tag
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
+    public function searchOnly($q, $columns = [ '*' ]);
 
     /**
      * Retorna uma dada tag através do campo ID.

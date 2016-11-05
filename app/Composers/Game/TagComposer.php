@@ -30,7 +30,7 @@ class TagComposer
      */
     public function compose($view)
     {
-        $tags = $this->tagRepository->getAll();
+        $tags = $this->tagRepository->getOnly();
 
         $view->with('tags', $tags);
     }

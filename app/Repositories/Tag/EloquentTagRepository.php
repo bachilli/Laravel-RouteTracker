@@ -14,42 +14,34 @@ class EloquentTagRepository implements TagRepository
      * @param array $columns
      * @return Tag
      */
-    public function getAll($columns = [ '*' ])
+    public function getOnly($columns = [ '*' ])
     {
-        $tags = Tag::latest('id')->latest('created_at');
-
         return $tags->get($columns);
     }
 
     /**
      * Retorna todas as tags fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Tag
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ])
+    public function getAndPage($columns = [ '*' ])
     {
-        $tags = Tag::latest('id')->latest('created_at');
-
-        return $tags->paginate($perPage, $columns);
+        return $tags->paginate($this->limit, $columns);
     }
 
     /**
      * Retorna as tags encontradas para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Tag
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
+    public function searchOnly($q, $columns = [ '*' ])
     {
         return Tag::where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
-            ->latest('id')
-            ->latest('created_at')
-            ->paginate($perPage, $columns)
+            ->paginate($columns)
             ->appends([ 'q' => $q ]);
     }
 

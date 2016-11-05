@@ -31,7 +31,7 @@ class DistributorComposer
      */
     public function compose($view)
     {
-        $distributors = $this->distributorRepository->getAll();
+        $distributors = $this->distributorRepository->getOnly();
 
         $view->with('distributors', $distributors);
     }

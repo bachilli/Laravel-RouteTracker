@@ -36,7 +36,7 @@ class PublicationController extends Controller
      */
     public function index()
     {
-        $publications = $this->publicationRepository->getPaging();
+        $publications = $this->publicationRepository->getAndPage();
 
         return view('cpanel.publications.index', compact('publications'));
     }

@@ -75,7 +75,7 @@ class DistributorController extends Controller
      */
     public function index()
     {
-        $distributors = $this->distributorRepository->getPaging();
+        $distributors = $this->distributorRepository->getAndPage();
 
         return view('cpanel.distributors.index', compact('distributors'));
     }
@@ -229,7 +229,7 @@ class DistributorController extends Controller
             $remoteFile = get_remote_file($g->data['thumbnail']);
 
             if (! empty($remoteFile)){
-                $location = sprintf('%s/%s', uplab_dir(), $remoteFile->name);
+                $location = uplab_dir('', $remoteFile->name);
 
                 storage()->put($location, $remoteFile->contents);
 

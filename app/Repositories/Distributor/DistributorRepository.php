@@ -8,34 +8,32 @@ use Exception;
 interface DistributorRepository
 {
     /**
-     * Retorna todas as fontes de conteúdo existentes.
+     * Retorna todas as distribuidoras existentes.
      *
      * @param array $columns
      * @return Distributor
      */
-    public function getAll($columns = [ '*' ]);
+    public function getOnly($columns = [ '*' ]);
 
     /**
-     * Retorna todas as fontes de conteúdo fazendo uso da paginação.
+     * Retorna todas as distribuidoras fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Distributor
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ]);
+    public function getAndPage($columns = [ '*' ]);
 
     /**
-     * Retorna as fontes de conteúdo encontradas para uma dada busca.
+     * Retorna as distribuidoras para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Distributor
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
+    public function searchOnly($q, $columns = [ '*' ]);
 
     /**
-     * Retorna uma dada fonte de conteúdo através do campo ID.
+     * Retorna uma distribuidora através do campo ID.
      *
      * @param $id
      * @param array $columns
@@ -44,7 +42,7 @@ interface DistributorRepository
     public function findById($id, $columns = [ '*' ]);
 
     /**
-     * Cria uma nova fonte de conteúdo.
+     * Cria uma nova distribuidora.
      *
      * @param $values
      * @return Distributor|null
@@ -53,7 +51,7 @@ interface DistributorRepository
     public function store($values);
 
     /**
-     * Realiza a atualização de uma fonte de conteúdo.
+     * Realiza a atualização de uma distribuidora.
      *
      * @param $values
      * @param $distributor
@@ -63,7 +61,7 @@ interface DistributorRepository
     public function update($values, $distributor);
 
     /**
-     * Faz a exclusão de uma fonte de conteúdo.
+     * Faz a exclusão de uma distribuidora.
      *
      * @param $distributor
      * @return Distributor|null

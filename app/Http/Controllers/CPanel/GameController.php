@@ -39,7 +39,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = $this->gameRepository->getPaging(100);
+        $games = $this->gameRepository->setLimit(100)->getAndPage();
 
         return view('cpanel.games.index', compact('games'));
     }

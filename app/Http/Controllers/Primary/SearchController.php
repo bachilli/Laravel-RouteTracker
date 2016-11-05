@@ -49,8 +49,8 @@ class SearchController extends Controller
     {
         $query = $request->input('q');
 
-        $games = $this->gameRepository->findByQuery($query);
-        $searchTags = $this->tagRepository->findByQuery($query);
+        $games = $this->gameRepository->searchOnly($query);
+        $searchTags = $this->tagRepository->searchOnly($query);
 
         return view('primary.search', compact('games', 'searchTags'));
     }

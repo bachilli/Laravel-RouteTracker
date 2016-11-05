@@ -39,7 +39,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = $this->tagRepository->getPaging();
+        $tags = $this->tagRepository->getAndPage();
 
         return view('cpanel.tags.index', compact('tags'));
     }

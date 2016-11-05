@@ -13,26 +13,24 @@ interface PublicationRepository
      * @param array $columns
      * @return Publication
      */
-    public function getAll($columns = [ '*' ]);
+    public function getOnly($columns = [ '*' ]);
 
     /**
      * Retorna todos os conteúdos das fontes fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Publication
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ]);
+    public function getAndPage($columns = [ '*' ]);
 
     /**
      * Retorna os conteúdos das fontes encontrados para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Publication
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
+    public function searchOnly($q, $columns = [ '*' ]);
 
     /**
      * Retorna o conteúdo de uma dada fonte através do campo ID.

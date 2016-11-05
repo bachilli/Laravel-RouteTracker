@@ -13,26 +13,24 @@ interface GameRepository
      * @param array $columns
      * @return Game
      */
-    public function getAll($columns = [ '*' ]);
+    public function getOnly($columns = [ '*' ]);
 
     /**
      * Retorna todos os jogos fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Game
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ]);
+    public function getAndPage($columns = [ '*' ]);
 
     /**
      * Retorna os jogos encontrados para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Game
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ]);
+    public function searchOnly($q, $columns = [ '*' ]);
 
     /**
      * Retorna um dado jogo através do campo ID.

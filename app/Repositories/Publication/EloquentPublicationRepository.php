@@ -14,38 +14,34 @@ class EloquentPublicationRepository implements PublicationRepository
      * @param array $columns
      * @return Publication
      */
-    public function getAll($columns = [ '*' ])
+    public function getOnly($columns = [ '*' ])
     {
-        return Publication::latest('id')->latest('created_at')->get($columns);
+        return Publication::get($columns);
     }
 
     /**
      * Retorna todas as publicações fazendo uso da paginação.
      *
-     * @param int $perPage
      * @param array $columns
      * @return Publication
      */
-    public function getPaging($perPage = 15, $columns = [ '*' ])
+    public function getAndPage($columns = [ '*' ])
     {
-        return Publication::latest('id')->latest('created_at')->paginate($perPage, $columns);
+        return Publication::paginate($this->limit, $columns);
     }
 
     /**
      * Retorna as publicações encontradas para uma dada busca.
      *
      * @param $q
-     * @param int $perPage
      * @param array $columns
      * @return Publication
      */
-    public function findByQuery($q, $perPage = 15, $columns = [ '*' ])
+    public function searchOnly($q, $columns = [ '*' ])
     {
         return Publication::where('name', 'ILIKE', '%'.$q.'%')
             ->orWhere('description', 'ILIKE', '%'.$q.'%')
-            ->latest('id')
-            ->latest('created_at')
-            ->paginate($perPage, $columns)
+            ->paginate($this->limit, $columns)
             ->appends([ 'q' => $q ]);
     }
 
